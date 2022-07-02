@@ -1,0 +1,14 @@
+{
+  "name": "skystats-reloaded",
+  "version": "0.0.1",
+  "description": "SkyStats for SkySim Network",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "rsnx",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
