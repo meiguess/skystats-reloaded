@@ -9,6 +9,10 @@
   "author": "rsnx",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
   }
 }
