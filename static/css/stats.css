@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 
+@import url('https://wordpress.github.io/dashicons/css/dashicons.css');
+
 :root.light, :root.light .nice-colors-auto, :root .nice-colors-dark, :root .piece, :root *::-webkit-scrollbar-thumb {
   --§0: #000000;
   --§1: #0b277a;
@@ -1975,6 +1977,21 @@ body::-webkit-scrollbar-track {
   z-index: 1;
 }
 
+.rank-tag .rank-plus-text {
+  position: relative;
+  z-index: 2;
+}
+
+.rank-tag .rank-plus-before {
+  position: absolute;
+  top: 0;
+  left: -7px;
+  width: 999px;
+  background-color: #D985BC;
+  height: 100%;
+  transform: skew(-20deg);
+}
+
 .piece-hide {
   display: none;
 }
@@ -2151,7 +2168,7 @@ div.inventory {
 .divTableHeading { display: table-header-group;}
 .divTableFoot { display: table-footer-group;}
 
-.unique-visits, .all-time-visits {
+.unique-visits, .all-time-visits, .note {
   font-weight: bold;
   color: rgba(255, 255, 255, 0.6);
   text-transform: capitalize;
@@ -2169,4 +2186,34 @@ div.inventory {
   color: white;
   font-size: 14px;
   margin-bottom: 0 !important;
+}
+
+.badge {
+  margin: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.badge-code {
+  background: #2fa2cc;
+  box-shadow: 0 0 0 4px #2fa2cc;
+}
+
+.dashicons:before {
+  position: relative;
+  top: -6px;
+  left: -13px;
+  font-size: 30px;
+  color: white;
+}
+
+.dashicons-networking:before {
+  top: 11px;
+  left: 0;
+}
+
+.note {
+  margin-top: 20px;
 }

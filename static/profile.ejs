@@ -51,9 +51,20 @@
                 <span tabindex="0" class="stats_for_player">
                     <div class="rank-tag nice-colors-dark">
                         <div class="rank-name" style="background-color: var(--§d)">PIG</div>
-                        <div class="rank-plus" style="background-color: var(--§b)">+++</div>
+                        <div class="rank-plus" style="background-color: var(--§b)">
+                            <div class="rank-plus-before" style="background-color: var(--§b)"></div>
+                            <span class="rank-plus-text">+++</span>
+                        </div>
                     </div>
                     <%= username %>
+                    <% if(uuidData.raw_id === 'f7ccf53e8acd466aab8a087ebefe1452') { %>
+                        <!-- rsnx -->
+                        <div class="badge badge-code dashicons dashicons-editor-code"> </div>
+                    <% } %>
+                    <% if(uuidData.raw_id === 'ffdd482c9e5141ccbc8b4bdfb472e203') { %>
+                        <!-- eqrta -->
+                        <div class="badge badge-speaker dashicons dashicons-star-filled"> </div>
+                    <% } %>
                 </span>
                 &ThickSpace;&ThickSpace;<span class="text-on">on</span>&ThickSpace;&ThickSpace;<span class="text-skysim">SkySim</span>
                 <!-- <p class="unique-visits">Unique Visits: 
@@ -65,6 +76,14 @@
                         COMING SOON
                     </span>
                 </p>
+                <span class="note">In memory of Technoblade, everyone on this webpage has the </span>
+                <div class="rank-tag nice-colors-dark" style=" margin: 5px; margin-top: -5px">
+                    <div class="rank-name" style="background-color: var(--§d)">PIG</div>
+                    <div class="rank-plus" style="background-color: var(--§b)">
+                        <div class="rank-plus-before" style="background-color: var(--§b)"></div> <span class="rank-plus-text">+++</span>
+                    </div>
+                </div> 
+                <span class="note"> rank.</span>
                 <!-- <i class="fa-solid fa-star favorizeIcon" id="favorized"></i>
                 <i class="fa-regular fa-star favorizeIcon"
                     id="notFavorized"></i> -->
