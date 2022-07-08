@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en" class="style-scrollbar">
+    <head>
+        <title>SkyStats</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/stats.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <nav class="menu-container">
+            <img src="/Resources/slyso234.png" alt="SkyStats Logo"
+                class="skystats-img" />
+
+            <div class="togglemenu">
+                <button class="join-discord-button" onclick="redirectDiscord()">Join
+                    our
+                    Discord</button>
+            </div>
+
+            <div class="menu">
+                <ul> </ul>
+                <ul>
+                    <li>
+                        <button class="join-discord-button"
+                            onclick="redirectDiscord()">Join
+                            our Discord</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="blur-box" data-sticky>
+            <div class="player_profile">
+                <span class="text-stats-for">Stats for</span>&ThickSpace;&ThickSpace;
+                <span tabindex="0" class="stats_for_player">
+                    <div class="rank-tag nice-colors-dark">
+                        <div class="rank-name" style="background-color: var(--§d)">PIG</div>
+                        <div class="rank-plus" style="background-color: var(--§b)">+++</div>
+                    </div>
+                    <%= username %>
+                </span>
+                &ThickSpace;&ThickSpace;<span class="text-on">on</span>&ThickSpace;&ThickSpace;<span class="text-skysim">SkySim</span>
+                <!-- <p class="unique-visits">Unique Visits: 
+                    <span class="unique-visits-number" id="unique-visits">
+                    </span>
+                </p> -->
+                <p class="all-time-visits">All-Time Visits: 
+                    <span class="all-time-visits-number" id="unique-visits" style="color: var(--§4) !important;">
+                        COMING SOON
+                    </span>
+                </p>
+                <!-- <i class="fa-solid fa-star favorizeIcon" id="favorized"></i>
+                <i class="fa-regular fa-star favorizeIcon"
+                    id="notFavorized"></i> -->
+            </div>
+            <div class="player_socials">
+                <a href="https://auctions.craftlink.xyz/players/<%=
+                    uuidData.raw_id %>"
+                    target="_blank" rel="noreferrer"
+                    class="additional-player-stat
+                    player-hyauction">HyAuctions</a>
+                <a href="https://plancke.io/hypixel/player/stats/<%=username %>"
+                    target="_blank" rel="noreferrer"
+                    class="additional-player-stat
+                    player-plancke">Plancke</a>
+            </div>
+            <!--Skill Section-->
+            <div class="skills">
+                <%- include('./skills.ejs'); %> 
+                <%- include('./playerstats.ejs'); %>
+            </div>
+        </div>
+    </body>
+    <script src="/js/profile.js"></script>
+</html>

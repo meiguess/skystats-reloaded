@@ -1,0 +1,398 @@
+                    <!--Combat Section-->
+                    <div class="combat-skill">
+                      <div class="skill-icon-combat"
+                          style="--skill_color: <%=
+                          userData['skills'].combat.hypermaxed ? '#dd980e' :
+                          '#0bca51' %>;">
+                          <img src="/Resources/Combat_Sword.webp" alt=""
+                              class="combat-sword">
+                      </div>
+                      <div class="skill-name-combat">
+                          <strong>Combat </strong><span class="skill-level">
+                              <%= userData['skills'].combat.level===null ? 0 :
+                                  userData['skills'].combat.level %>
+                              </span>
+                          </div>
+                          <div class="skill-progress-bar-grey-combat"
+                              style="--left_side_bar: <%=
+                              userData['skills'].combat.skill_progression_percentage
+                              + 1.1 %>%; --width_bar: <%=
+                                  userData['skills'].combat.greyPercentage +
+                                  0.3 %>%;">
+                              </div>
+                              <div class="skill-progress-bar-combat"
+                                  style="--progress_bar_color: <%=
+                                  userData['skills'].combat.hypermaxed ?
+                                  '#ce8f12' : '#0baa51' %>; --progress: <%=
+                                      userData['skills'].combat.skill_progression_percentage
+                                      %>%;">
+                                  </div>
+                                  <div class="skill-progress-text-combat"
+                                      style="--left_side: <%=
+                                      ((userData['skills'].combat.skill_progression_percentage
+                                      +
+                                      userData['skills'].combat.greyPercentage)
+                                      + 0.3) / 2 %>%;
+                                      --min-text: <%=
+                                          (userData['skills'].combat.level>=
+                                          60 ?
+                                          `${userData['skills'].combat.abbrev}
+                                          XP`.length :
+                                          `${userData['skills'].combat.abbrev}/${userData['skills'].combat.nextLevelXP}
+                                          XP`.length) %>px;">
+                                          <%= userData['skills'].combat.level>=
+                                              60 ?
+                                              `${userData['skills'].combat.abbrev}
+                                              XP` :
+                                              `${userData['skills'].combat.currentSkillXP.abbrev}/${userData['skills'].combat.currentSkillXP.nextXPAbbrev}
+                                              XP` %>
+                                          </div>
+                                      </div>
+                                      <!--Mining Section-->
+                                      <div class="mining-skill">
+                                          <div class="skill-icon-mining"
+                                              style="--skill_color: <%=
+                                              userData['skills'].mining.hypermaxed
+                                              ? '#dd980e' : '#0bca51' %>;">
+                                              <img
+                                                  src="/Resources/Stone_Pickaxe.png"
+                                                  alt="" class="mining-sword">
+                                          </div>
+                                          <div class="skill-name-mining">
+                                              <strong>Mining </strong><span
+                                                  class="skill-level">
+                                                  <%=
+                                                      userData['skills'].mining.level===null
+                                                      ? 0 :
+                                                      userData['skills'].mining.level
+                                                      %>
+                                                  </span>
+                                              </div>
+                                              <div
+                                                  class="skill-progress-bar-grey-mining"
+                                                  style="--left_side_bar: <%=
+                                                  userData['skills'].mining.skill_progression_percentage
+                                                  + 1.1 %>%; --width_bar: <%=
+                                                      userData['skills'].mining.greyPercentage
+                                                      + 0.3 %>%;">
+                                                  </div>
+                                                  <div
+                                                      class="skill-progress-bar-mining"
+                                                      style="--progress_bar_color:
+                                                  <%=
+                                                      userData['skills'].mining.hypermaxed
+                                                      ? '#ce8f12' : '#0baa51'
+                                                      %>; --progress: <%=
+                                                          userData['skills'].mining.skill_progression_percentage
+                                                          %>%;">
+                                                      </div>
+                                                      <div
+                                                          class="skill-progress-text-mining"
+                                                          style="--left_side:
+                                                      <%=
+                                                          ((userData['skills'].mining.skill_progression_percentage
+                                                          +
+                                                          userData['skills'].mining.greyPercentage)
+                                                          + 0.3) / 2 %>%;
+                                                          --min-text: <%=
+                                                              (userData['skills'].mining.level>=
+                                                              60 ?
+                                                              `${userData['skills'].mining.abbrev}
+                                                              XP`.length :
+                                                              `${userData['skills'].mining.abbrev}/${userData['skills'].mining.nextLevelXP}
+                                                              XP`.length) %>px;">
+                                                              <%=
+                                                                  userData['skills'].mining.level>=
+                                                                  60 ?
+                                                                  `${userData['skills'].mining.abbrev}
+                                                                  XP` :
+                                                                  `${userData['skills'].mining.currentSkillXP.abbrev}/${userData['skills'].mining.currentSkillXP.nextXPAbbrev}
+                                                                  XP` %>
+                                                              </div>
+                                                          </div>
+                                                          <!--Enchanting Skill-->
+                                                          <div
+                                                              class="enchanting-skill">
+                                                              <div
+                                                                  class="skill-icon-enchanting"
+                                                                  style="--skill_color:
+                                                              <%=
+                                                                  userData['skills'].enchanting.hypermaxed
+                                                                  ? '#dd980e'
+                                                                  : '#0bca51'
+                                                                  %>;">
+                                                                  <img
+                                                                      src="/Resources/Enchanting_Table.png"
+                                                                      alt=""
+                                                                      class="enchanting-sword">
+                                                              </div>
+                                                              <div
+                                                                  class="skill-name-enchanting">
+                                                                  <strong>Enchanting
+                                                                  </strong><span
+                                                                      class="skill-enchanting">
+                                                                      <%=
+                                                                          userData['skills'].enchanting.level===null
+                                                                          ? 0
+                                                                          :
+                                                                          userData['skills'].enchanting.level
+                                                                          %>
+                                                                      </span>
+                                                                  </div>
+                                                                  <div
+                                                                      class="skill-progress-bar-grey-enchanting"
+                                                                      style="--left_side_bar:
+                                                                  <%=
+                                                                      userData['skills'].enchanting.skill_progression_percentage
+                                                                      + 1.1 %>%;
+                                                                      --width_bar:
+                                                                      <%=
+                                                                          userData['skills'].enchanting.greyPercentage
+                                                                          +
+                                                                          0.3
+                                                                          %>%;">
+                                                                      </div>
+                                                                      <div
+                                                                          class="skill-progress-bar-enchanting"
+                                                                          style="--progress_bar_color:
+                                                                      <%=
+                                                                          userData['skills'].enchanting.hypermaxed
+                                                                          ?
+                                                                          '#ce8f12'
+                                                                          :
+                                                                          '#0baa51'
+                                                                          %>;
+                                                                          --progress:
+                                                                          <%=
+                                                                              userData['skills'].enchanting.skill_progression_percentage
+                                                                              %>%;">
+                                                                          </div>
+                                                                          <div
+                                                                              class="skill-progress-text-enchanting"
+                                                                              style="--left_side:
+                                                                          <%=
+                                                                              ((userData['skills'].enchanting.skill_progression_percentage
+                                                                              +
+                                                                              userData['skills'].enchanting.greyPercentage)
+                                                                              +
+                                                                              0.3)
+                                                                              /
+                                                                              2
+                                                                              %>%;
+                                                                              --min-text:
+                                                                              <%=
+                                                                                  (userData['skills'].enchanting.level>=
+                                                                                  60
+                                                                                  ?
+                                                                                  `${userData['skills'].enchanting.abbrev}
+                                                                                  XP`.length
+                                                                                  :
+                                                                                  `${userData['skills'].enchanting.abbrev}/${userData['skills'].enchanting.nextLevelXP}
+                                                                                  XP`.length)
+                                                                                  %>px;">
+                                                                                  <%=
+                                                                                      userData['skills'].enchanting.level>=
+                                                                                      60
+                                                                                      ?
+                                                                                      `${userData['skills'].enchanting.abbrev}
+                                                                                      XP`
+                                                                                      :
+                                                                                      `${userData['skills'].enchanting.currentSkillXP.abbrev}/${userData['skills'].enchanting.currentSkillXP.nextXPAbbrev}
+                                                                                      XP`
+                                                                                      %>
+                                                                                  </div>
+                                                                              </div>
+                                                                              <!--Farming Skill-->
+                                                                              <div
+                                                                                  class="farming-skill">
+                                                                                  <div
+                                                                                      class="skill-icon-farming"
+                                                                                      style="--skill_color:
+                                                                                  <%=
+                                                                                      userData['skills'].farming.hypermaxed
+                                                                                      ?
+                                                                                      '#dd980e'
+                                                                                      :
+                                                                                      '#0bca51'
+                                                                                      %>;">
+                                                                                      <img
+                                                                                          src="/Resources/Minecraft-goldenhoe.webp"
+                                                                                          alt=""
+                                                                                          class="farming-sword">
+                                                                                  </div>
+                                                                                  <div
+                                                                                      class="skill-name-farming">
+                                                                                      <strong>Farming
+                                                                                      </strong><span
+                                                                                          class="skill-farming">
+                                                                                          <%=
+                                                                                              userData['skills'].farming.level===null
+                                                                                              ?
+                                                                                              0
+                                                                                              :
+                                                                                              userData['skills'].farming.level
+                                                                                              %>
+                                                                                          </span>
+                                                                                      </div>
+                                                                                      <div
+                                                                                          class="skill-progress-bar-grey-farming"
+                                                                                          style="--left_side_bar:
+                                                                                      <%=
+                                                                                          userData['skills'].farming.skill_progression_percentage
+                                                                                          +
+                                                                                          1.1
+                                                                                          %>%;
+                                                                                          --width_bar:
+                                                                                          <%=
+                                                                                              userData['skills'].farming.greyPercentage
+                                                                                              +
+                                                                                              0.3
+                                                                                              %>%;">
+                                                                                          </div>
+                                                                                          <div
+                                                                                              class="skill-progress-bar-farming"
+                                                                                              style="--progress_bar_color:
+                                                                                          <%=
+                                                                                              userData['skills'].farming.hypermaxed
+                                                                                              ?
+                                                                                              '#ce8f12'
+                                                                                              :
+                                                                                              '#0baa51'
+                                                                                              %>;
+                                                                                              --progress:
+                                                                                              <%=
+                                                                                                  userData['skills'].farming.skill_progression_percentage
+                                                                                                  %>%;">
+                                                                                              </div>
+                                                                                              <div
+                                                                                                  class="skill-progress-text-farming"
+                                                                                                  style="--left_side:
+                                                                                              <%=
+                                                                                                  ((userData['skills'].farming.skill_progression_percentage
+                                                                                                  +
+                                                                                                  userData['skills'].farming.greyPercentage)
+                                                                                                  +
+                                                                                                  0.3)
+                                                                                                  /
+                                                                                                  2
+                                                                                                  %>%;
+                                                                                                  --min-text:
+                                                                                                  <%=
+                                                                                                      (userData['skills'].farming.level>=
+                                                                                                      60
+                                                                                                      ?
+                                                                                                      `${userData['skills'].farming.abbrev}
+                                                                                                      XP`.length
+                                                                                                      :
+                                                                                                      `${userData['skills'].farming.abbrev}/${userData['skills'].farming.nextLevelXP}
+                                                                                                      XP`.length)
+                                                                                                      %>px;">
+                                                                                                      <%=
+                                                                                                          userData['skills'].farming.level>=
+                                                                                                          60
+                                                                                                          ?
+                                                                                                          `${userData['skills'].farming.abbrev}
+                                                                                                          XP`
+                                                                                                          :
+                                                                                                          `${userData['skills'].farming.currentSkillXP.abbrev}/${userData['skills'].farming.currentSkillXP.nextXPAbbrev}
+                                                                                                          XP`
+                                                                                                          %>
+                                                                                                      </div>
+                                                                                                  </div>
+                                                                                                  <!--Foraging Section-->
+                                                                                                  <div
+                                                                                                      class="foraging-skill">
+                                                                                                      <div
+                                                                                                          class="skill-icon-foraging"
+                                                                                                          style="--skill_color:
+                                                                                                      <%=
+                                                                                                          userData['skills'].foraging.hypermaxed
+                                                                                                          ?
+                                                                                                          '#dd980e'
+                                                                                                          :
+                                                                                                          '#0bca51'
+                                                                                                          %>;">
+                                                                                                          <img
+                                                                                                              src="/Resources/Foraging_Icon_Sapling.webp"
+                                                                                                              alt=""
+                                                                                                              class="foraging-sword">
+                                                                                                      </div>
+                                                                                                      <div
+                                                                                                          class="skill-name-foraging">
+                                                                                                          <strong>Foraging
+                                                                                                          </strong><span
+                                                                                                              class="skill-foraging">
+                                                                                                              <%=
+                                                                                                                  userData['skills'].foraging.level===null
+                                                                                                                  ?
+                                                                                                                  0
+                                                                                                                  :
+                                                                                                                  userData['skills'].foraging.level
+                                                                                                                  %>
+                                                                                                              </span>
+                                                                                                          </div>
+                                                                                                          <div
+                                                                                                              class="skill-progress-bar-grey-foraging"
+                                                                                                              style="--left_side_bar:
+                                                                                                          <%=
+                                                                                                              userData['skills'].foraging.skill_progression_percentage
+                                                                                                              +
+                                                                                                              1.1
+                                                                                                              %>%;
+                                                                                                              --width_bar:
+                                                                                                              <%=
+                                                                                                                  userData['skills'].foraging.greyPercentage
+                                                                                                                  +
+                                                                                                                  0.3
+                                                                                                                  %>%;">
+                                                                                                              </div>
+                                                                                                              <div
+                                                                                                                  class="skill-progress-bar-foraging"
+                                                                                                                  style="--progress_bar_color:
+                                                                                                              <%=
+                                                                                                                  userData['skills'].foraging.hypermaxed
+                                                                                                                  ?
+                                                                                                                  '#ce8f12'
+                                                                                                                  :
+                                                                                                                  '#0baa51'
+                                                                                                                  %>;
+                                                                                                                  --progress:
+                                                                                                                  <%=
+                                                                                                                      userData['skills'].foraging.skill_progression_percentage
+                                                                                                                      %>%;">
+                                                                                                                  </div>
+                                                                                                                  <div
+                                                                                                                      class="skill-progress-text-foraging"
+                                                                                                                      style="--left_side:
+                                                                                                                  <%=
+                                                                                                                      (((userData['skills'].foraging.skill_progression_percentage
+                                                                                                                      +
+                                                                                                                      userData['skills'].foraging.greyPercentage)
+                                                                                                                      +
+                                                                                                                      0.3)
+                                                                                                                      /
+                                                                                                                      2)
+                                                                                                                      %>%;
+                                                                                                                      --min-text:
+                                                                                                                      <%=
+                                                                                                                          (userData['skills'].foraging.level>=
+                                                                                                                          60
+                                                                                                                          ?
+                                                                                                                          `${userData['skills'].foraging.abbrev}
+                                                                                                                          XP`.length
+                                                                                                                          :
+                                                                                                                          `${userData['skills'].foraging.abbrev}/${userData['skills'].foraging.nextLevelXP}
+                                                                                                                          XP`.length)
+                                                                                                                          %>px;">
+                                                                                                                          <%=
+                                                                                                                              userData['skills'].foraging.level>=
+                                                                                                                              60
+                                                                                                                              ?
+                                                                                                                              `${userData['skills'].foraging.abbrev}
+                                                                                                                              XP`
+                                                                                                                              :
+                                                                                                                              `${userData['skills'].foraging.currentSkillXP.abbrev}/${userData['skills'].foraging.currentSkillXP.nextXPAbbrev}
+                                                                                                                              XP`
+                                                                                                                              %>
+                                                                                                                          </div>
+                                                                                                                      </div>
