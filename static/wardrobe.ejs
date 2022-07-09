@@ -1,3 +1,4 @@
+<div class="text-wardrobe" style="position: absolute; top: 1130px;">Wardrobe</div>
 <div class="pieces">
   <% 
   let wardrobeArray = wardrobe;
@@ -32,7 +33,7 @@
     <% } else {%>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(headArray[j].lore); %>-bg">
-        <div class="piece-<%= j %>-icon armor-piece" style="--item-icon: url('<%= headArray[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= headArray[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
       </div>
     </div>
     <% } } %>
@@ -45,7 +46,9 @@
       </div>
     <% } else {%>
     <div class="wardrobe-set">
-      <div class="piece piece-<%= loreToRarity(chestArray[j].lore); %>-bg"></div>
+      <div class="piece piece-<%= loreToRarity(chestArray[j].lore); %>-bg">
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[chestArray[j].type.toLowerCase()] %>');"></div>
+      </div>
     </div>
     <% } } %>
   </div>
@@ -57,7 +60,9 @@
       </div>
     <% } else {%>
     <div class="wardrobe-set">
-      <div class="piece piece-<%= loreToRarity(legArray[j].lore); %>-bg"></div>
+      <div class="piece piece-<%= loreToRarity(legArray[j].lore); %>-bg">
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[legArray[j].type.toLowerCase()] %>');"></div>
+      </div>
     </div>
     <% } } %>
   </div>
@@ -69,7 +74,9 @@
       </div>
     <% } else {%>
     <div class="wardrobe-set">
-      <div class="piece piece-<%= loreToRarity(bootArray[j].lore); %>-bg"></div>
+      <div class="piece piece-<%= loreToRarity(bootArray[j].lore); %>-bg">
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[bootArray[j].type.toLowerCase()] %>');"></div>
+      </div>
     </div>
     <% } } %>
   </div>
