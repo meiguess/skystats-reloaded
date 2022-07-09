@@ -375,9 +375,9 @@ App.post("/", async (req, res) => {
     userData["slayers"]["tarantula"]["xp"]["current"] = TarantulaSlayerProgression["currentXP"];
     userData["slayers"]["tarantula"]["xp"]["next"] = TarantulaSlayerProgression["nextLevelXP"];
 
-    //Rendering page.
+    const LoreToRarityFunction = await require("./Functions/LoreToRarity");
 
-    console.log(PlayerInventory.data.armor);
+    //Rendering page.
 
     const fetchingPlayer = await PlayerDB.findOne({
       UUID: UUID.data?.data?.player?.id
@@ -386,6 +386,8 @@ App.post("/", async (req, res) => {
     if (fetchingPlayer) fetchingPlayer.updateOne({
       UUID: fetchingPlayer.UUID,
       PlayerData: userData
+    }).then(() => {
+      // console.log("Updated Data!")
     });
 
     if (!fetchingPlayer) new PlayerDB({
@@ -414,7 +416,9 @@ App.post("/", async (req, res) => {
       visits: {
         alltime: allTimeVisits,
         unique: uniqueVisits,
-      }
+      },
+      wardrobe: PlayerInventory.data.wardrobe,
+      loreToRarity: LoreToRarityFunction,
     });
   }
 });

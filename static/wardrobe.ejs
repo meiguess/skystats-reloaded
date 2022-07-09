@@ -1,0 +1,74 @@
+<div class="pieces">
+  <% 
+  let wardrobeArray = wardrobe;
+  let headArray = [];
+  let chestArray = [];
+  let legArray = [];
+  let bootArray = [];
+
+  for (let i = 0; i < wardrobeArray.length; i+=4) {
+    headArray.push(wardrobeArray[i]);
+  }
+  for (let i = 1; i < wardrobeArray.length; i+=4) {
+    chestArray.push(wardrobeArray[i]);
+  }
+  for (let i = 2; i < wardrobeArray.length; i+=4) {
+    legArray.push(wardrobeArray[i]);
+  }
+  for (let i = 3; i < wardrobeArray.length; i+=4) {
+    bootArray.push(wardrobeArray[i]);
+  }
+  headArray.splice(headArray.length - 9, 9);
+  chestArray.splice(chestArray.length - 9, 9);
+  legArray.splice(legArray.length - 9, 9);
+  bootArray.splice(bootArray.length - 9, 9);
+  %>
+  <!-- Head -->
+  <div class="row">
+    <% for(let j = 0; j < headArray.length; j++) { if(headArray[j] === null) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-NONE-bg"></div>
+      </div>
+    <% } else {%>
+    <div class="wardrobe-set">
+      <div class="piece piece-<%= loreToRarity(headArray[j].lore); %>-bg"></div>
+    </div>
+    <% } } %>
+  </div>
+  <!-- Chest -->
+  <div class="row">
+    <% for(let j = 0; j < chestArray.length; j++) { if(chestArray[j] === null) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-NONE-bg"></div>
+      </div>
+    <% } else {%>
+    <div class="wardrobe-set">
+      <div class="piece piece-<%= loreToRarity(chestArray[j].lore); %>-bg"></div>
+    </div>
+    <% } } %>
+  </div>
+  <!-- Leg -->
+  <div class="row">
+    <% for(let j = 0; j < legArray.length; j++) { if(legArray[j] === null) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-NONE-bg"></div>
+      </div>
+    <% } else {%>
+    <div class="wardrobe-set">
+      <div class="piece piece-<%= loreToRarity(legArray[j].lore); %>-bg"></div>
+    </div>
+    <% } } %>
+  </div>
+  <!-- Boot -->
+  <div class="row">
+    <% for(let j = 0; j < bootArray.length; j++) { if(bootArray[j] === null) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-NONE-bg"></div>
+      </div>
+    <% } else {%>
+    <div class="wardrobe-set">
+      <div class="piece piece-<%= loreToRarity(bootArray[j].lore); %>-bg"></div>
+    </div>
+    <% } } %>
+  </div>
+</div>

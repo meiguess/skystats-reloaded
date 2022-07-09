@@ -2217,3 +2217,83 @@ div.inventory {
 .note {
   margin-top: 20px;
 }
+
+.pieces {
+  margin-top: -12px;
+  position: absolute;
+  top: 1185px;
+}
+
+.wardrobe-set {
+  vertical-align: top;
+  display: inline-block;
+  max-height: 90px;
+  overflow: hidden;
+  transition: max-height .2s;
+}
+
+.piece-COMMON-bg {
+  background-color: var(--§f) !important;
+}
+
+.piece-UNCOMMON-bg {
+  background-color: var(--§a) !important;
+}
+
+.piece-RARE-bg {
+  background-color: var(--§9) !important;
+}
+
+.piece-EPIC-bg {
+  background-color: var(--§5) !important;
+}
+
+.piece-LEGENDARY-bg {
+  background-color: var(--§6) !important;
+}
+
+.piece-MYTHIC-bg {
+  background-color: var(--§d) !important;
+}
+
+.piece-SUPREME-bg {
+  background-color: var(--§b) !important;
+}
+
+.piece-SPECIAL-bg {
+  background-color: var(--§c) !important;
+}
+
+.piece-VERY_SPECIAL-bg {
+  background-color: var(--§c) !important;
+}
+
+.piece {
+  display: inline-block;
+  position: relative;
+  width: 75px;
+  height: 75px;
+  vertical-align: top;
+  margin-right: 8px;
+  margin-top: 12px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+  transition: z-index .2s;
+  background-color: #555555;
+}
+
+.wardrobe-set .piece {
+  display: block;
+}
+
+
+.row {
+  display: table;
+}
+
+.wardrobe-set {
+  display: table-cell;
+  width: 82.979px;
+}
