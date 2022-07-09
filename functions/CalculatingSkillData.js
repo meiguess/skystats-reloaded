@@ -250,7 +250,7 @@ module.exports = async (SkySimData) => {
 
     farmingData.greyPercentage = farmingData.level === null ? 45 : 45 - percent_of_percentage_3;
 
-    console.log(raw_data_3, percent_of_percentage_3, farmingNextXP, farmingData.currentSkillXP)
+    // console.log(raw_data_3, percent_of_percentage_3, farmingNextXP, farmingData.currentSkillXP)
 
     //Setting hypermaxed settings;
     if (farmingData.level >= 50) farmingData.hypermaxed = true;
