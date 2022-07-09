@@ -277,6 +277,17 @@ body::-webkit-scrollbar-track {
   user-select: text !important;
 }
 
+@media (max-width: 1380px) {
+  .skill-progress-bar-grey-combat, .skill-progress-bar-combat, .skill-progress-text-combat,
+  .skill-progress-bar-grey-enchanting, .skill-progress-bar-enchanting, .skill-progress-text-enchanting,
+  .skill-progress-bar-grey-farming, .skill-progress-bar-farming, .skill-progress-text-farming,
+  .skill-progress-bar-grey-foraging, .skill-progress-bar-foraging, .skill-progress-text-foraging,
+  .skill-progress-bar-grey-mining, .skill-progress-bar-mining, .skill-progress-text-mining {
+    display: none !important;
+  }
+}
+
+
 .skill-progress-bar-grey-combat {
   width: var(--width_bar);
   position: relative;
@@ -1540,6 +1551,42 @@ body::-webkit-scrollbar-track {
   color: #fff;
 }
 
+.revenant-header-text {
+  font-size: 0.75vw;
+}
+
+@media (max-width: 1900px) {
+  .slayers {
+    display: none !important;
+  }
+  }
+  /*.revenant-icon, .revenant-slayer-boxing, .revenant-green-bar, .revenant-grey-bar {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1050px) {
+  .revenant-slayer-skill-text {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1050px) {
+  .revenant-slayer-skill-text {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1400px) {
+  .responsive-text-revenant {
+    display: block;
+  }
+} */
+
+  .responsive-text-revenant {
+    display: none !important;
+  }
+
 .revenant-icon {
   width: 28px;
   height: 28px;
@@ -1561,6 +1608,7 @@ body::-webkit-scrollbar-track {
   line-height: 1.5;
   text-align: center;
   user-select: text !important;
+  font-size: 1vw;
 }
 
 .revenant-value {
