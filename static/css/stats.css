@@ -1283,7 +1283,7 @@ body::-webkit-scrollbar-track {
   top: calc(-480px - env(safe-area-inset-top, 0));
 }
 
-.text-armor {
+.text-armor, .text-wardrobe {
   height: 40px;
   line-height: 40px;
   text-transform: uppercase;
