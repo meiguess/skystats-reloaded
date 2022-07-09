@@ -419,6 +419,7 @@ App.post("/", async (req, res) => {
       },
       wardrobe: PlayerInventory.data.wardrobe,
       loreToRarity: LoreToRarityFunction,
+      armorAttr: ArmorAttribute,
     });
   }
 });
