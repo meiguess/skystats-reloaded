@@ -25,6 +25,6 @@ module.exports = (lore) => {
     return "SPECIAL";
   }
   if (lastText.includes("VERY") && lastText.includes("SPECIAL")) {
-    return "VERY SPECIAL";
+    return "VERY_SPECIAL";
   }
 }
