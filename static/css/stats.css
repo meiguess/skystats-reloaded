@@ -118,7 +118,7 @@ body::-webkit-scrollbar-track {
 .blur-box {
   position: relative;
   margin-left: 40vw;
-  height: 100vh;
+  height: 150vh;
   --padding: 30px;
   padding: var(--padding);
   padding-top: calc(48px + env(safe-area-inset-top, 0));
@@ -235,7 +235,7 @@ body::-webkit-scrollbar-track {
   margin-left: calc(-1*30px);
   margin-right: calc(-1*30px);
   background-color: rgba(0, 0, 0, 0.3);
-  height: 100vh;
+  height: 145vh;
 }
 
 /*Combat Section*/
