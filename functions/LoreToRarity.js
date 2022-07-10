@@ -1,6 +1,6 @@
 module.exports = (lore) => {
   const lastText = lore[lore.length - 1];
-  if (lastText.includes("COMMON")) {
+  if (lastText.includes("COMMON") && !lastText.includes("UNCOMMON")) {
     return "COMMON";
   }
   if (lastText.includes("UNCOMMON")) {
