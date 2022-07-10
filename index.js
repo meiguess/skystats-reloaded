@@ -379,6 +379,8 @@ App.post("/", async (req, res) => {
 
     const IntToArgbFunction = await require("./Functions/IntToARGB");
 
+    const MinecraftMaterials = await require("./Constants/MinecraftMaterials");
+
     //Rendering page.
 
     const fetchingPlayer = await PlayerDB.findOne({
@@ -423,6 +425,7 @@ App.post("/", async (req, res) => {
       loreToRarity: LoreToRarityFunction,
       armorAttr: ArmorAttribute,
       intToRGB: IntToArgbFunction,
+      minecraftMaterials: MinecraftMaterials,
     });
   }
 });
