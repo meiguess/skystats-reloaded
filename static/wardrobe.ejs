@@ -48,7 +48,7 @@
     <% } else {%>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(chestArray[j].lore); %>-bg">
-        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[chestArray[j].type.toLowerCase()] %>');"></div>
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[chestArray[j].type.toLowerCase()] === undefined ? 'https://sky.lea.moe/leather/chestplate/' + intToRGB(chestArray[j].color).r + ',' + intToRGB(chestArray[j].color).g + ',' + intToRGB(chestArray[j].color).b + '' : armorAttr[chestArray[j].type.toLowerCase()]%>');"></div>
       </div>
     </div>
     <% } } %>
@@ -62,7 +62,7 @@
     <% } else {%>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(legArray[j].lore); %>-bg">
-        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[legArray[j].type.toLowerCase()] %>');"></div>
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[legArray[j].type.toLowerCase()] === undefined ? 'https://sky.lea.moe/leather/leggings/' + intToRGB(legArray[j].color).r + ',' + intToRGB(legArray[j].color).g + ',' + intToRGB(legArray[j].color).b + '' : armorAttr[legArray[j].type.toLowerCase()] %>');"></div>
       </div>
     </div>
     <% } } %>
@@ -76,7 +76,7 @@
     <% } else {%>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(bootArray[j].lore); %>-bg">
-        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[bootArray[j].type.toLowerCase()] %>');"></div>
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[bootArray[j].type.toLowerCase()] === undefined ? 'https://sky.lea.moe/leather/boots/' + intToRGB(bootArray[j].color).r + ',' + intToRGB(bootArray[j].color).g + ',' + intToRGB(bootArray[j].color).b + '' : armorAttr[bootArray[j].type.toLowerCase()] %>');"></div>
       </div>
     </div>
     <% } } %>
@@ -105,7 +105,7 @@
     <% } else {%>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(secondChestArray[j].lore); %>-bg">
-        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondChestArray[j].type.toLowerCase()] %>');"></div>
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondChestArray[j].type.toLowerCase()] === undefined ? 'https://sky.lea.moe/leather/chestplate/' + intToRGB(secondChestArray[j].color).r + ',' + intToRGB(secondChestArray[j].color).g + ',' + intToRGB(secondChestArray[j].color).b + '' : armorAttr[secondChestArray[j].type.toLowerCase()] %>');"></div>
       </div>
     </div>
     <% } } %>
@@ -119,7 +119,7 @@
     <% } else {%>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(secondLegArray[j].lore); %>-bg">
-        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondLegArray[j].type.toLowerCase()] %>');"></div>
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondLegArray[j].type.toLowerCase()] === undefined ? 'https://sky.lea.moe/leather/leggings/' + intToRGB(secondLegArray[j].color).r + ',' + intToRGB(secondLegArray[j].color).g + ',' + intToRGB(secondLegArray[j].color).b + '' : armorAttr[secondLegArray[j].type.toLowerCase()] %>');"></div>
       </div>
     </div>
     <% } } %>
@@ -133,7 +133,7 @@
     <% } else {%>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(secondBootArray[j].lore); %>-bg">
-        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondBootArray[j].type.toLowerCase()] %>');"></div>
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondBootArray[j].type.toLowerCase()] === undefined ? 'https://sky.lea.moe/leather/boots/' + intToRGB(secondBootArray[j].color).r + ',' + intToRGB(secondBootArray[j].color).g + ',' + intToRGB(secondBootArray[j].color).b + '' : armorAttr[secondBootArray[j].type.toLowerCase()] %>');"></div>
       </div>
     </div>
     <% } } %>
