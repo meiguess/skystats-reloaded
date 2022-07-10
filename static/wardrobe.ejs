@@ -34,7 +34,7 @@
     <% } else {%>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(headArray[j].lore); %>-bg">
-        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= secondHeadArray[j].texture === undefined ? armorAttr[headArray[j].type.toLowerCase()] : headArray[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= headArray[j].texture === undefined ? armorAttr[headArray[j].type.toLowerCase()] : headArray[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
       </div>
     </div>
     <% } } %>
