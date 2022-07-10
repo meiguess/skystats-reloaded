@@ -35,7 +35,11 @@
     <% if (minecraftMaterials.includes(headArray[j].material)) { %>
       <div class="wardrobe-set">
         <div class="piece piece-<%= loreToRarity(headArray[j].lore); %>-bg">
+          <% if (headArray[j].material.toLowerCase() === "stained_glass") { %>
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+          <% } else { %>
           <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= headArray[j].material.toLowerCase() %>.png')"></div>
+          <% } %>
         </div>
       </div>
     <% } else { %>
