@@ -117,12 +117,19 @@
         <div class="piece piece-NONE-bg"></div>
       </div>
     <% } else {%>
+    <% if (minecraftMaterials.includes(secondHeadArray[j].material)) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(secondHeadArray[j].lore); %>-bg">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= secondHeadArray[j].material.toLowerCase() %>.png')"></div>
+        </div>
+      </div>
+    <% } else { %>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(secondHeadArray[j].lore); %>-bg">
         <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= secondHeadArray[j].texture === undefined ? armorAttr[secondHeadArray[j].type.toLowerCase()] :  secondHeadArray[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
       </div>
     </div>
-    <% } } %>
+    <% } } }%>
   </div>
   <!-- Chest -->
   <div class="row">
@@ -131,12 +138,19 @@
         <div class="piece piece-NONE-bg"></div>
       </div>
     <% } else {%>
+    <% if (minecraftMaterials.includes(secondChestArray[j].material)) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(secondChestArray[j].lore); %>-bg">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= secondChestArray[j].material.toLowerCase() %>.png')"></div>
+        </div>
+      </div>
+    <% } else { %>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(secondChestArray[j].lore); %>-bg">
         <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondChestArray[j].type.toLowerCase()] === undefined ? 'https://sky.lea.moe/leather/chestplate/' + intToRGB(secondChestArray[j].color).r + ',' + intToRGB(secondChestArray[j].color).g + ',' + intToRGB(secondChestArray[j].color).b + '' : armorAttr[secondChestArray[j].type.toLowerCase()] %>');"></div>
       </div>
     </div>
-    <% } } %>
+    <% } } }%>
   </div>
   <!-- Leg -->
   <div class="row">
@@ -145,12 +159,19 @@
         <div class="piece piece-NONE-bg"></div>
       </div>
     <% } else {%>
+    <% if (minecraftMaterials.includes(secondLegArray[j].material)) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(secondLegArray[j].lore); %>-bg">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= secondLegArray[j].material.toLowerCase() %>.png')"></div>
+        </div>
+      </div>
+    <% } else { %>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(secondLegArray[j].lore); %>-bg">
         <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondLegArray[j].type.toLowerCase()] === undefined ? 'https://sky.lea.moe/leather/leggings/' + intToRGB(secondLegArray[j].color).r + ',' + intToRGB(secondLegArray[j].color).g + ',' + intToRGB(secondLegArray[j].color).b + '' : armorAttr[secondLegArray[j].type.toLowerCase()] %>');"></div>
       </div>
     </div>
-    <% } } %>
+    <% } } }%>
   </div>
   <!-- Boot -->
   <div class="row">
@@ -159,11 +180,18 @@
         <div class="piece piece-NONE-bg"></div>
       </div>
     <% } else {%>
+    <% if (minecraftMaterials.includes(secondBootArray[j].material)) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(secondBootArray[j].lore); %>-bg">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= secondBootArray[j].material.toLowerCase() %>.png')"></div>
+        </div>
+      </div>
+    <% } else { %>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(secondBootArray[j].lore); %>-bg">
         <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondBootArray[j].type.toLowerCase()] === undefined ? 'https://sky.lea.moe/leather/boots/' + intToRGB(secondBootArray[j].color).r + ',' + intToRGB(secondBootArray[j].color).g + ',' + intToRGB(secondBootArray[j].color).b + '' : armorAttr[secondBootArray[j].type.toLowerCase()] %>');"></div>
       </div>
     </div>
-    <% } } %>
+    <% } } }%>
   </div>
 </div>
