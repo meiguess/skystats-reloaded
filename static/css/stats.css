@@ -118,7 +118,7 @@ body::-webkit-scrollbar-track {
 .blur-box {
   position: relative;
   margin-left: 40vw;
-  height: 150vh;
+  height: 190vh;
   --padding: 30px;
   padding: var(--padding);
   padding-top: calc(48px + env(safe-area-inset-top, 0));
