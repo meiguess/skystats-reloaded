@@ -19,10 +19,10 @@
   for (let i = 3; i < wardrobeArray.length; i+=4) {
     bootArray.push(wardrobeArray[i]);
   }
-  headArray.splice(headArray.length - 9, 9);
-  chestArray.splice(chestArray.length - 9, 9);
-  legArray.splice(legArray.length - 9, 9);
-  bootArray.splice(bootArray.length - 9, 9);
+  let secondHeadArray = headArray.splice(headArray.length - 9, 9);
+  let secondChestArray = chestArray.splice(chestArray.length - 9, 9);
+  let secondLegArray = legArray.splice(legArray.length - 9, 9);
+  let secondBootArray = bootArray.splice(bootArray.length - 9, 9);
   %>
   <!-- Head -->
   <div class="row">
@@ -33,7 +33,7 @@
     <% } else {%>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(headArray[j].lore); %>-bg">
-        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= headArray[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= headArray[j].texture === undefined ? '' : headArray[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
       </div>
     </div>
     <% } } %>
@@ -76,6 +76,63 @@
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(bootArray[j].lore); %>-bg">
         <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[bootArray[j].type.toLowerCase()] %>');"></div>
+      </div>
+    </div>
+    <% } } %>
+  </div>
+  <div class="separator">Wardrobe Page 2</div>
+  <!-- Head -->
+  <div class="row">
+    <% for(let j = 0; j < secondHeadArray.length; j++) { if(secondHeadArray[j] === null) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-NONE-bg"></div>
+      </div>
+    <% } else {%>
+    <div class="wardrobe-set">
+      <div class="piece piece-<%= loreToRarity(secondHeadArray[j].lore); %>-bg">
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= secondHeadArray[j].texture === undefined ? '' :  secondHeadArray[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+      </div>
+    </div>
+    <% } } %>
+  </div>
+  <!-- Chest -->
+  <div class="row">
+    <% for(let j = 0; j < secondChestArray.length; j++) { if(secondChestArray[j] === null) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-NONE-bg"></div>
+      </div>
+    <% } else {%>
+    <div class="wardrobe-set">
+      <div class="piece piece-<%= loreToRarity(secondChestArray[j].lore); %>-bg">
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondChestArray[j].type.toLowerCase()] %>');"></div>
+      </div>
+    </div>
+    <% } } %>
+  </div>
+  <!-- Leg -->
+  <div class="row">
+    <% for(let j = 0; j < secondLegArray.length; j++) { if(secondLegArray[j] === null) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-NONE-bg"></div>
+      </div>
+    <% } else {%>
+    <div class="wardrobe-set">
+      <div class="piece piece-<%= loreToRarity(secondLegArray[j].lore); %>-bg">
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondLegArray[j].type.toLowerCase()] %>');"></div>
+      </div>
+    </div>
+    <% } } %>
+  </div>
+  <!-- Boot -->
+  <div class="row">
+    <% for(let j = 0; j < secondBootArray.length; j++) { if(secondBootArray[j] === null) { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-NONE-bg"></div>
+      </div>
+    <% } else {%>
+    <div class="wardrobe-set">
+      <div class="piece piece-<%= loreToRarity(secondBootArray[j].lore); %>-bg">
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armorAttr[secondBootArray[j].type.toLowerCase()] %>');"></div>
       </div>
     </div>
     <% } } %>
