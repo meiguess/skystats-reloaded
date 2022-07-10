@@ -100,23 +100,36 @@
 </div>
 <!--Armor Section-->
 <div class="armors" id="Armor">
-  <div class="text-armor">Armor</div>
-  <div class="armor-inventory" style="color: white;">
-      <% if (playerArmor.equippedItems===false) { %>
+  <div class="text-armor" style="margin-bottom: -90px;">Armor</div>
+  <div class="armor-inventory" style="color: white;margin-bottom: 80px;"">
+      <% if (armor.length===0) { %>
           <span class="text-not-equip-armor">
               <%= username %> doesn't have any armor equipped.
           </span>
-          <% }; %>
-              <% if (playerArmor.equippedItems===true) { %>
-                  <% let index=1; %>
-                      <% playerArmor.noReforge.map((item)=> { %>
-                          <div tabindex="0" class="piece-<%= index %> armor-piece" style="--background-color: <%= item === null ? '' : playerArmor.withReforge[index - 1].split('-')[1] %>;">
-                              <div class="piece-<%= index %>-icon armor-piece" style="--item-icon: <%= playerArmor.noReforge[index - 1] === undefined ? 'url()' : `url('${playerArmor.noReforge[index - 1]?.itemTexture}')` %>;">
-                              </div>
-                          </div>
-                          <% index++; %>
-                              <% }); %>
-                                  <% }; %>
+    <% } else { armor.reverse();%>
+        <% for(let j = 0; j < armor.length; j++) { if(armor[j] === null) { %>
+            <div class="wardrobe-set">
+              <div class="piece piece-NONE-bg"></div>
+            </div>
+          <% } else {%>
+          <% if (minecraftMaterials.includes(armor[j].material)) { %>
+            <div class="wardrobe-set">
+              <div class="piece piece-<%= loreToRarity(armor[j].lore); %>-bg">
+                <% if (armor[j].material.toLowerCase() === "stained_glass") { %>
+                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+                <% } else { %>
+                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= armor[j].material.toLowerCase() %>.png')"></div>
+                <% } %>
+              </div>
+            </div>
+          <% } else { %>
+          <div class="wardrobe-set">
+            <div class="piece piece-<%= loreToRarity(armor[j].lore); %>-bg">
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= armor[j].texture === undefined ? armorAttr[armor[j].type.toLowerCase()] : armor[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+            </div>
+          </div>
+          <% } } } %>
+    <% } %>
   </div>
 </div>
 <!--Slayer Section-->

@@ -282,7 +282,7 @@ App.post("/", async (req, res) => {
 
     const colorCodes = require("./Constants/ColorCodes").colorCodes;
 
-    await PlayerInventory.data.armor.forEach((armor) => {
+    /* await PlayerInventory.data.armor.forEach((armor) => {
       colorCodes.forEach((colorCode) => {
         const regex = new RegExp(colorCode, "gim");
 
@@ -338,7 +338,9 @@ App.post("/", async (req, res) => {
       itemsWithoutReforge[2],
       itemsWithoutReforge[1],
       itemsWithoutReforge[0],
-    ];
+    ]; */
+
+    const armor = PlayerInventory.data.armor;
 
     //Slayer Sections
 
@@ -417,6 +419,7 @@ App.post("/", async (req, res) => {
         withReforge: items,
         noReforge: itemsWithoutReforge,
       },
+      armor: armor,
       visits: {
         alltime: allTimeVisits,
         unique: uniqueVisits,
