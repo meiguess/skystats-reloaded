@@ -377,6 +377,8 @@ App.post("/", async (req, res) => {
 
     const LoreToRarityFunction = await require("./Functions/LoreToRarity");
 
+    const IntToArgbFunction = await require("./Functions/IntToARGB");
+
     //Rendering page.
 
     const fetchingPlayer = await PlayerDB.findOne({
@@ -420,6 +422,7 @@ App.post("/", async (req, res) => {
       wardrobe: PlayerInventory.data.wardrobe,
       loreToRarity: LoreToRarityFunction,
       armorAttr: ArmorAttribute,
+      intToRGB: IntToArgbFunction,
     });
   }
 });
