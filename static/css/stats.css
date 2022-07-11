@@ -2270,12 +2270,14 @@ div.inventory {
   margin-top: -12px;
   position: absolute;
   top: 1655px;
+  margin-left: 15px;
 }
 
 .inventory-pieces {
   margin-top: -12px;
   position: absolute;
   top: 1185px;
+  margin-left: 15px;
 }
 
 
@@ -2285,6 +2287,7 @@ div.inventory {
   max-height: 90px;
   overflow: hidden;
   transition: max-height .2s;
+  padding: 0px 2px;
 }
 
 .piece-COMMON-bg {
