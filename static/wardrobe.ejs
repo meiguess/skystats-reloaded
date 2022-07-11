@@ -42,6 +42,12 @@
           <% } %>
         </div>
       </div>
+    <% } else if (headArray[j].material.toLowerCase() === "leather_helmet") { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(headArray[j].lore); %>-bg">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/helmet/' + intToRGB(headArray[j].color).r + ',' + intToRGB(headArray[j].color).g + ',' + intToRGB(headArray[j].color).b %>')"></div>
+        </div>
+      </div>
     <% } else { %>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(headArray[j].lore); %>-bg">
