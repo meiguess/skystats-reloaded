@@ -1,11 +1,135 @@
-<div class="divTable inventory">
-  <div class="divTableBody">
-  <div class="divTableRow">
-  <div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div></div>
-  <div class="divTableRow">
-  <div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div></div>
-  <div class="divTableRow">
-  <div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div></div>
-  <div class="divTableRow">
-  <div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div><div class="divTableCell">&nbsp;</div></div>
-  </div>
+<div class="text-wardrobe" style="position: absolute; top: 1130px;">Inventory</div>
+<div class="inventory-pieces">
+  <% 
+  let items = playerInventory.inventory;
+  let hotbar = [];
+  let row1 = [];
+  let row2 = [];
+  let row3 = [];
+
+  for (let i = 0; i < 9; i+=1) {
+    hotbar.push(items[i]);
+  }
+  for (let i = 9; i < 18; i+=1) {
+    row3.push(items[i]);
+  }
+  for (let i = 18; i < 27; i+=1) {
+    row2.push(items[i]);
+  }
+  for (let i = 27; i < 36; i+=1) {
+    row1.push(items[i]);
+  }
+  console.log(hotbar);
+  %>
+
+    <!-- Row 3 -->
+
+    <div class="row">
+      <% for(let j = 0; j < row3.length; j++) { if(row3[j] === null) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-NONE-bg"></div>
+        </div>
+      <% } else {%>
+      <% if (minecraftMaterials.includes(row3[j].material)) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-<%= loreToRarity(row3[j].lore); %>-bg">
+            <% if (row3[j].material.toLowerCase() === "stained_glass") { %>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+            <% } else { %>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row3[j].material.toLowerCase() %>.png')"></div>
+            <% } %>
+          </div>
+        </div>
+      <% } else { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(row3[j].lore); %>-bg">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= row3[j].texture === undefined ? armorAttr[row3[j].type.toLowerCase()] : row3[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+        </div>
+      </div>
+      <% } } }%>
+    </div>
+
+    <!-- Row 2 -->
+
+    <div class="row">
+      <% for(let j = 0; j < row2.length; j++) { if(row2[j] === null) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-NONE-bg"></div>
+        </div>
+      <% } else {%>
+      <% if (minecraftMaterials.includes(row2[j].material)) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-<%= loreToRarity(row2[j].lore); %>-bg">
+            <% if (row2[j].material.toLowerCase() === "stained_glass") { %>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+            <% } else { %>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row2[j].material.toLowerCase() %>.png')"></div>
+            <% } %>
+          </div>
+        </div>
+      <% } else { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(row2[j].lore); %>-bg">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= row2[j].texture === undefined ? armorAttr[row2[j].type.toLowerCase()] : row2[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+        </div>
+      </div>
+      <% } } }%>
+    </div>
+
+    <!-- Row1 -->
+
+    <div class="row">
+      <% for(let j = 0; j < row1.length; j++) { if(row1[j] === null) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-NONE-bg"></div>
+        </div>
+      <% } else {%>
+      <% if (minecraftMaterials.includes(row1[j].material)) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-<%= loreToRarity(row1[j].lore); %>-bg">
+            <% if (row1[j].material.toLowerCase() === "stained_glass") { %>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+            <% } else { %>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row1[j].material.toLowerCase() %>.png')"></div>
+            <% } %>
+          </div>
+        </div>
+      <% } else { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(row1[j].lore); %>-bg">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= row1[j].texture === undefined ? armorAttr[row1[j].type.toLowerCase()] : row1[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+        </div>
+      </div>
+      <% } } }%>
+    </div>
+  
+
+    <!-- Hotbar -->
+
+    <div class="separator text-wardrobe-seperator">Hotbar</div>
+
+    <div class="row">
+      <% for(let j = 0; j < hotbar.length; j++) { if(hotbar[j] === null) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-NONE-bg"></div>
+        </div>
+      <% } else {%>
+      <% if (minecraftMaterials.includes(hotbar[j].material)) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg">
+            <% if (hotbar[j].material.toLowerCase() === "stained_glass") { %>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+            <% } else { %>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= hotbar[j].material.toLowerCase() %>.png')"></div>
+            <% } %>
+          </div>
+        </div>
+      <% } else { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= hotbar[j].texture === undefined ? armorAttr[hotbar[j].type.toLowerCase()] : hotbar[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+        </div>
+      </div>
+      <% } } }%>
+    </div>
+</div>
