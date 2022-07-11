@@ -2269,8 +2269,15 @@ div.inventory {
 .pieces {
   margin-top: -12px;
   position: absolute;
+  top: 1655px;
+}
+
+.inventory-pieces {
+  margin-top: -12px;
+  position: absolute;
   top: 1185px;
 }
+
 
 .wardrobe-set {
   vertical-align: top;
