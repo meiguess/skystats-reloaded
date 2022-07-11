@@ -429,6 +429,7 @@ App.post("/", async (req, res) => {
       armorAttr: ArmorAttribute,
       intToRGB: IntToArgbFunction,
       minecraftMaterials: MinecraftMaterials,
+      wardrobeSelected: PlayerInventory.data.wardrobeSelected,
     });
   }
 });
