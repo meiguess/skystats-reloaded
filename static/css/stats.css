@@ -125,7 +125,7 @@ body::-webkit-scrollbar-track {
   padding-bottom: calc(var(--padding) + env(safe-area-inset-bottom));
   box-sizing: border-box;
   user-select: none;
-  backdrop-filter: blur(16px) brightness(0.5);
+  /* backdrop-filter: blur(16px) brightness(0.5); */
   border-radius: 25px;
 }
 
@@ -234,7 +234,7 @@ body::-webkit-scrollbar-track {
   padding: 30px;
   margin-left: calc(-1*30px);
   margin-right: calc(-1*30px);
-  background-color: rgba(0, 0, 0, 0.3);
+  /* background-color: rgba(0, 0, 0, 0.3); */
   height: 145vh;
 }
 
@@ -2399,4 +2399,19 @@ div.inventory {
   .rank-tag, .badge, .note {
     display: none;
   }
+}
+
+.second-blur-box {
+  position: absolute;
+  margin-left: 40vw;
+  --padding: 30px;
+  padding: var(--padding);
+  padding-top: calc(48px + env(safe-area-inset-top, 0));
+  padding-bottom: calc(var(--padding) + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  user-select: none;
+  backdrop-filter: blur(16px) brightness(0.5);
+  border-radius: 25px;
+  height: 230vh;
+  width: 60vw;
 }
