@@ -88,4 +88,5 @@ module.exports = [
   'INK_SACK',
   'STRING',
   'GRILLED_PORK',
+  'BARRIER',
 ]
