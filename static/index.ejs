@@ -20,19 +20,25 @@
     <img src="/Resources/slyso234.png" alt="SkyStats Logo" class="skystats-img"/>
 
     <div class="togglemenu">
-      <button class="join-discord-button" onclick="redirectDiscord()">Join our Discord</button>
-    </div>
+      <button class="join-discord-button" onclick="redirectDiscord()">Join
+          our
+          Discord</button>
+      <button class="join-discord-button" onclick="redirectSkyStatsDiscord()">Join SkyStats Discord</button>
+  </div>
 
-    <div class="menu">
+  <div class="menu">
+      <ul> </ul>
       <ul>
-
+          <li>
+              <button class="join-discord-button"
+                  onclick="redirectDiscord()">Join
+                  our Discord</button>
+          </li>
+          <li>
+              <button class="join-discord-button" onclick="redirectSkyStatsDiscord()">Join SkyStats Discord</button>
+          </li>
       </ul>
-      <ul>
-        <li>
-          <button class="join-discord-button" onclick="redirectDiscord()">Join our Discord</button>
-        </li>
-      </ul>
-    </div>
+  </div>
   </nav>
   <div class="blur-box">
       <h1 class="skysim-header"><strong>Show SkySim Stats for</strong></h1>
@@ -85,6 +91,11 @@
     function redirectDiscord() {
         location.href = "https://discord.skysim.sbs/";
     };
+
+    function redirectSkyStatsDiscord() { 
+      location.href = "https://discord.gg/W67U3SAeU7";
+    }
+
     tippy('#info-box', {
         allowHTML: true,
         animation: 'scale',
