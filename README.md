@@ -26,4 +26,4 @@ On the Discord in #general! :)
 ## Authors
 
 - [@meiguess](https://www.github.com/meiguess)
-- [@TerievWorks](https://www.github.com/TerievWorks)
+- [@PureSkyblockScripts](https://www.github.com/PureSkyblockScripts)
