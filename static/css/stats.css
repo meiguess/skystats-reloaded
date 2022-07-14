@@ -2329,8 +2329,6 @@ div.inventory {
 .piece {
   display: inline-block;
   position: relative;
-  width: 75px;
-  height: 75px;
   vertical-align: top;
   margin-right: 8px;
   margin-top: 12px;
@@ -2340,6 +2338,8 @@ div.inventory {
   cursor: pointer;
   transition: z-index .2s;
   background-color: #555555;
+  width: 4vw;
+  height: 4vw;
 }
 
 .wardrobe-set .piece {
