@@ -23,7 +23,6 @@
       <button class="join-discord-button" onclick="redirectDiscord()">Join
           our
           Discord</button>
-      <button class="join-discord-button" onclick="redirectSkyStatsDiscord()">Join SkyStats Discord</button>
   </div>
 
   <div class="menu">
@@ -33,9 +32,6 @@
               <button class="join-discord-button"
                   onclick="redirectDiscord()">Join
                   our Discord</button>
-          </li>
-          <li>
-              <button class="join-discord-button" onclick="redirectSkyStatsDiscord()">Join SkyStats Discord</button>
           </li>
       </ul>
   </div>
@@ -91,10 +87,6 @@
     function redirectDiscord() {
         location.href = "https://discord.skysim.sbs/";
     };
-
-    function redirectSkyStatsDiscord() { 
-      location.href = "https://discord.gg/W67U3SAeU7";
-    }
 
     tippy('#info-box', {
         allowHTML: true,
