@@ -1,6 +1,6 @@
 {
   "name": "skystats-reloaded",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "SkyStats for SkySim Network",
   "main": "index.js",
   "scripts": {
