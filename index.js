@@ -11,6 +11,9 @@ const dotenv = require("dotenv").config();
 const URL = process.env.URL;
 mongoose.connect(URL);
 
+// Beta 
+const BETA_KEYS = process.env.BETA_KEYS.split(", ");
+
 function abbreviateNumber(number) {
   // what tier? (determines SI symbol)
   var tier = (Math.log10(Math.abs(number)) / 3) | 0;
@@ -85,6 +88,15 @@ App.get("/usernotfound/:username/:type", (req, res) => {
 });
 
 App.post("/", async (req, res) => {
+  if (!BETA_KEYS.includes(req.body.SkySim_BetaCode)) {
+    const object = {
+      error: `${
+        `Wrong Beta Key`
+      }`,
+    };
+  
+    res.status(200).send(object);
+  }
   if (
     !req.body.SkySim_Username ||
     typeof req.body.SkySim_Username !== "string" ||
