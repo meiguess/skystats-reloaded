@@ -95,7 +95,7 @@ App.post("/", async (req, res) => {
       }`,
     };
   
-    res.status(200).send(object);
+    res.send(object);
   }
   if (
     !req.body.SkySim_Username ||
