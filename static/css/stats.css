@@ -2237,7 +2237,7 @@ div.inventory {
 }
 
 .badge {
-  margin: 12px;
+  margin: 12px 1px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
