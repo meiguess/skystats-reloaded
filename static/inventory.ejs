@@ -228,13 +228,13 @@
           </div>
         <% } else if (hotbar[j].material.toLowerCase().includes("leather") && row3[j].material.toLowerCase().includes("boots")) { %>
           <div class="wardrobe-set">
-            <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg" <%= hotbar[j].name %>>
+            <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg <%= hotbar[j].name %>">
               <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/boots/' + intToRGB(hotbar[j].color).r + ',' + intToRGB(hotbar[j].color).g + ',' + intToRGB(hotbar[j].color).b %>')"></div>
             </div>
           </div>
         <% } else { %>
       <div class="wardrobe-set">
-        <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg" <%= hotbar[j].name %>>
+        <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg <%= hotbar[j].name %>">
           <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= hotbar[j].texture === undefined ? armorAttr[hotbar[j].type.toLowerCase()] : hotbar[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
         </div>
       </div>
