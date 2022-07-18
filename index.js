@@ -282,6 +282,32 @@ App.post("/", async (req, res) => {
 
     const colorCodes = require("./Constants/ColorCodes").colorCodes;
 
+    PlayerInventory.data.inventory.forEach((elem, index) => {
+      if (elem !== null) {
+        let elemObj = elem;
+        elemObj.name = elemObj.name.split(" ").join("_");
+        this[index] = elemObj;
+      }
+    }, PlayerInventory.data.inventory);
+
+    PlayerInventory.data.armor.forEach((elem, index) => {
+      if (elem !== null) {
+        let elemObj = elem;
+        elemObj.name = elemObj.name.split(" ").join("_");
+        this[index] = elemObj;
+      }
+    }, PlayerInventory.data.armor);
+
+    PlayerInventory.data.wardrobe.forEach((elem, index) => {
+      if (elem !== null) {
+        let elemObj = elem;
+        elemObj.name = elemObj.name.split(" ").join("_");
+        this[index] = elemObj;
+      }
+    }, PlayerInventory.data.wardrobe);
+
+    const armor = PlayerInventory.data.armor;
+
     /* await PlayerInventory.data.armor.forEach((armor) => {
       colorCodes.forEach((colorCode) => {
         const regex = new RegExp(colorCode, "gim");
@@ -340,7 +366,6 @@ App.post("/", async (req, res) => {
       itemsWithoutReforge[0],
     ]; */
 
-    const armor = PlayerInventory.data.armor;
 
     // console.log(PlayerInventory.data.inventory);
 
