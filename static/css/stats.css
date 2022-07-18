@@ -2,7 +2,7 @@
 
 @import url('https://wordpress.github.io/dashicons/css/dashicons.css');
 
-:root.light, :root.light .nice-colors-auto, :root .nice-colors-dark, :root .piece, :root *::-webkit-scrollbar-thumb {
+:root, :root.light, :root.light .nice-colors-auto, :root .nice-colors-dark, :root .piece, :root *::-webkit-scrollbar-thumb {
   --§0: #000000;
   --§1: #0b277a;
   --§2: #00aa00;
@@ -19,6 +19,7 @@
   --§d: #e668c6;
   --§e: #efc721;
   --§f: #929292;
+  --lore_background-hex: #0f0f0fe6;
 }
 
 * {
@@ -2050,17 +2051,19 @@ body::-webkit-scrollbar-track {
 
 #stats_content {
   position: fixed;
-  right: calc(70vw + 20px);
-  background-color: var(--lore_background-hex);
-  min-width: 360px;
+  display: none;
+  /* right: calc(70vw + 20px); */
+  /* background-color: var(--lore_background-hex); */
+  top: 100px;
+  min-width: 250px;
   width: max-content;
   max-width: min(500px,100vw - 40px);
   z-index: 100;
-  opacity: 0;
-  transform: translateX(-25px);
+  /* opacity: 0; */
+  /* transform: translateX(-25px); */
   pointer-events: none;
   transition: visibility .2s,opacity .2s,transform .2s,left .1s;
-  visibility: hidden;
+  /* visibility: hidden; */
   border-radius: 10px;
   overflow: hidden;
 }
@@ -2414,4 +2417,46 @@ div.inventory {
   border-radius: 25px;
   height: 230vh;
   width: 61vw;
+}
+
+#stats_content .item-name .item-name__name[data-multicolor=true] {
+  background-color: var(--lore_background-hex);
+  border-radius: 1rem;
+  padding: 4px 10px;
+  --§9: #929292;
+  --§8: #929292;
+  --§0: #929292;
+  text-align: center;
+}
+
+#stats_content .item-name {
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+#stats_content .item-lore {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  font-size: 15px;
+}
+
+#stats_content .item-lore {
+  padding: 25px;
+  font-weight: 600;
+  background-color: rgba(0,0,0,0.8);
+}
+
+#stats_content .item-lore .lore-row {
+  display: block;
+  min-height: 1.2em;
+}
+
+.§l {
+  font-weight: bold;
 }
