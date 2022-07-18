@@ -342,6 +342,8 @@ App.post("/", async (req, res) => {
 
     const armor = PlayerInventory.data.armor;
 
+    // console.log(PlayerInventory.data.inventory);
+
     //Slayer Sections
 
     const SlayerData = await require("./calculations/slayer")(userData);
@@ -382,6 +384,8 @@ App.post("/", async (req, res) => {
     const IntToArgbFunction = await require("./Functions/IntToARGB");
 
     const MinecraftMaterials = await require("./Constants/MinecraftMaterials");
+
+    const SkySimTypes = await require("./Constants/SkySimTypes");
 
     //Rendering page.
 
@@ -429,6 +433,7 @@ App.post("/", async (req, res) => {
       armorAttr: ArmorAttribute,
       intToRGB: IntToArgbFunction,
       minecraftMaterials: MinecraftMaterials,
+      skysimTypes: SkySimTypes,
       wardrobeSelected: PlayerInventory.data.wardrobeSelected,
     });
   }
