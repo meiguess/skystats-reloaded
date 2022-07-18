@@ -29,7 +29,7 @@
           <div class="piece piece-NONE-bg"></div>
         </div>
       <% } else {%>
-      <% if (minecraftMaterials.includes(row3[j].material) || row3[j].type !== null) { %>
+      <% if (minecraftMaterials.includes(row3[j].material) || skysimTypes.hasOwnProperty(row3[j].type)) { %>
         <div class="wardrobe-set">
           <div class="piece piece-<%= loreToRarity(row3[j].lore); %>-bg">
             <% if (row3[j].material.toLowerCase() === "stained_glass") { %>
@@ -83,7 +83,7 @@
           <div class="piece piece-NONE-bg"></div>
         </div>
       <% } else {%>
-      <% if (minecraftMaterials.includes(row2[j].material)) { %>
+      <% if (minecraftMaterials.includes(row2[j].material) || skysimTypes.hasOwnProperty(row3[j].type)) { %>
         <div class="wardrobe-set">
           <div class="piece piece-<%= loreToRarity(row2[j].lore); %>-bg">
             <% if (row2[j].material.toLowerCase() === "stained_glass") { %>
@@ -137,7 +137,7 @@
           <div class="piece piece-NONE-bg"></div>
         </div>
       <% } else {%>
-      <% if (minecraftMaterials.includes(row1[j].material)) { %>
+      <% if (minecraftMaterials.includes(row1[j].material) || skysimTypes.hasOwnProperty(row3[j].type)) { %>
         <div class="wardrobe-set">
           <div class="piece piece-<%= loreToRarity(row1[j].lore); %>-bg">
             <% if (row1[j].material.toLowerCase() === "stained_glass") { %>
@@ -194,7 +194,7 @@
           <div class="piece piece-NONE-bg"></div>
         </div>
       <% } else {%>
-      <% if (minecraftMaterials.includes(hotbar[j].material)) { %>
+      <% if (minecraftMaterials.includes(hotbar[j].material) || skysimTypes.hasOwnProperty(row3[j].type)) { %>
         <div class="wardrobe-set">
           <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg">
             <% if (hotbar[j].material.toLowerCase() === "stained_glass") { %>
