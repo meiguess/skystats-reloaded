@@ -29,14 +29,17 @@
           <div class="piece piece-NONE-bg"></div>
         </div>
       <% } else {%>
-      <% if (minecraftMaterials.includes(row3[j].material)) { %>
+      <% if (minecraftMaterials.includes(row3[j].material) || row3[j].type !== null) { %>
         <div class="wardrobe-set">
           <div class="piece piece-<%= loreToRarity(row3[j].lore); %>-bg">
             <% if (row3[j].material.toLowerCase() === "stained_glass") { %>
             <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
             <% } else { %>
-            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row3[j].material.toLowerCase() %>.png')"></div>
-            <% } %>
+              <% if(skysimTypes.hasOwnProperty(row3[j].type)) {  let type = row3[j].type;%>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%=skysimTypes[type] %>')"></div>
+              <% } else { %>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row3[j].material.toLowerCase() %>.png')"></div>
+            <%} } %>
           </div>
         </div>
       <% } else if (row3[j].material.toLowerCase().includes("leather") && row3[j].material.toLowerCase().includes("helmet")) { %>
@@ -86,8 +89,11 @@
             <% if (row2[j].material.toLowerCase() === "stained_glass") { %>
             <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
             <% } else { %>
-            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row2[j].material.toLowerCase() %>.png')"></div>
-            <% } %>
+              <% if(skysimTypes.hasOwnProperty(row2[j].type)) {  let type = row2[j].type;%>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%=skysimTypes[type] %>')"></div>
+              <% } else { %>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row2[j].material.toLowerCase() %>.png')"></div>
+            <%} } %>
           </div>
         </div>
         <% } else if (row2[j].material.toLowerCase().includes("leather") && row2[j].material.toLowerCase().includes("helmet")) { %>
@@ -137,8 +143,11 @@
             <% if (row1[j].material.toLowerCase() === "stained_glass") { %>
             <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
             <% } else { %>
-            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row1[j].material.toLowerCase() %>.png')"></div>
-            <% } %>
+              <% if(skysimTypes.hasOwnProperty(row1[j].type)) {  let type = row1[j].type;%>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%=skysimTypes[type] %>')"></div>
+              <% } else { %>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row1[j].material.toLowerCase() %>.png')"></div>
+            <%} } %>
           </div>
         </div>
         <% } else if (row1[j].material.toLowerCase().includes("leather") && row1[j].material.toLowerCase().includes("helmet")) { %>
@@ -191,8 +200,11 @@
             <% if (hotbar[j].material.toLowerCase() === "stained_glass") { %>
             <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
             <% } else { %>
-            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= hotbar[j].material.toLowerCase() %>.png')"></div>
-            <% } %>
+              <% if(skysimTypes.hasOwnProperty(hotbar[j].type)) {  let type = hotbar[j].type;%>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%=skysimTypes[type] %>')"></div>
+              <% } else { %>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= hotbar[j].material.toLowerCase() %>.png')"></div>
+            <%} } %>
           </div>
         </div>
         <% } else if (hotbar[j].material.toLowerCase().includes("leather") && hotbar[j].material.toLowerCase().includes("helmet")) { %>
