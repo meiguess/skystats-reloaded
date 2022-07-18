@@ -11,4 +11,5 @@ module.exports = {
   'PRISMARINE_BLADE': '../Resources/custom/items/melee/prismarine_blade.png',
   'REAPER_FALCHION': '../Resources/custom/items/melee/reaper_falchion.png',
   'ROGUE_SWORD': '../Resources/custom/items/melee/rogue_sword.png',
+  'GRAPPLING_HOOK': '../Resources/custom/items/tools/grapple_hook.png',
 }
