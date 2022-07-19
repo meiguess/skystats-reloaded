@@ -2415,7 +2415,7 @@ div.inventory {
   user-select: none;
   backdrop-filter: blur(16px) brightness(0.5);
   border-radius: 25px;
-  height: 230vh;
+  height: 275vh;
   width: 61vw;
 }
 
