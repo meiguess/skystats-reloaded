@@ -7,6 +7,11 @@ document.querySelector("#favorized").addEventListener("click", () => {
   document.querySelector("#favorized").style.display = "none";
   document.querySelector("#notFavorized").style.display = "inline";
 }); */
+
+function getPosition(string, subString, index) {
+  return string.split(subString, index).join(subString).length;
+}
+
 const allPieces = document.querySelectorAll(".piece");
 allPieces.forEach((e) => {
   if (!e.classList.contains("piece-NONE-bg")) {
@@ -19,10 +24,53 @@ allPieces.forEach((e) => {
       let color = getComputedStyle(document.body).getPropertyValue("--" + itemName.substring(0, 2));
       document.querySelector("#stats_content_item_name").style.color = color;
 
+      const lore = event.target.getAttribute("lore").split("\n");
+
+      document.querySelector(".item-lore").innerHTML = "";
+
+      const codesArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c",
+      "d", "e", "f", "k", "l", "m", "n", "o", "r"];
+
+      lore.forEach((item) => {
+        let loreRow = document.createElement("span");
+        loreRow.classList.add("lore-row");
+
+        let itemSplit = item.split("");
+        let lastIndex = -2;
+
+        itemSplit = itemSplit.map((itemItr, index) => {
+          if (itemItr === "§") {
+            let itrCode = "§" + itemSplit[index + 1];
+            lastIndex = index;
+            if (itrCode === "§l") {
+              return "<span class='" + itrCode + "'>";
+            } else if (itrCode === "§k") {
+              return "<span class='obfuscated'>";
+            } else {
+              return "<span style='color: var(--" + itrCode + ");'>"
+            }
+          } else if (index - 1 === lastIndex) {
+            return '';
+          } else {
+            return itemItr;
+          }
+        });
+
+        item = itemSplit.join("");
+
+        loreRow.innerHTML = item;
+
+
+        document.querySelector(".item-lore").appendChild(loreRow);
+      });
+
       document.querySelector(".item-name").classList.add("piece-" + rarity + "-bg");
-      document.querySelector("#stats_content").style.top = (pos.top - 250) + "px";
-      document.querySelector("#stats_content").style.left = (pos.left - 400) + "px";
+
       document.querySelector("#stats_content").style.display = "block";
+      let height = document.querySelector("#stats_content").offsetHeight;
+
+      document.querySelector("#stats_content").style.top = (pos.top - height / 2) + "px";
+      document.querySelector("#stats_content").style.left = (pos.left - 300) + "px";
     });
   }
 });
