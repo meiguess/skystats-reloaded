@@ -65,9 +65,12 @@ allPieces.forEach((e) => {
       });
 
       document.querySelector(".item-name").classList.add("piece-" + rarity + "-bg");
-      document.querySelector("#stats_content").style.top = (pos.top - 250) + "px";
-      document.querySelector("#stats_content").style.left = (pos.left - 400) + "px";
+
       document.querySelector("#stats_content").style.display = "block";
+      let height = document.querySelector("#stats_content").offsetHeight;
+
+      document.querySelector("#stats_content").style.top = (pos.top - height / 2) + "px";
+      document.querySelector("#stats_content").style.left = (pos.left - 300) + "px";
     });
   }
 });
