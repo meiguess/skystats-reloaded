@@ -12,4 +12,9 @@ module.exports = {
   'REAPER_FALCHION': '../Resources/custom/items/melee/reaper_falchion.png',
   'ROGUE_SWORD': '../Resources/custom/items/melee/rogue_sword.png',
   'GRAPPLING_HOOK': '../Resources/custom/items/tools/grapple_hook.png',
+  'AUTO_RECOMBOBULATOR': '../Resources/custom/items/accessories/auto_recombobulator.png',
+  'PIGGY_BANK': '../Resources/custom/items/accessories/piggy_bank.png',
+  'TARANTULA_TALISMAN': '../Resources/custom/items/accessories/tarantula_talisman.png',
+  'PERFECT_TALISMAN': '../Resources/custom/items/accessories/perfect_talisman.png',
+  'FARMING_TALISMAN': '../Resources/custom/items/accessories/farming_talisman.png',
 }
