@@ -17,4 +17,9 @@ module.exports = {
   'TARANTULA_TALISMAN': '../Resources/custom/items/accessories/tarantula_talisman.png',
   'PERFECT_TALISMAN': '../Resources/custom/items/accessories/perfect_talisman.png',
   'FARMING_TALISMAN': '../Resources/custom/items/accessories/farming_talisman.png',
+  'OVERFLUX_CAPACITOR': '../Resources/custom/items/other/power_orbs/overflux_capacitor.png',
+  'RADIANT_POWER_ORB': '../Resources/custom/items/other/power_orbs/radiant_power_orb.png',
+  'MANA_FLUX_POWER_ORB': '../Resources/custom/items/other/power_orbs/mana_flux_power_orb.png',
+  'OVERFLUX_POWER_ORB': '../Resources/custom/items/other/power_orbs/overflux_power_orb.png',
+  'PLASMAFLUX_POWER_ORB': '../Resources/custom/items/other/power_orbs/plasmaflux_power_orb.png',
 }
