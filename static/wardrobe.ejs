@@ -129,14 +129,24 @@
     <% } else {%>
     <% if (minecraftMaterials.includes(secondHeadArray[j].material)) { %>
       <div class="wardrobe-set">
-        <div class="piece piece-<%= loreToRarity(secondHeadArray[j].lore); %>-bg <%= secondHeadArray[j].name %>" lore="<%= secondHeadArray[j].lore %>">
+        <div class="piece piece-<%= loreToRarity(secondHeadArray[j].lore); %>-bg <%= secondHeadArray[j].name %>" lore="<%= secondHeadArray[j].lore %>" lore="<%= secondHeadArray[j].lore %>">
+          <% if (secondHeadArray[j].material.toLowerCase() === "stained_glass") { %>
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+          <% } else { %>
           <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= secondHeadArray[j].material.toLowerCase() %>.png')"></div>
+          <% } %>
+        </div>
+      </div>
+    <% } else if (secondHeadArray[j].material.toLowerCase() === "leather_helmet") { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(secondHeadArray[j].lore); %>-bg <%= secondHeadArray[j].name %>" lore="<%= secondHeadArray[j].lore %>">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/helmet/' + intToRGB(secondHeadArray[j].color).r + ',' + intToRGB(secondHeadArray[j].color).g + ',' + intToRGB(secondHeadArray[j].color).b %>')"></div>
         </div>
       </div>
     <% } else { %>
     <div class="wardrobe-set">
       <div class="piece piece-<%= loreToRarity(secondHeadArray[j].lore); %>-bg <%= secondHeadArray[j].name %>" lore="<%= secondHeadArray[j].lore %>">
-        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= secondHeadArray[j].texture === undefined ? armorAttr[secondHeadArray[j].type.toLowerCase()] :  secondHeadArray[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+        <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= secondHeadArray[j].texture === undefined ? armorAttr[secondHeadArray[j].type.toLowerCase()] : secondHeadArray[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
       </div>
     </div>
     <% } } }%>
