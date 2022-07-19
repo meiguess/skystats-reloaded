@@ -286,6 +286,7 @@ App.post("/", async (req, res) => {
       if (elem !== null) {
         let elemObj = elem;
         elemObj.name = elemObj.name.split(" ").join("_");
+        elemObj.lore = elemObj.lore.join("\n");
         this[index] = elemObj;
       }
     }, PlayerInventory.data.inventory);
@@ -294,6 +295,7 @@ App.post("/", async (req, res) => {
       if (elem !== null) {
         let elemObj = elem;
         elemObj.name = elemObj.name.split(" ").join("_");
+        elemObj.lore = elemObj.lore.join("\n");
         this[index] = elemObj;
       }
     }, PlayerInventory.data.armor);
@@ -302,6 +304,7 @@ App.post("/", async (req, res) => {
       if (elem !== null) {
         let elemObj = elem;
         elemObj.name = elemObj.name.split(" ").join("_");
+        elemObj.lore = elemObj.lore.join("\n");
         this[index] = elemObj;
       }
     }, PlayerInventory.data.wardrobe);
