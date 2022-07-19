@@ -19,6 +19,8 @@ allPieces.forEach((e) => {
       let color = getComputedStyle(document.body).getPropertyValue("--" + itemName.substring(0, 2));
       document.querySelector("#stats_content_item_name").style.color = color;
 
+      const lore = event.target.getAttribute("lore").split(",");
+
       document.querySelector(".item-name").classList.add("piece-" + rarity + "-bg");
       document.querySelector("#stats_content").style.top = (pos.top - 250) + "px";
       document.querySelector("#stats_content").style.left = (pos.left - 400) + "px";
