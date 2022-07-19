@@ -322,8 +322,6 @@ App.post("/", async (req, res) => {
 
     const equipments = PlayerInventory.data.equipments;
 
-    console.log(equipments);
-
     /* await PlayerInventory.data.armor.forEach((armor) => {
       colorCodes.forEach((colorCode) => {
         const regex = new RegExp(colorCode, "gim");
