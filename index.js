@@ -309,7 +309,20 @@ App.post("/", async (req, res) => {
       }
     }, PlayerInventory.data.wardrobe);
 
+    PlayerInventory.data.equipments.forEach((elem, index) => {
+      if (elem !== null) {
+        let elemObj = elem;
+        elemObj.name = elemObj.name.split(" ").join("_");
+        elemObj.lore = elemObj.lore.join("\n");
+        this[index] = elemObj;
+      }
+    }, PlayerInventory.data.equipments);
+
     const armor = PlayerInventory.data.armor;
+
+    const equipments = PlayerInventory.data.equipments;
+
+    console.log(equipments);
 
     /* await PlayerInventory.data.armor.forEach((armor) => {
       colorCodes.forEach((colorCode) => {
@@ -452,6 +465,7 @@ App.post("/", async (req, res) => {
         noReforge: itemsWithoutReforge,
       },
       armor: armor,
+      equipments: equipments,
       visits: {
         alltime: allTimeVisits,
         unique: uniqueVisits,
