@@ -1061,14 +1061,9 @@ body {
   color: #fff;
 }
 
-.skysim-subheader {
-  font-size: max(1vw, 12px);
-  color: rgba(255, 255, 255, 0.725);
-}
-
 .blur-box {
-  height: 400px !important;
-  min-width: 400px !important;
+  height: 300px !important;
+  min-width: 300px !important;
 }
 
 .submit-username-text {

@@ -11,9 +11,6 @@ const dotenv = require("dotenv").config();
 const URL = process.env.URL;
 mongoose.connect(URL);
 
-// Beta 
-const BETA_KEYS = process.env.BETA_KEYS.split(", ");
-
 function abbreviateNumber(number) {
   // what tier? (determines SI symbol)
   var tier = (Math.log10(Math.abs(number)) / 3) | 0;
@@ -88,15 +85,6 @@ App.get("/usernotfound/:username/:type", (req, res) => {
 });
 
 App.post("/", async (req, res) => {
-  if (!BETA_KEYS.includes(req.body.SkySim_BetaCode)) {
-    const object = {
-      error: `${
-        `Wrong Beta Key`
-      }`,
-    };
-  
-    res.send(object);
-  }
   if (
     !req.body.SkySim_Username ||
     typeof req.body.SkySim_Username !== "string" ||
@@ -120,12 +108,12 @@ App.post("/", async (req, res) => {
   if (UUID && UUID.data && UUID.data.code == "player.found") {
     const SkySimData = await axios({
       method: "get",
-      url: `https://api.skysim.sbs/?key=${API_KEY}&type=PLAYER_INFO&param=${UUID.data.data.player.id}`,
+      url: `https://api.skysim.sbs/?key=${API_KEY}&type=PLAYER_INFO&param=${UUID.data?.data?.player?.id}`,
     }).catch((err) => null);
 
     const PlayerInventory = await axios({
       method: "get",
-      url: `https://api.skysim.sbs/?key=${API_KEY}&type=PLAYER_ITEMS&param=${UUID.data.data.player.id}`,
+      url: `https://api.skysim.sbs/?key=${API_KEY}&type=PLAYER_ITEMS&param=${UUID.data?.data?.player?.id}`,
     }).catch((err) => null);
 
     if (SkySimData.data.error || PlayerInventory.data.error)
@@ -139,7 +127,7 @@ App.post("/", async (req, res) => {
     let userData = {
       profile: {
         username: req.body.SkySim_Username,
-        uuid: UUID.data.data.player,
+        uuid: UUID.data?.data?.player,
       },
       coins: {
         raw: SkySimData.data.coins,
@@ -355,27 +343,27 @@ App.post("/", async (req, res) => {
 
     PlayerInventory.data.armor.forEach(async (armor) => {
       if (armor === null) return itemsWithoutReforge.push(null);
-      if (armor.material.toLowerCase() != "skull_item") {
+      if (armor.material?.toLowerCase() != "skull_item") {
         if (armor !== null) {
-          const attr = armor.type.toLowerCase();
+          const attr = armor.type?.toLowerCase();
 
           const actualTextures = ArmorAttribute[attr];
 
           itemsWithoutReforge.push({
             name: armor.name,
-            itemType: armor.type.toLowerCase(),
+            itemType: armor.type?.toLowerCase(),
             itemTexture: actualTextures,
           });
         }
-      } else if (armor.material.toLowerCase() == "skull_item") {
+      } else if (armor.material?.toLowerCase() == "skull_item") {
         if (armor !== null) {
-          const raw_texture = armor.texture.split("/")[4];
+          const raw_texture = armor.texture?.split("/")[4];
 
           const apiLink = `https://mc-heads.net/head/${raw_texture}`;
 
           itemsWithoutReforge.push({
             name: armor.name,
-            itemType: armor.type.toLowerCase(),
+            itemType: armor.type?.toLowerCase(),
             itemTexture: apiLink,
           });
         }
@@ -438,7 +426,7 @@ App.post("/", async (req, res) => {
     //Rendering page.
 
     const fetchingPlayer = await PlayerDB.findOne({
-      UUID: UUID.data.data.player.id
+      UUID: UUID.data?.data?.player?.id
     }).catch((err) => null);
 
     if (fetchingPlayer) fetchingPlayer.updateOne({
@@ -449,7 +437,7 @@ App.post("/", async (req, res) => {
     });
 
     if (!fetchingPlayer) new PlayerDB({
-        UUID: UUID.data.data.player.id,
+        UUID: UUID.data?.data?.player?.id,
         PlayerData: userData
     }).save();
 
@@ -459,7 +447,7 @@ App.post("/", async (req, res) => {
     res.render("profile", {
       data: SkySimData.data,
       username: req.body.SkySim_Username,
-      uuidData: UUID.data.data.player,
+      uuidData: UUID.data?.data?.player,
       constants: {
         colorCodes: colorCodes,
       },
