@@ -110,6 +110,7 @@ allPieces.forEach((e) => {
     document.querySelector(".item-name").classList.remove("piece-SUPREME-bg");
     document.querySelector(".item-name").classList.remove("piece-SPECIAL-bg");
     document.querySelector(".item-name").classList.remove("piece-VERY_SPECIAL-bg");
+    document.querySelector(".item-name").classList.remove("piece-EXCLUSIVE-bg");
     document.querySelector("#stats_content").style.display = "none";
   });
 });
