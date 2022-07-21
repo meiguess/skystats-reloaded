@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 
+:root, :root.light, :root.light .nice-colors-auto, :root .nice-colors-dark, :root .piece, :root *::-webkit-scrollbar-thumb {
+  --§0: #000000;
+  --§1: #0b277a;
+  --§2: #00aa00;
+  --§3: #038d8d;
+  --§4: #920909;
+  --§5: #a305a3;
+  --§6: #d88f07;
+  --§7: #636363;
+  --§8: #2f2f2f;
+  --§9: #4444f3;
+  --§a: #40bb40;
+  --§b: #33aec3;
+  --§c: #c43c3c;
+  --§d: #e668c6;
+  --§e: #efc721;
+  --§f: #929292;
+  --lore_background-hex: #0f0f0fe6;
+}
+
 * {
   font-family: 'Montserrat', sans-serif;
   text-size-adjust: none;
@@ -1242,4 +1262,11 @@ body {
   .menu li {
     padding: 0 20px;
   }
+}
+
+.errormsg {
+  display: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: #f30909;
 }
