@@ -128,6 +128,22 @@
         },
         role: 'tooltip'
     });
+
+    const url = new URLSearchParams(window.location.search);
+    const errorType = url.get("type");
+    const errorUser = url.get("user");
+    if (errorType !== null) {
+        if (errorType == "invalid"){ 
+            document.querySelector(".errormsg").innerHTML = "Invalid Username!"; 
+            document.querySelector(".errormsg").style.display = "block";
+        } else if (errorType == "notfound"){
+            document.querySelector(".errormsg").innerHTML = "That player was not found!";
+            document.querySelector(".errormsg").style.display = "block";
+        } else if (errorType == "neverjoined"){ 
+            document.querySelector(".errormsg").innerHTML = "That player never joined the SkySim Network!";
+            document.querySelector(".errormsg").style.display = "block";
+        }
+    }
 </script>
 
 </html>
