@@ -2104,6 +2104,10 @@ body::-webkit-scrollbar-track {
   background-color: var(--§b);
 }
 
+.piece-exclusive-bg, .style-scrollbar .piece-exclusive-bg+.item-lore::-webkit-scrollbar-thumb {
+  background-color: var(--§7);
+}
+
 #inventory_container {
 	display: inline-block;
 	background-color: rgba(var(--background-rgb), 0.3);
@@ -2327,6 +2331,10 @@ div.inventory {
 
 .piece-VERY_SPECIAL-bg {
   background-color: var(--§c) !important;
+}
+
+.piece-EXCLUSIVE-bg {
+  background-color: var(--§7) !important;
 }
 
 .piece {
