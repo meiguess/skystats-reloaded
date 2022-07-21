@@ -18,8 +18,34 @@ allPieces.forEach((e) => {
     e.addEventListener("mouseover", (event) => {
       let pos = event.target.getClientRects()[0];
       let rarity = e.classList[1].replace("piece-", "").replace("-bg", "");
+
+
       let itemName = e.classList[e.classList.length - 1].split("_").join(" ");
-      document.querySelector("#stats_content_item_name").innerHTML = itemName.substring(2);
+
+      let nItemSplit = itemName.split("");
+      let nLastIndex = -2;
+
+      nItemSplit = nItemSplit.map((itemItr, index) => {
+        if (itemItr === "§") {
+          let itrCode = "§" + nItemSplit[index + 1];
+          nLastIndex = index;
+          if (itrCode === "§l") {
+            return "</span><span class='" + itrCode + "'>";
+          } else if (itrCode === "§k") {
+            return "</span><span class='obfuscated'>";
+          } else {
+            return "</span><span style='color: var(--" + itrCode + ");'>"
+          }
+        } else if (index - 1 === nLastIndex) {
+          return '';
+        } else {
+          return itemItr;
+        }
+      });
+
+      itemName = nItemSplit.join("");
+
+      document.querySelector("#stats_content_item_name").innerHTML = "<span><" + itemName.substring(2);
 
       let color = getComputedStyle(document.body).getPropertyValue("--" + itemName.substring(0, 2));
       document.querySelector("#stats_content_item_name").style.color = color;
