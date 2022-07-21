@@ -43,11 +43,11 @@ allPieces.forEach((e) => {
             let itrCode = "§" + itemSplit[index + 1];
             lastIndex = index;
             if (itrCode === "§l") {
-              return "<span class='" + itrCode + "'>";
+              return "</span><span class='" + itrCode + "'>";
             } else if (itrCode === "§k") {
-              return "<span class='obfuscated'>";
+              return "</span><span class='obfuscated'>";
             } else {
-              return "<span style='color: var(--" + itrCode + ");'>"
+              return "</span><span style='color: var(--" + itrCode + ");'>"
             }
           } else if (index - 1 === lastIndex) {
             return '';
