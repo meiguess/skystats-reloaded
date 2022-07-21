@@ -120,8 +120,7 @@ App.post("/", async (req, res) => {
       return (
         res.redirect(
           `?user=${encodeURIComponent(req.body.SkySim_Username)}&type=neverjoined`
-        ),
-        console.log(SkySimData.data.error || PlayerInventory.data.error)
+        )
       );
 
     //Setting User Data
