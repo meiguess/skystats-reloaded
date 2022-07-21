@@ -92,7 +92,7 @@ App.post("/", async (req, res) => {
     req.body.SkySim_Username.length < 3
   )
     return res.redirect(
-      `?user=${encodeURIComponent(req.body.SkySim_Username)}&type="invalid"`
+      `?user=${encodeURIComponent(req.body.SkySim_Username)}&type=invalid`
     );
 
   const UUID = await axios({
@@ -102,7 +102,7 @@ App.post("/", async (req, res) => {
 
   if (!UUID || !UUID.data || UUID.data.success === false)
     return res.redirect(
-      `?user=${encodeURIComponent(req.body.SkySim_Username)}&type="notfound"`
+      `?user=${encodeURIComponent(req.body.SkySim_Username)}&type=notfound`
     );
 
   if (UUID && UUID.data && UUID.data.code == "player.found") {
@@ -119,7 +119,7 @@ App.post("/", async (req, res) => {
     if (SkySimData.data.error || PlayerInventory.data.error)
       return (
         res.redirect(
-          `?user=${encodeURIComponent(req.body.SkySim_Username)}&type="neverjoined"`
+          `?user=${encodeURIComponent(req.body.SkySim_Username)}&type=neverjoined`
         ),
         console.log(SkySimData.data.error || PlayerInventory.data.error)
       );
