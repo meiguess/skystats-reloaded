@@ -3,78 +3,78 @@
       <div class="heart-icon"></div>
       <span class="health-text">Health</span>
       <span class="health-value">
-          <%= userData['stats'].health?.toLocaleString() %>
+          <%= userData['stats'].health.toLocaleString() %>
       </span>
   </div>
   <div class="defense-stat">
       <div class="defense-icon"></div>
       <span class="defense-text"
-          data-tippy-content="Effective Health: <%= Math.round(userData['stats'].effectiveHP.hp)?.toLocaleString() %>">Defense</span>
+          data-tippy-content="Effective Health: <%= Math.round(userData['stats'].effectiveHP.hp).toLocaleString() %>">Defense</span>
       <span class="defense-value">
-          <%= userData['stats'].defense?.toLocaleString() %>
+          <%= userData['stats'].defense.toLocaleString() %>
       </span>
   </div>
   <div class="strength-stat">
       <div class="strength-icon"></div>
       <span class="strength-text">Strength</span>
       <span class="strength-value">
-          <%= userData['stats'].strength?.toLocaleString() %>
+          <%= userData['stats'].strength.toLocaleString() %>
       </span>
   </div>
   <div class="speed-stat">
       <div class="speed-icon"></div>
       <span class="speed-text">Speed</span>
       <span class="speed-value">
-          <%= userData['stats'].speed?.toLocaleString() %>%
+          <%= userData['stats'].speed.toLocaleString() %>%
       </span>
   </div>
   <div class="crit-chance-stat">
       <div class="crit-chance-icon"></div>
       <span class="crit-chance-text">Crit Chance</span>
       <span class="crit-chance-value">
-          <%= userData['stats']['crit']['chance']?.toLocaleString() %>%
+          <%= userData['stats']['crit']['chance'].toLocaleString() %>%
       </span>
   </div>
   <div class="crit-damage-stat">
       <div class="crit-damage-icon"></div>
       <span class="crit-damage-text">Crit Damage</span>
       <span class="crit-damage-value">
-          <%= userData['stats']['crit']['damage']?.toLocaleString() %>%
+          <%= userData['stats']['crit']['damage'].toLocaleString() %>%
       </span>
   </div>
   <div class="attack-speed-stat">
       <div class="attack-speed-icon"></div>
       <span class="attack-speed-text">Attack Speed</span>
       <span class="attack-speed-value">
-          <%= userData['stats']['attackSpeed']?.toLocaleString() %>%
+          <%= userData['stats']['attackSpeed'].toLocaleString() %>%
       </span>
   </div>
   <div class="intelligence-stat">
       <div class="intelligence-icon"></div>
       <span class="intelligence-text">Intelligence</span>
       <span class="intelligence-value">
-          <%= userData['stats']['mana']?.toLocaleString() %>
+          <%= userData['stats']['mana'].toLocaleString() %>
       </span>
   </div>
   <div class="mf-stat">
       <div class="mf-icon"></div>
       <span class="mf-text">Magic Find</span>
       <span class="mf-value">
-          <%= userData['stats']['magicFind']?.toLocaleString() %>
+          <%= userData['stats']['magicFind'].toLocaleString() %>
       </span>
   </div>
   <div class="ferocity-stat">
       <div class="ferocity-icon"></div>
       <span class="ferocity-text">Ferocity</span>
       <span class="ferocity-value">
-          <%= userData['stats']['ferocity']?.toLocaleString() %>
+          <%= userData['stats']['ferocity'].toLocaleString() %>
       </span>
   </div>
   <div class="ability-damage-stat">
       <div class="ability-damage-icon"></div>
       <span class="ability-damage-text">Ability Damage</span>
       <span class="ability-damage-value">
-          <%= userData['stats']['abilityDamage']?.toLocaleString() %>%
+          <%= userData['stats']['abilityDamage'].toLocaleString() %>%
       </span>
   </div>
 </div>
@@ -95,7 +95,7 @@
   <span class="text-weight">Weight:</span>
   <span class="weight-value">
       <%= userData['weight'].weightAbbrev %> (<%=
-              Math.round(userData['weight'].totalWeight)?.toLocaleString() %>)
+              Math.round(userData['weight'].totalWeight).toLocaleString() %>)
   </span>
 </div>
 
@@ -117,9 +117,9 @@
             <div class="wardrobe-set">
               <div class="piece piece-<%= loreToRarity(armor[j].lore); %>-bg <%= armor[j].name %>" lore="<%= armor[j].lore %>">
                 <% if (armor[j].material.toLowerCase() === "stained_glass") { %>
-                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../resources/armor/glass_red.png')"></div>
                 <% } else { %>
-                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= armor[j].material.toLowerCase() %>.png')"></div>
+                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../resources/armor/<%= armor[j].material.toLowerCase() %>.png')"></div>
                 <% } %>
               </div>
             </div>
@@ -188,9 +188,9 @@
             <div class="wardrobe-set">
               <div class="piece piece-<%= loreToRarity(equipments[j].lore); %>-bg <%= equipments[j].name %>" lore="<%= equipments[j].lore %>">
                 <% if (equipments[j].material.toLowerCase() === "stained_glass") { %>
-                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../resources/armor/glass_red.png')"></div>
                 <% } else { %>
-                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= equipments[j].material.toLowerCase() %>.png')"></div>
+                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../resources/armor/<%= equipments[j].material.toLowerCase() %>.png')"></div>
                 <% } %>
               </div>
             </div>

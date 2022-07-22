@@ -47,12 +47,12 @@
         <div class="wardrobe-set">
           <div class="piece piece-<%= loreToRarity(row3[j].lore); %>-bg   <%= row3[j].name %>" lore="<%= row3[j].lore %>" lore="<%= row3[j].lore %>">
             <% if (row3[j].material.toLowerCase() === "stained_glass") { %>
-            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/glass_red.png')"></div>
             <% } else { %>
               <% if(skysimTypes.hasOwnProperty(row3[j].type)) {  let type = row3[j].type;%>
               <div class="piece-1-icon armor-piece" style="--item-icon: url('<%=skysimTypes[type] %>')"></div>
               <% } else { %>
-              <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row3[j].material.toLowerCase() %>.png')"></div>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/<%= row3[j].material.toLowerCase() %>.png')"></div>
             <%} } %>
           </div>
         </div>
@@ -101,12 +101,12 @@
         <div class="wardrobe-set">
           <div class="piece piece-<%= loreToRarity(row2[j].lore); %>-bg  <%= row2[j].name %>" lore="<%= row2[j].lore %>">
             <% if (row2[j].material.toLowerCase() === "stained_glass") { %>
-            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/glass_red.png')"></div>
             <% } else { %>
               <% if(skysimTypes.hasOwnProperty(row2[j].type)) {  let type = row2[j].type;%>
               <div class="piece-1-icon armor-piece" style="--item-icon: url('<%=skysimTypes[type] %>')"></div>
               <% } else { %>
-              <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row2[j].material.toLowerCase() %>.png')"></div>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/<%= row2[j].material.toLowerCase() %>.png')"></div>
             <%} } %>
           </div>
         </div>
@@ -155,12 +155,12 @@
         <div class="wardrobe-set">
           <div class="piece piece-<%= loreToRarity(row1[j].lore); %>-bg  <%= row1[j].name %>" lore="<%= row1[j].lore %>">
             <% if (row1[j].material.toLowerCase() === "stained_glass") { %>
-            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/glass_red.png')"></div>
             <% } else { %>
               <% if(skysimTypes.hasOwnProperty(row1[j].type)) {  let type = row1[j].type;%>
               <div class="piece-1-icon armor-piece" style="--item-icon: url('<%=skysimTypes[type] %>')"></div>
               <% } else { %>
-              <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= row1[j].material.toLowerCase() %>.png')"></div>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/<%= row1[j].material.toLowerCase() %>.png')"></div>
             <%} } %>
           </div>
         </div>
@@ -212,12 +212,12 @@
         <div class="wardrobe-set">
           <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg  <%= hotbar[j].name %>" lore="<%= hotbar[j].lore %>">
             <% if (hotbar[j].material.toLowerCase() === "stained_glass") { %>
-            <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/glass_red.png')"></div>
             <% } else { %>
               <% if(skysimTypes.hasOwnProperty(hotbar[j].type)) {  let type = hotbar[j].type;%>
               <div class="piece-1-icon armor-piece" style="--item-icon: url('<%=skysimTypes[type] %>')"></div>
               <% } else { %>
-              <div class="piece-1-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= hotbar[j].material.toLowerCase() %>.png')"></div>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/<%= hotbar[j].material.toLowerCase() %>.png')"></div>
             <%} } %>
           </div>
         </div>
