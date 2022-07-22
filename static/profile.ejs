@@ -56,11 +56,49 @@
                 <span class="text-stats-for">Stats for</span>&ThickSpace;&ThickSpace;
                 <span tabindex="0" class="stats_for_player">
                     <div class="rank-tag nice-colors-dark">
-                        <div class="rank-name" style="background-color: var(--§d)">PIG</div>
-                        <div class="rank-plus" style="background-color: var(--§b)">
-                            <div class="rank-plus-before" style="background-color: var(--§b)"></div>
-                            <span class="rank-plus-text">+++</span>
-                        </div>
+                        <% let rank = userData.rank;
+                        if (rank !== undefined) rank = rank.toLowerCase()%>
+                        <% if (rank === "vip") { %>
+                            <div class="rank-name" style="background-color: var(--§a)">VIP</div>
+                        <% } else if (rank === "vip+") { %>
+                            <div class="rank-name" style="background-color: var(--§a)">VIP</div>
+                            <div class="rank-plus" style="background-color: var(--§6)">
+                                <div class="rank-plus-before" style="background-color: var(--§6)"></div>
+                                <span class="rank-plus-text">+</span>
+                            </div>
+                        <% } else if (rank === "mvp") { %>
+                            <div class="rank-name" style="background-color: var(--§b)">MVP</div>
+                        <% } else if (rank === "mvp+") { %>
+                            <div class="rank-name" style="background-color: var(--§b)">MVP</div>
+                            <div class="rank-plus" style="background-color: var(--§c)">
+                                <div class="rank-plus-before" style="background-color: var(--§c)"></div>
+                                <span class="rank-plus-text">+</span>
+                            </div>
+                        <% } else if (rank === "mvp++") { %>
+                            <div class="rank-name" style="background-color: var(--§6)">MVP</div>
+                            <div class="rank-plus" style="background-color: var(--§c)">
+                                <div class="rank-plus-before" style="background-color: var(--§c)"></div>
+                                <span class="rank-plus-text">++</span>
+                            </div>
+                        <% } else if (rank === "dragon") { %>
+                            <div class="rank-name" style="background-color: var(--§5)">DRAGON</div>
+                        <% } else if (rank === "helper") { %>
+                            <div class="rank-name" style="background-color: var(--§9)">HELPER</div>
+                        <% } else if (rank === "mod") { %>
+                            <div class="rank-name" style="background-color: var(--§2)">MODERATOR</div>
+                        <% } else if (rank === "dev") { %>
+                            <div class="rank-name" style="background-color: var(--§6)">DEVELOPER</div>
+                        <% } else if (rank === "admin") { %>
+                            <div class="rank-name" style="background-color: var(--§c)">ADMIN</div>
+                        <% } else if (rank === "h-dev") { %>
+                            <div class="rank-name" style="background-color: var(--§c)">H-DEVELOPER</div>
+                        <% } else if (rank === "jrmedia") { %>
+                            <div class="rank-name" style="background-color: var(--§c)">JR. MEDIA</div>
+                        <% } else if (rank === "media") { %>
+                            <div class="rank-name" style="background-color: var(--§c)">MEDIA</div>
+                        <% } else { %>
+                            <div class="rank-name" style="background-color: var(--§d)">BT</div>
+                        <% } %>
                     </div>
                     <%= username %>
                     <% if(uuidData.raw_id === 'f7ccf53e8acd466aab8a087ebefe1452') { %>
