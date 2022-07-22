@@ -258,11 +258,11 @@ App.post("/", async (req, res) => {
     };
 
     // Estimated RNG Calculation (by rsnx)
-    const calculateRNG = await require("./Calculations/estimated_rng");
+    const calculateRNG = await require("./calculations/estimated_rng");
     
 
     //Skill System
-    const SkillData = await require("./Functions/CalculatingSkillData")(
+    const SkillData = await require("./functions/CalculatingSkillData")(
       SkySimData
     );
 
@@ -274,9 +274,9 @@ App.post("/", async (req, res) => {
     userData["skills"].farming = SkillData.farming;
     userData["skills"].foraging = SkillData.foraging;
 
-    userData.weight = await require("./Calculations/weight")(userData);
+    userData.weight = await require("./calculations/weight")(userData);
 
-    const effHP = await require("./Calculations/ehp")(userData);
+    const effHP = await require("./calculations/ehp")(userData);
 
     userData["stats"].effectiveHP = {
       hp: effHP,
@@ -284,11 +284,11 @@ App.post("/", async (req, res) => {
     };
 
     //Modifying Equipped Armor;
-    const ArmorAttribute = require("./Constants/ArmorTextures");
+    const ArmorAttribute = require("./constants/ArmorTextures");
     let items = [];
     let itemsWithoutReforge = [];
 
-    const colorCodes = require("./Constants/ColorCodes").colorCodes;
+    const colorCodes = require("./constants/ColorCodes").colorCodes;
 
     PlayerInventory.data.inventory.forEach((elem, index) => {
       if (elem !== null) {
@@ -339,7 +339,7 @@ App.post("/", async (req, res) => {
           if (armor.name.match(regex)) {
             const index = colorCodes.findIndex((code) => code === colorCode);
 
-            const colorAttribute = require("./Constants/ColorCodes")
+            const colorAttribute = require("./constants/ColorCodes")
               .colorAttribute[index];
 
             const replacedArmor = armor.name.replace(regex, "");
@@ -393,7 +393,7 @@ App.post("/", async (req, res) => {
 
     //Slayer Sections
 
-    const SlayerData = await require("./Calculations/slayer")(userData);
+    const SlayerData = await require("./calculations/slayer")(userData);
 
     userData["slayers"]["revenant"]["slayerLevel"] =
       SlayerData["zombielvl"] === null ? 0 : SlayerData["zombielvl"];
@@ -405,7 +405,7 @@ App.post("/", async (req, res) => {
       SlayerData["tarantulalvl"] === null ? 0 : SlayerData["tarantulalvl"];
 
     const RevenantSlayerProgression =
-      await require("./Functions/CalculatingSlayerData")(userData, 1);
+      await require("./functions/CalculatingSlayerData")(userData, 1);
 
     userData["slayers"]["revenant"]["progression"] =
       RevenantSlayerProgression["completetion"];
@@ -418,7 +418,7 @@ App.post("/", async (req, res) => {
     userData["slayers"]["revenant"]["xp"]["next"] =
       RevenantSlayerProgression["nextLevelXP"];
 
-    const TarantulaSlayerProgression = await require("./Functions/CalculatingSlayerData")(userData, 2);
+    const TarantulaSlayerProgression = await require("./functions/CalculatingSlayerData")(userData, 2);
 
     userData["slayers"]["tarantula"]["progression"] = TarantulaSlayerProgression["completetion"];
     userData["slayers"]["tarantula"]["greyProgression"] = TarantulaSlayerProgression["greyProgress"];
@@ -426,13 +426,13 @@ App.post("/", async (req, res) => {
     userData["slayers"]["tarantula"]["xp"]["current"] = TarantulaSlayerProgression["currentXP"];
     userData["slayers"]["tarantula"]["xp"]["next"] = TarantulaSlayerProgression["nextLevelXP"];
 
-    const LoreToRarityFunction = await require("./Functions/LoreToRarity");
+    const LoreToRarityFunction = await require("./functions/LoreToRarity");
 
-    const IntToArgbFunction = await require("./Functions/IntToARGB");
+    const IntToArgbFunction = await require("./functions/IntToARGB");
 
-    const MinecraftMaterials = await require("./Constants/MinecraftMaterials");
+    const MinecraftMaterials = await require("./constants/MinecraftMaterials");
 
-    const SkySimTypes = await require("./Constants/SkySimTypes");
+    const SkySimTypes = await require("./constants/SkySimTypes");
 
     //Rendering page.
 
