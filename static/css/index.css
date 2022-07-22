@@ -26,7 +26,7 @@
 }
 
 body {
-  background: url(/Resources/skysim-bg-new.png);
+  background: url(/resources/skysim-bg-new.png);
   background-position: center center;
   background-repeat: no-repeat; 
   background-attachment: fixed;
