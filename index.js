@@ -64,7 +64,6 @@ App.use(
 );
 
 App.use(express.static(path.join(__dirname, "/static")));
-App.use("/resources", express.static(path.join(__dirname, "/static/resources")));
 
 App.get("/", (req, res) => {
   res.status(200).render("index");
