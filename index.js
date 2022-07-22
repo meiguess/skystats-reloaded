@@ -11,9 +11,6 @@ const dotenv = require("dotenv").config();
 const URL = process.env.URL;
 mongoose.connect(URL);
 
-// Beta 
-const BETA_KEYS = process.env.BETA_KEYS.split(", ");
-
 function abbreviateNumber(number) {
   // what tier? (determines SI symbol)
   var tier = (Math.log10(Math.abs(number)) / 3) | 0;
@@ -34,6 +31,7 @@ function abbreviateNumber(number) {
 
 const path = require("path");
 const express = require("express");
+const request = require("request");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 
@@ -87,15 +85,6 @@ App.get("/usernotfound/:username/:type", (req, res) => {
 });
 
 App.post("/", async (req, res) => {
-  if (!BETA_KEYS.includes(req.body.SkySim_BetaCode)) {
-    const object = {
-      error: `${
-        `Wrong Beta Key`
-      }`,
-    };
-  
-    res.send(object);
-  }
   if (
     !req.body.SkySim_Username ||
     typeof req.body.SkySim_Username !== "string" ||
@@ -119,12 +108,12 @@ App.post("/", async (req, res) => {
   if (UUID && UUID.data && UUID.data.code == "player.found") {
     const SkySimData = await axios({
       method: "get",
-      url: `https://api.skysim.sbs/?key=${API_KEY}&type=PLAYER_INFO&param=${UUID.data.data.player.id}`,
+      url: `https://api.skysim.sbs/?key=${API_KEY}&type=PLAYER_INFO&param=${UUID.data?.data?.player?.id}`,
     }).catch((err) => null);
 
     const PlayerInventory = await axios({
       method: "get",
-      url: `https://api.skysim.sbs/?key=${API_KEY}&type=PLAYER_ITEMS&param=${UUID.data.data.player.id}`,
+      url: `https://api.skysim.sbs/?key=${API_KEY}&type=PLAYER_ITEMS&param=${UUID.data?.data?.player?.id}`,
     }).catch((err) => null);
 
     if (SkySimData.data.error || PlayerInventory.data.error)
@@ -138,7 +127,8 @@ App.post("/", async (req, res) => {
     let userData = {
       profile: {
         username: req.body.SkySim_Username,
-        uuid: UUID.data.data.player,
+        uuid: UUID.data?.data?.player,
+        rank: SkySimData.data.rank,
       },
       coins: {
         raw: SkySimData.data.coins,
@@ -287,41 +277,49 @@ App.post("/", async (req, res) => {
 
     const colorCodes = require(path.resolve(__dirname, "./constants/ColorCodes")).colorCodes;
 
-    PlayerInventory.data.inventory.forEach((elem, index) => {
-      if (elem !== null) {
-        let elemObj = elem;
-        elemObj.name = elemObj.name.split(" ").join("_");
-        elemObj.lore = elemObj.lore.join("\n");
-        this[index] = elemObj;
-      }
-    }, PlayerInventory.data.inventory);
+    if (PlayerInventory.data.inventory !== null) {
+      PlayerInventory.data.inventory.forEach((elem, index) => {
+        if (elem !== null) {
+          let elemObj = elem;
+          elemObj.name = elemObj.name.split(" ").join("_");
+          elemObj.lore = elemObj.lore.join("\n");
+          this[index] = elemObj;
+        }
+      }, PlayerInventory.data.inventory);
+    }
 
-    PlayerInventory.data.armor.forEach((elem, index) => {
-      if (elem !== null) {
-        let elemObj = elem;
-        elemObj.name = elemObj.name.split(" ").join("_");
-        elemObj.lore = elemObj.lore.join("\n");
-        this[index] = elemObj;
-      }
-    }, PlayerInventory.data.armor);
+    if (PlayerInventory.data.armor !== null) {
+      PlayerInventory.data.armor.forEach((elem, index) => {
+        if (elem !== null) {
+          let elemObj = elem;
+          elemObj.name = elemObj.name.split(" ").join("_");
+          elemObj.lore = elemObj.lore.join("\n");
+          this[index] = elemObj;
+        }
+      }, PlayerInventory.data.armor);
+    } 
 
-    PlayerInventory.data.wardrobe.forEach((elem, index) => {
-      if (elem !== null) {
-        let elemObj = elem;
-        elemObj.name = elemObj.name.split(" ").join("_");
-        elemObj.lore = elemObj.lore.join("\n");
-        this[index] = elemObj;
-      }
-    }, PlayerInventory.data.wardrobe);
+    if (PlayerInventory.data.wardrobe !== null) {
+      PlayerInventory.data.wardrobe.forEach((elem, index) => {
+        if (elem !== null) {
+          let elemObj = elem;
+          elemObj.name = elemObj.name.split(" ").join("_");
+          elemObj.lore = elemObj.lore.join("\n");
+          this[index] = elemObj;
+        }
+      }, PlayerInventory.data.wardrobe);
+    }
 
-    PlayerInventory.data.equipments.forEach((elem, index) => {
-      if (elem !== null) {
-        let elemObj = elem;
-        elemObj.name = elemObj.name.split(" ").join("_");
-        elemObj.lore = elemObj.lore.join("\n");
-        this[index] = elemObj;
-      }
-    }, PlayerInventory.data.equipments);
+    if (PlayerInventory.data.equipments !== null) {
+      PlayerInventory.data.equipments.forEach((elem, index) => {
+        if (elem !== null) {
+          let elemObj = elem;
+          elemObj.name = elemObj.name.split(" ").join("_");
+          elemObj.lore = elemObj.lore.join("\n");
+          this[index] = elemObj;
+        }
+      }, PlayerInventory.data.equipments);
+    }
 
     const armor = PlayerInventory.data.armor;
 
@@ -351,27 +349,27 @@ App.post("/", async (req, res) => {
 
     PlayerInventory.data.armor.forEach(async (armor) => {
       if (armor === null) return itemsWithoutReforge.push(null);
-      if (armor.material.toLowerCase() != "skull_item") {
+      if (armor.material?.toLowerCase() != "skull_item") {
         if (armor !== null) {
-          const attr = armor.type.toLowerCase();
+          const attr = armor.type?.toLowerCase();
 
           const actualTextures = ArmorAttribute[attr];
 
           itemsWithoutReforge.push({
             name: armor.name,
-            itemType: armor.type.toLowerCase(),
+            itemType: armor.type?.toLowerCase(),
             itemTexture: actualTextures,
           });
         }
-      } else if (armor.material.toLowerCase() == "skull_item") {
+      } else if (armor.material?.toLowerCase() == "skull_item") {
         if (armor !== null) {
-          const raw_texture = armor.texture.split("/")[4];
+          const raw_texture = armor.texture?.split("/")[4];
 
           const apiLink = `https://mc-heads.net/head/${raw_texture}`;
 
           itemsWithoutReforge.push({
             name: armor.name,
-            itemType: armor.type.toLowerCase(),
+            itemType: armor.type?.toLowerCase(),
             itemTexture: apiLink,
           });
         }
@@ -434,7 +432,7 @@ App.post("/", async (req, res) => {
     //Rendering page.
 
     const fetchingPlayer = await PlayerDB.findOne({
-      UUID: UUID.data.data.player.id
+      UUID: UUID.data?.data?.player?.id
     }).catch((err) => null);
 
     if (fetchingPlayer) fetchingPlayer.updateOne({
@@ -445,7 +443,7 @@ App.post("/", async (req, res) => {
     });
 
     if (!fetchingPlayer) new PlayerDB({
-        UUID: UUID.data.data.player.id,
+        UUID: UUID.data?.data?.player?.id,
         PlayerData: userData
     }).save();
 
@@ -455,7 +453,7 @@ App.post("/", async (req, res) => {
     res.render("profile", {
       data: SkySimData.data,
       username: req.body.SkySim_Username,
-      uuidData: UUID.data.data.player,
+      uuidData: UUID.data?.data?.player,
       constants: {
         colorCodes: colorCodes,
       },

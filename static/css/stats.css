@@ -2468,3 +2468,60 @@ div.inventory {
 .§l {
   font-weight: bold;
 }
+
+.stat-container {
+  margin-top: 35px;
+  position: absolute;
+  top: 675px;
+}
+
+.stat-inventory-container {
+  top: 1175px;
+}
+
+.stat-equipments-container {
+  top: 970px;
+}
+
+.stat-wardrobe-container {
+  top: 1630px;
+}
+
+.info-container-wrapper {
+  text-align: center;
+}
+
+.info-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-bottom: 0;
+  padding: 20px;
+  padding-top: 55px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  max-width: 500px;
+  border-radius: 10px;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.info-container {
+  overflow: clip;
+  color: #fff;
+  font-weight: 500;
+}
+
+.info-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35px;
+  line-height: 35px;
+  background-color: var(--§a);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  font-size: 19px;
+}

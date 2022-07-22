@@ -1,5 +1,18 @@
 <div class="text-wardrobe" style="position: absolute; top: 1150px;">Inventory</div>
 <%- include("./item.ejs") %>
+
+<% if (playerInventory.inventory === null || playerInventory.inventory === undefined) { %>
+
+<div class="stat-container info-container-wrapper stat-inventory-container">
+  <div class="info-container">
+  <div class="info-header">Notice</div>
+  Inventory is not available for <%= username %> due to limited API access.<br><span>Open your in game settings to enable full API access.</span>
+  </div>
+</div>
+
+<% } else { %>
+
+
 <div class="inventory-pieces">
   <% 
   let items = playerInventory.inventory;
@@ -241,3 +254,5 @@
       <% } } }%>
     </div>
 </div>
+
+<% } %>
