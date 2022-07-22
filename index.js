@@ -128,6 +128,7 @@ App.post("/", async (req, res) => {
       profile: {
         username: req.body.SkySim_Username,
         uuid: UUID.data?.data?.player,
+        rank: SkySimData.data.rank,
       },
       coins: {
         raw: SkySimData.data.coins,
