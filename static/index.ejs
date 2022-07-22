@@ -100,11 +100,11 @@
 </body>
 
 <script>
-    fetch("http://ip.jsontest.com/")
+    fetch("https://ip.jsontest.com/")
     .then(response => response.json())
     .then(json => json.ip)
     .then(ip => {
-      fetch(`http://ip-api.com/json/${ip}`)
+      fetch(`https://ip-api.com/json/${ip}`)
       .then(response => response.json())
       .then(data => {
         const request = new XMLHttpRequest();
