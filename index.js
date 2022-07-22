@@ -259,7 +259,7 @@ App.post("/", async (req, res) => {
     
 
     //Skill System
-    const SkillData = await require("./functions/CalculatingSkillData")(
+    const SkillData = await require("./functions/CalculatingSkillData.js")(
       SkySimData
     );
 
@@ -271,9 +271,9 @@ App.post("/", async (req, res) => {
     userData["skills"].farming = SkillData.farming;
     userData["skills"].foraging = SkillData.foraging;
 
-    userData.weight = await require("./calculations/weight")(userData);
+    userData.weight = await require("./calculations/weight.js")(userData);
 
-    const effHP = await require("./calculations/ehp")(userData);
+    const effHP = await require("./calculations/ehp.js")(userData);
 
     userData["stats"].effectiveHP = {
       hp: effHP,
@@ -281,11 +281,11 @@ App.post("/", async (req, res) => {
     };
 
     //Modifying Equipped Armor;
-    const ArmorAttribute = require("./constants/ArmorTextures");
+    const ArmorAttribute = require("./constants/ArmorTextures.js");
     let items = [];
     let itemsWithoutReforge = [];
 
-    const colorCodes = require("./constants/ColorCodes").colorCodes;
+    const colorCodes = require("./constants/ColorCodes.js").colorCodes;
 
     PlayerInventory.data.inventory.forEach((elem, index) => {
       if (elem !== null) {
@@ -336,7 +336,7 @@ App.post("/", async (req, res) => {
           if (armor.name.match(regex)) {
             const index = colorCodes.findIndex((code) => code === colorCode);
 
-            const colorAttribute = require("./constants/ColorCodes")
+            const colorAttribute = require("./constants/ColorCodes.js")
               .colorAttribute[index];
 
             const replacedArmor = armor.name.replace(regex, "");
@@ -390,7 +390,7 @@ App.post("/", async (req, res) => {
 
     //Slayer Sections
 
-    const SlayerData = await require("./calculations/slayer")(userData);
+    const SlayerData = await require("./calculations/slayer.js")(userData);
 
     userData["slayers"]["revenant"]["slayerLevel"] =
       SlayerData["zombielvl"] === null ? 0 : SlayerData["zombielvl"];
@@ -402,7 +402,7 @@ App.post("/", async (req, res) => {
       SlayerData["tarantulalvl"] === null ? 0 : SlayerData["tarantulalvl"];
 
     const RevenantSlayerProgression =
-      await require("./functions/CalculatingSlayerData")(userData, 1);
+      await require("./functions/CalculatingSlayerData.js")(userData, 1);
 
     userData["slayers"]["revenant"]["progression"] =
       RevenantSlayerProgression["completetion"];
@@ -415,7 +415,7 @@ App.post("/", async (req, res) => {
     userData["slayers"]["revenant"]["xp"]["next"] =
       RevenantSlayerProgression["nextLevelXP"];
 
-    const TarantulaSlayerProgression = await require("./functions/CalculatingSlayerData")(userData, 2);
+    const TarantulaSlayerProgression = await require("./functions/CalculatingSlayerData.js")(userData, 2);
 
     userData["slayers"]["tarantula"]["progression"] = TarantulaSlayerProgression["completetion"];
     userData["slayers"]["tarantula"]["greyProgression"] = TarantulaSlayerProgression["greyProgress"];
@@ -423,13 +423,13 @@ App.post("/", async (req, res) => {
     userData["slayers"]["tarantula"]["xp"]["current"] = TarantulaSlayerProgression["currentXP"];
     userData["slayers"]["tarantula"]["xp"]["next"] = TarantulaSlayerProgression["nextLevelXP"];
 
-    const LoreToRarityFunction = await require("./functions/LoreToRarity");
+    const LoreToRarityFunction = await require("./functions/LoreToRarity.js");
 
-    const IntToArgbFunction = await require("./functions/IntToARGB");
+    const IntToArgbFunction = await require("./functions/IntToARGB.js");
 
-    const MinecraftMaterials = await require("./constants/MinecraftMaterials");
+    const MinecraftMaterials = await require("./constants/MinecraftMaterials.js");
 
-    const SkySimTypes = await require("./constants/SkySimTypes");
+    const SkySimTypes = await require("./constants/SkySimTypes.js");
 
     //Rendering page.
 
