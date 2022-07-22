@@ -2479,6 +2479,14 @@ div.inventory {
   top: 1175px;
 }
 
+.stat-equipments-container {
+  top: 970px;
+}
+
+.stat-wardrobe-container {
+  top: 1630px;
+}
+
 .info-container-wrapper {
   text-align: center;
 }
