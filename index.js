@@ -256,9 +256,6 @@ App.post("/", async (req, res) => {
         catacombLevel: null,
       },
     };
-
-    // Estimated RNG Calculation (by rsnx)
-    const calculateRNG = await require("./calculations/estimated_rng");
     
 
     //Skill System
