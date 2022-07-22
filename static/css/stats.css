@@ -2471,7 +2471,12 @@ div.inventory {
 
 .stat-container {
   margin-top: 35px;
-  position: relative;
+  position: absolute;
+  top: 675px;
+}
+
+.stat-inventory-container {
+  top: 1175px;
 }
 
 .info-container-wrapper {
@@ -2479,7 +2484,7 @@ div.inventory {
 }
 
 .info-container {
-  background-color: rgba(var(--background-rgb), 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   margin-bottom: 0;
   padding: 20px;
   padding-top: 55px;
@@ -2494,6 +2499,8 @@ div.inventory {
 
 .info-container {
   overflow: clip;
+  color: #fff;
+  font-weight: 500;
 }
 
 .info-header {
