@@ -32,7 +32,7 @@ html {
 }
 
 body {
-    background: url(/Resources/bg.webp) no-repeat center center fixed;
+    background: url(/resources/bg.webp) no-repeat center center fixed;
     background-size: cover;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -761,8 +761,8 @@ body::-webkit-scrollbar-track {
   height: 20px;
   width: 20px;
   bottom: 190px;
-  mask-image: url(../Resources/heart.svg);
-  -webkit-mask-image: url(../Resources/heart.svg);
+  mask-image: url(../resources/heart.svg);
+  -webkit-mask-image: url(../resources/heart.svg);
   background-color: #fb5858;
 }
 
@@ -808,8 +808,8 @@ body::-webkit-scrollbar-track {
   height: 20px;
   width: 20px;
   bottom: 190px;
-  mask-image: url(../Resources/shield.svg);
-  -webkit-mask-image: url(../Resources/shield.svg);
+  mask-image: url(../resources/shield.svg);
+  -webkit-mask-image: url(../resources/shield.svg);
   background-color: #5bda5b;
 }
 
@@ -854,8 +854,8 @@ body::-webkit-scrollbar-track {
   height: 20px;
   width: 20px;
   bottom: 190px;
-  mask-image: url(../Resources/Strenght_Icon.svg);
-  -webkit-mask-image: url(../Resources/Strenght_Icon.svg);
+  mask-image: url(../resources/Strenght_Icon.svg);
+  -webkit-mask-image: url(../resources/Strenght_Icon.svg);
   background-color: #fb5858;
 }
 
@@ -900,8 +900,8 @@ body::-webkit-scrollbar-track {
   height: 20px;
   width: 20px;
   bottom: 190px;
-  mask-image: url(../Resources/Speed_Icon.svg);
-  -webkit-mask-image: url(../Resources/Speed_Icon.svg);
+  mask-image: url(../resources/Speed_Icon.svg);
+  -webkit-mask-image: url(../resources/Speed_Icon.svg);
   background-color: #ffffff;
 }
 
@@ -947,8 +947,8 @@ body::-webkit-scrollbar-track {
   left: 240px;
   width: 20px;
   bottom: 250px;
-  mask-image: url(../Resources/Crit_Chance_Icon.svg);
-  -webkit-mask-image: url(../Resources/Crit_Chance_Icon.svg);
+  mask-image: url(../resources/Crit_Chance_Icon.svg);
+  -webkit-mask-image: url(../resources/Crit_Chance_Icon.svg);
   background-color: #7486f0;
 }
 
@@ -994,8 +994,8 @@ body::-webkit-scrollbar-track {
   width: 20px;
   left: 240px;
   bottom: 250px;
-  mask-image: url(../Resources/Crit_Damage.svg);
-  -webkit-mask-image: url(../Resources/Crit_Damage.svg);
+  mask-image: url(../resources/Crit_Damage.svg);
+  -webkit-mask-image: url(../resources/Crit_Damage.svg);
   background-color: #7486f0;
 }
 
@@ -1041,8 +1041,8 @@ body::-webkit-scrollbar-track {
   width: 20px;
   left: 240px;
   bottom: 250px;
-  mask-image: url(../Resources/Attack_Speed.svg);
-  -webkit-mask-image: url(../Resources/Attack_Speed.svg);
+  mask-image: url(../resources/Attack_Speed.svg);
+  -webkit-mask-image: url(../resources/Attack_Speed.svg);
   background-color: #f2f267;
 }
 
@@ -1088,8 +1088,8 @@ body::-webkit-scrollbar-track {
   width: 20px;
   left: 240px;
   bottom: 250px;
-  mask-image: url(../Resources/Mana.svg);
-  -webkit-mask-image: url(../Resources/Mana.svg);
+  mask-image: url(../resources/Mana.svg);
+  -webkit-mask-image: url(../resources/Mana.svg);
   background-color: #58d6ed;
 }
 
@@ -1135,8 +1135,8 @@ body::-webkit-scrollbar-track {
   width: 20px;
   left: 480px;
   bottom: 310px;
-  mask-image: url(../Resources/Magic_Find_Icon.svg);
-  -webkit-mask-image: url(../Resources/Magic_Find_Icon.svg);
+  mask-image: url(../resources/Magic_Find_Icon.svg);
+  -webkit-mask-image: url(../resources/Magic_Find_Icon.svg);
   background-color: #58d6ed;
 }
 
@@ -1182,8 +1182,8 @@ body::-webkit-scrollbar-track {
   width: 20px;
   left: 480px;
   bottom: 310px;
-  mask-image: url(../Resources/Ferocity_Icon.svg);
-  -webkit-mask-image: url(../Resources/Ferocity_Icon.svg);
+  mask-image: url(../resources/Ferocity_Icon.svg);
+  -webkit-mask-image: url(../resources/Ferocity_Icon.svg);
   background-color: #fb5858;
 }
 
@@ -1229,8 +1229,8 @@ body::-webkit-scrollbar-track {
   width: 20px;
   left: 480px;
   bottom: 310px;
-  mask-image: url(../Resources/Ability_Damage_Icon.svg);
-  -webkit-mask-image: url(../Resources/Ability_Damage_Icon.svg);
+  mask-image: url(../resources/Ability_Damage_Icon.svg);
+  -webkit-mask-image: url(../resources/Ability_Damage_Icon.svg);
   background-color: #fb5858;
 }
 
@@ -1597,7 +1597,7 @@ body::-webkit-scrollbar-track {
   background-repeat: no-repeat;
   background-position: center;
   vertical-align: middle;
-  background-image: url(/Resources/Revenant_Icon.webp);
+  background-image: url(/resources/Revenant_Icon.webp);
 }
 
 .text-revenant {
@@ -1698,7 +1698,7 @@ body::-webkit-scrollbar-track {
   background-repeat: no-repeat;
   background-position: center;
   vertical-align: middle;
-  background-image: url(/Resources/Tarantula_Icon.webp);
+  background-image: url(/resources/Tarantula_Icon.webp);
 }
 
 .text-tarantula {
