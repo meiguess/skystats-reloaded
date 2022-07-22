@@ -116,9 +116,9 @@
             <div class="wardrobe-set">
               <div class="piece piece-<%= loreToRarity(armor[j].lore); %>-bg <%= armor[j].name %>" lore="<%= armor[j].lore %>">
                 <% if (armor[j].material.toLowerCase() === "stained_glass") { %>
-                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../resources/armor/glass_red.png')"></div>
                 <% } else { %>
-                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= armor[j].material.toLowerCase() %>.png')"></div>
+                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../resources/armor/<%= armor[j].material.toLowerCase() %>.png')"></div>
                 <% } %>
               </div>
             </div>
@@ -175,9 +175,9 @@
             <div class="wardrobe-set">
               <div class="piece piece-<%= loreToRarity(equipments[j].lore); %>-bg <%= equipments[j].name %>" lore="<%= equipments[j].lore %>">
                 <% if (equipments[j].material.toLowerCase() === "stained_glass") { %>
-                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../Resources/armor/glass_red.png')"></div>
+                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../resources/armor/glass_red.png')"></div>
                 <% } else { %>
-                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../Resources/armor/<%= equipments[j].material.toLowerCase() %>.png')"></div>
+                <div class="piece-<%=j+1%>-icon armor-piece" style="--item-icon: url('../resources/armor/<%= equipments[j].material.toLowerCase() %>.png')"></div>
                 <% } %>
               </div>
             </div>
