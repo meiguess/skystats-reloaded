@@ -33,7 +33,6 @@ function abbreviateNumber(number) {
 }
 
 const path = require("path");
-const request = require("request");
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
@@ -259,7 +258,7 @@ App.post("/", async (req, res) => {
     };
 
     // Estimated RNG Calculation (by rsnx)
-    const calculateRNG = await require("./calculations/estimated_rng");
+    const calculateRNG = await require("./Calculations/estimated_rng");
     
 
     //Skill System
@@ -275,9 +274,9 @@ App.post("/", async (req, res) => {
     userData["skills"].farming = SkillData.farming;
     userData["skills"].foraging = SkillData.foraging;
 
-    userData.weight = await require("./calculations/weight")(userData);
+    userData.weight = await require("./Calculations/weight")(userData);
 
-    const effHP = await require("./calculations/ehp")(userData);
+    const effHP = await require("./Calculations/ehp")(userData);
 
     userData["stats"].effectiveHP = {
       hp: effHP,
@@ -394,7 +393,7 @@ App.post("/", async (req, res) => {
 
     //Slayer Sections
 
-    const SlayerData = await require("./calculations/slayer")(userData);
+    const SlayerData = await require("./Calculations/slayer")(userData);
 
     userData["slayers"]["revenant"]["slayerLevel"] =
       SlayerData["zombielvl"] === null ? 0 : SlayerData["zombielvl"];
