@@ -280,41 +280,49 @@ App.post("/", async (req, res) => {
 
     const colorCodes = require("./Constants/ColorCodes").colorCodes;
 
-    PlayerInventory.data.inventory.forEach((elem, index) => {
-      if (elem !== null) {
-        let elemObj = elem;
-        elemObj.name = elemObj.name.split(" ").join("_");
-        elemObj.lore = elemObj.lore.join("\n");
-        this[index] = elemObj;
-      }
-    }, PlayerInventory.data.inventory);
+    if (PlayerInventory.data.inventory !== null) {
+      PlayerInventory.data.inventory.forEach((elem, index) => {
+        if (elem !== null) {
+          let elemObj = elem;
+          elemObj.name = elemObj.name.split(" ").join("_");
+          elemObj.lore = elemObj.lore.join("\n");
+          this[index] = elemObj;
+        }
+      }, PlayerInventory.data.inventory);
+    }
 
-    PlayerInventory.data.armor.forEach((elem, index) => {
-      if (elem !== null) {
-        let elemObj = elem;
-        elemObj.name = elemObj.name.split(" ").join("_");
-        elemObj.lore = elemObj.lore.join("\n");
-        this[index] = elemObj;
-      }
-    }, PlayerInventory.data.armor);
+    if (PlayerInventory.data.armor !== null) {
+      PlayerInventory.data.armor.forEach((elem, index) => {
+        if (elem !== null) {
+          let elemObj = elem;
+          elemObj.name = elemObj.name.split(" ").join("_");
+          elemObj.lore = elemObj.lore.join("\n");
+          this[index] = elemObj;
+        }
+      }, PlayerInventory.data.armor);
+    } 
 
-    PlayerInventory.data.wardrobe.forEach((elem, index) => {
-      if (elem !== null) {
-        let elemObj = elem;
-        elemObj.name = elemObj.name.split(" ").join("_");
-        elemObj.lore = elemObj.lore.join("\n");
-        this[index] = elemObj;
-      }
-    }, PlayerInventory.data.wardrobe);
+    if (PlayerInventory.data.wardrobe !== null) {
+      PlayerInventory.data.wardrobe.forEach((elem, index) => {
+        if (elem !== null) {
+          let elemObj = elem;
+          elemObj.name = elemObj.name.split(" ").join("_");
+          elemObj.lore = elemObj.lore.join("\n");
+          this[index] = elemObj;
+        }
+      }, PlayerInventory.data.wardrobe);
+    }
 
-    PlayerInventory.data.equipments.forEach((elem, index) => {
-      if (elem !== null) {
-        let elemObj = elem;
-        elemObj.name = elemObj.name.split(" ").join("_");
-        elemObj.lore = elemObj.lore.join("\n");
-        this[index] = elemObj;
-      }
-    }, PlayerInventory.data.equipments);
+    if (PlayerInventory.data.equipments !== null) {
+      PlayerInventory.data.equipments.forEach((elem, index) => {
+        if (elem !== null) {
+          let elemObj = elem;
+          elemObj.name = elemObj.name.split(" ").join("_");
+          elemObj.lore = elemObj.lore.join("\n");
+          this[index] = elemObj;
+        }
+      }, PlayerInventory.data.equipments);
+    }
 
     const armor = PlayerInventory.data.armor;
 
