@@ -100,7 +100,7 @@
 </body>
 
 <script>
-    fetch("http://ip.jsontest.com/")
+    fetch("https://api.ipify.org/?format=json")
     .then(response => response.json())
     .then(json => json.ip)
     .then(ip => {
