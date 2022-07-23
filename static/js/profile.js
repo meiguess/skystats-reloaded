@@ -93,8 +93,8 @@ allPieces.forEach((e) => {
       document.querySelector("#stats_content").style.display = "block";
       let height = document.querySelector("#stats_content").offsetHeight;
 
-      document.querySelector("#stats_content").style.top = (pos.top - height / 2) + "px";
-      document.querySelector("#stats_content").style.left = (pos.left - 300) + "px";
+      document.querySelector("#stats_content").style.top = ((pos.top - height / 2) + 500) + "px";
+      document.querySelector("#stats_content").style.left = (pos.left - 500) + "px";
     });
   }
 });
