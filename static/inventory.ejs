@@ -1,4 +1,4 @@
-<div class="text-wardrobe" style="position: absolute; top: 1150px;">Inventory</div>
+<div class="text-wardrobe" style="position: absolute; top: 790px;" id="Inventory">Inventory</div>
 <%- include("./item.ejs") %>
 
 <% if (playerInventory.inventory === null || playerInventory.inventory === undefined) { %>
@@ -200,7 +200,7 @@
 
     <!-- Hotbar -->
 
-    <div class="separator text-wardrobe-seperator">Hotbar</div>
+    <div class="separator text-wardrobe-seperator" style="width: 750px;">Hotbar</div>
 
     <div class="row">
       <% for(let j = 0; j < hotbar.length; j++) { if(hotbar[j] === null) { %>
