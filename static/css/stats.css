@@ -2051,6 +2051,7 @@ body::-webkit-scrollbar-track {
   /* visibility: hidden; */
   border-radius: 10px;
   overflow: hidden;
+  position: absolute;
 }
 
 .piece-common-bg, .style-scrollbar .piece-common-bg+.item-lore::-webkit-scrollbar-thumb {
@@ -2267,8 +2268,8 @@ div.inventory {
 
 .inventory-pieces {
   margin-top: -12px;
-  top: 1205px;
   margin-left: 15px;
+  position:relative;
 }
 
 
