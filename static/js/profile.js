@@ -16,7 +16,7 @@ const allPieces = document.querySelectorAll(".piece");
 allPieces.forEach((e) => {
   if (!e.classList.contains("piece-NONE-bg")) {
     e.addEventListener("mouseover", (event) => {
-      let pos = event.target.getClientRects()[0];
+      let pos = event.target.getBoundingClientRect();
       let rarity = e.classList[1].replace("piece-", "").replace("-bg", "");
 
 
@@ -93,8 +93,8 @@ allPieces.forEach((e) => {
       document.querySelector("#stats_content").style.display = "block";
       let height = document.querySelector("#stats_content").offsetHeight;
 
-      document.querySelector("#stats_content").style.top = ((pos.top - height / 2) + 500) + "px";
-      document.querySelector("#stats_content").style.left = (pos.left - 500) + "px";
+      document.querySelector("#stats_content").style.top = ((pos.top + window.scrollY) - height / 2) + "px";
+      document.querySelector("#stats_content").style.left = (pos.left - 700) + "px";
     });
   }
 });
