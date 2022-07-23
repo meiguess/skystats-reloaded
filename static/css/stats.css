@@ -646,13 +646,11 @@ body::-webkit-scrollbar-track {
   text-transform: capitalize;
   line-height: 1.5;
   user-select: text !important;
-  position: relative;
   bottom: 560px;
   font-size: 14px;
 }
 
 .purse-value {
-  position: relative;
   font-weight: 700;
   margin-left: 2px;
   line-height: 1.5;
@@ -670,14 +668,12 @@ body::-webkit-scrollbar-track {
   text-transform: capitalize;
   line-height: 1.5;
   user-select: text !important;
-  position: relative;
   bottom: 560px;
   left: 5px;
   font-size: 14px;
 }
 
 .bank-value {
-  position: relative;
   font-weight: 700;
   margin-left: 2px;
   line-height: 1.5;
@@ -695,14 +691,12 @@ body::-webkit-scrollbar-track {
   text-transform: capitalize;
   line-height: 1.5;
   user-select: text !important;
-  position: relative;
   bottom: 560px;
   left: 10px;
   font-size: 14px;
 }
 
 .weight-value {
-  position: relative;
   font-weight: 700;
   margin-left: 2px;
   line-height: 1.5;
@@ -721,14 +715,12 @@ body::-webkit-scrollbar-track {
   text-transform: capitalize;
   line-height: 1.5;
   user-select: text !important;
-  position: relative;
   bottom: 560px;
   left: 10px;
   font-size: 14px;
 }
 
 .bits-value {
-  position: relative;
   font-weight: 700;
   margin-left: 2px;
   line-height: 1.5;
@@ -2591,4 +2583,8 @@ div.inventory {
 
 .player-stats-column {
   margin: 0 50px 0 0;
+}
+
+.player-statistics-misc {
+  margin-bottom: 30px;
 }
