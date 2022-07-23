@@ -22,6 +22,28 @@
   --lore_background-hex: #0f0f0fe6;
 }
 
+:root {
+  --icon-hex: #0bca51;
+  --icon-rgb: 11, 202, 81;
+  --link-hex: #0bea51;
+  --link-rgb: 11, 234, 81;
+  --hover-hex: #09ef70;
+  --skillbar: #0baa51;
+  --maxedbar: #ce8f12;
+  --maxed-hex: #dd980e;
+  --gold-hex: #fdbb3c;
+  --text-hex: white;
+  --text-rgb: 255, 255, 255;
+  --background-hex: black;
+  --background-rgb: 0, 0, 0;
+  --header-hex: #282828;
+  --header-rgb: 40, 40, 40;
+  --grey_background-hex: #1e1e1e;
+  --grey_background-rgb: 30, 30, 30;
+  --lore_background-hex: #0f0f0fe6;
+  --bg-hex: #121212;
+}
+
 * {
   font-family: 'Montserrat', sans-serif;
   text-size-adjust: none;
@@ -2524,4 +2546,78 @@ div.inventory {
   font-weight: 600;
   text-align: center;
   font-size: 19px;
+}
+
+#nav_bar {
+  position: sticky;
+  top: calc(48px + env(safe-area-inset-top, 0));
+  margin-left: calc(-1*var(--padding));
+  margin-right: calc(-1*var(--padding));
+  text-align: center;
+  padding-bottom: 6px;
+  white-space: nowrap;
+  z-index: 25;
+}
+
+#nav_bar #nav_items_container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 6px;
+  z-index: 3;
+  overflow-x: auto;
+}
+
+#nav_bar #nav_bar_background {
+  background-color: rgba(var(--background-rgb), 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  z-index: 1;
+}
+
+#nav_bar #nav_bar_line {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  height: 2px;
+  background-color: var(--icon-hex);
+  z-index: 2;
+}
+
+#nav_bar #nav_items_container .nav-item {
+  display: inline-block;
+  padding: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-left: 8px;
+  font-weight: 600;
+  transition: background-color .1s,color .1s;
+  position: relative;
+  color: rgba(var(--text-rgb), 0.8);
+  text-decoration: none;
+}
+
+#nav_bar #nav_items_container .nav-item[aria-current] {
+  color: rgba(var(--text-rgb), 1);
+}
+
+#nav_bar #nav_items_container .nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  top: 100%;
+  background-color: var(--icon-hex);
+  border-radius: 4px;
+  transition: height .1s,top .1s;
+}
+
+#nav_bar #nav_items_container .nav-item[aria-current]::after {
+  height: 8px;
+  top: calc(100% - 3px);
 }
