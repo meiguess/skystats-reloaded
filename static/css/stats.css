@@ -257,7 +257,6 @@ body::-webkit-scrollbar-track {
   margin-left: calc(-1*30px);
   margin-right: calc(-1*30px);
   /* background-color: rgba(0, 0, 0, 0.3); */
-  height: 145vh;
 }
 
 /*Combat Section*/
@@ -1279,8 +1278,8 @@ body::-webkit-scrollbar-track {
 /*Armor Section*/
 .armors {
   display: block;
-  position: relative;
-  top: calc(-480px - env(safe-area-inset-top, 0));
+  height: 100px;
+  margin-top: 50px;
 }
 
 .text-armor, .text-wardrobe {
