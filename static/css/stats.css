@@ -2260,9 +2260,8 @@ div.inventory {
 }
 
 .pieces {
-  margin-top: -12px;
-  position: absolute;
-  top: 1655px;
+  margin-top: 45px;
+  position: relative;
   margin-left: 15px;
 }
 
@@ -2385,6 +2384,7 @@ div.inventory {
   text-underline-position: under;
   color: #fff;
   bottom: 100px;
+  width: 750px;
 }
 
 .glow {
