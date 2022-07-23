@@ -2505,7 +2505,7 @@ div.inventory {
 
 #nav_bar {
   position: sticky;
-  top: calc(48px + env(safe-area-inset-top, 0));
+  top: 0;
   margin-left: calc(-1*var(--padding));
   margin-right: calc(-1*var(--padding));
   text-align: center;
