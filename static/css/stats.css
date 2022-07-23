@@ -100,7 +100,6 @@ body::-webkit-scrollbar-track {
 } */
 
 .navbar {
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -744,7 +743,6 @@ body::-webkit-scrollbar-track {
 /* Stats*/
 
 .health-stat {
-  position: relative;
   margin-top: 0;
   color: #fb5858;
   height: 24px;
@@ -754,7 +752,6 @@ body::-webkit-scrollbar-track {
 }
 
 .health-text {
-  position: relative;
   font-size: 16px;
   color: #fb5858;
   font-weight: 600;
@@ -766,7 +763,6 @@ body::-webkit-scrollbar-track {
 }
 
 .health-value {
-  position: relative;
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -779,7 +775,7 @@ body::-webkit-scrollbar-track {
 }
 
 .heart-icon {
-  position: relative;
+  display: inline-block;
   height: 20px;
   width: 20px;
   bottom: 190px;
@@ -791,7 +787,6 @@ body::-webkit-scrollbar-track {
 /*a*/
 
 .defense-stat {
-  position: relative;
   margin-top: 0;
   color: #5bda5b;
   height: 24px;
@@ -801,7 +796,6 @@ body::-webkit-scrollbar-track {
 }
 
 .defense-text {
-  position: relative;
   font-size: 16px;
   color: #5bda5b;
   font-weight: 600;
@@ -813,7 +807,6 @@ body::-webkit-scrollbar-track {
 }
 
 .defense-value {
-  position: relative;
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -826,7 +819,7 @@ body::-webkit-scrollbar-track {
 }
 
 .defense-icon {
-  position: relative;
+  display: inline-block;
   height: 20px;
   width: 20px;
   bottom: 190px;
@@ -837,7 +830,6 @@ body::-webkit-scrollbar-track {
 
 /*Strength Stat Section*/
 .strength-stat {
-  position: relative;
   margin-top: 0;
   color: #fb5858;
   height: 24px;
@@ -847,7 +839,6 @@ body::-webkit-scrollbar-track {
 }
 
 .strength-text {
-  position: relative;
   font-size: 16px;
   color: #fb5858;
   font-weight: 600;
@@ -859,7 +850,6 @@ body::-webkit-scrollbar-track {
 }
 
 .strength-value {
-  position: relative;
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -872,7 +862,7 @@ body::-webkit-scrollbar-track {
 }
 
 .strength-icon {
-  position: relative;
+  display: inline-block;
   height: 20px;
   width: 20px;
   bottom: 190px;
@@ -883,7 +873,6 @@ body::-webkit-scrollbar-track {
 
 /*Speed Stat Section*/
 .speed-stat {
-  position: relative;
   margin-top: 0;
   color: #ffffff;
   height: 24px;
@@ -893,7 +882,6 @@ body::-webkit-scrollbar-track {
 }
 
 .speed-text {
-  position: relative;
   font-size: 16px;
   color: #ffffff;
   font-weight: 600;
@@ -905,7 +893,6 @@ body::-webkit-scrollbar-track {
 }
 
 .speed-value {
-  position: relative;
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -918,7 +905,7 @@ body::-webkit-scrollbar-track {
 }
 
 .speed-icon {
-  position: relative;
+  display: inline-block;
   height: 20px;
   width: 20px;
   bottom: 190px;
@@ -929,7 +916,6 @@ body::-webkit-scrollbar-track {
 
 /*Crit Chance Section*/
 .crit-chance-stat {
-  position: relative;
   margin-top: 0;
   color: #7486f0;
   height: 24px;
@@ -939,7 +925,6 @@ body::-webkit-scrollbar-track {
 }
 
 .crit-chance-text {
-  position: relative;
   font-size: 16px;
   color: #7486f0;
   font-weight: 600;
@@ -951,7 +936,6 @@ body::-webkit-scrollbar-track {
 }
 
 .crit-chance-value {
-  position: relative;
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -964,7 +948,7 @@ body::-webkit-scrollbar-track {
 }
 
 .crit-chance-icon {
-  position: relative;
+  display: inline-block;
   height: 20px;
   left: 240px;
   width: 20px;
@@ -976,7 +960,6 @@ body::-webkit-scrollbar-track {
 
 /*Crit Damage Section*/
 .crit-damage-stat {
-  position: relative;
   margin-top: 0;
   color: #7486f0;
   height: 24px;
@@ -986,7 +969,6 @@ body::-webkit-scrollbar-track {
 }
 
 .crit-damage-text {
-  position: relative;
   font-size: 16px;
   color: #7486f0;
   font-weight: 600;
@@ -998,7 +980,6 @@ body::-webkit-scrollbar-track {
 }
 
 .crit-damage-value {
-  position: relative;
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -1011,7 +992,7 @@ body::-webkit-scrollbar-track {
 }
 
 .crit-damage-icon {
-  position: relative;
+  display: inline-block;
   height: 20px;
   width: 20px;
   left: 240px;
@@ -1023,7 +1004,6 @@ body::-webkit-scrollbar-track {
 
 /*Attack Speed  Section*/
 .attack-speed-stat {
-  position: relative;
   margin-top: 0;
   color: #f2f267;
   height: 24px;
@@ -1033,7 +1013,6 @@ body::-webkit-scrollbar-track {
 }
 
 .attack-speed-text {
-  position: relative;
   font-size: 16px;
   color: #f2f267;
   font-weight: 600;
@@ -1045,7 +1024,6 @@ body::-webkit-scrollbar-track {
 }
 
 .attack-speed-value {
-  position: relative;
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -1058,7 +1036,7 @@ body::-webkit-scrollbar-track {
 }
 
 .attack-speed-icon {
-  position: relative;
+  display: inline-block;
   height: 20px;
   width: 20px;
   left: 240px;
@@ -1070,7 +1048,6 @@ body::-webkit-scrollbar-track {
 
 /*Intelligence Section*/
 .intelligence-stat {
-  position: relative;
   margin-top: 0;
   color: #58d6ed;
   height: 24px;
@@ -1080,7 +1057,6 @@ body::-webkit-scrollbar-track {
 }
 
 .intelligence-text {
-  position: relative;
   font-size: 16px;
   color: #58d6ed;
   font-weight: 600;
@@ -1092,7 +1068,6 @@ body::-webkit-scrollbar-track {
 }
 
 .intelligence-value {
-  position: relative;
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -1105,7 +1080,7 @@ body::-webkit-scrollbar-track {
 }
 
 .intelligence-icon {
-  position: relative;
+  display: inline-block;
   height: 20px;
   width: 20px;
   left: 240px;
@@ -1117,7 +1092,6 @@ body::-webkit-scrollbar-track {
 
 /*Magic Find Section*/
 .mf-stat {
-  position: relative;
   margin-top: 0;
   color: #58d6ed;
   height: 24px;
@@ -1127,7 +1101,6 @@ body::-webkit-scrollbar-track {
 }
 
 .mf-text {
-  position: relative;
   font-size: 16px;
   color: #58d6ed;
   font-weight: 600;
@@ -1139,7 +1112,6 @@ body::-webkit-scrollbar-track {
 }
 
 .mf-value {
-  position: relative;
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -1152,7 +1124,7 @@ body::-webkit-scrollbar-track {
 }
 
 .mf-icon {
-  position: relative;
+  display: inline-block;
   height: 20px;
   width: 20px;
   left: 480px;
@@ -1164,7 +1136,6 @@ body::-webkit-scrollbar-track {
 
 /*Ferocity Section*/
 .ferocity-stat {
-  position: relative;
   margin-top: 0;
   color: #58d6ed;
   height: 24px;
@@ -1174,7 +1145,6 @@ body::-webkit-scrollbar-track {
 }
 
 .ferocity-text {
-  position: relative;
   font-size: 16px;
   color: #fb5858;
   font-weight: 600;
@@ -1186,7 +1156,6 @@ body::-webkit-scrollbar-track {
 }
 
 .ferocity-value {
-  position: relative;
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -1199,7 +1168,7 @@ body::-webkit-scrollbar-track {
 }
 
 .ferocity-icon {
-  position: relative;
+  display: inline-block;
   height: 20px;
   width: 20px;
   left: 480px;
@@ -1211,7 +1180,6 @@ body::-webkit-scrollbar-track {
 
 /*Ferocity Section*/
 .ability-damage-stat {
-  position: relative;
   margin-top: 0;
   color: #58d6ed;
   height: 24px;
@@ -1221,7 +1189,6 @@ body::-webkit-scrollbar-track {
 }
 
 .ability-damage-text {
-  position: relative;
   font-size: 16px;
   color: #fb5858;
   font-weight: 600;
@@ -1233,7 +1200,6 @@ body::-webkit-scrollbar-track {
 }
 
 .ability-damage-value {
-  position: relative;
   font-size: 14px;
   color: white;
   font-weight: 700;
@@ -1246,7 +1212,7 @@ body::-webkit-scrollbar-track {
 }
 
 .ability-damage-icon {
-  position: relative;
+  display: inline-block;
   height: 20px;
   width: 20px;
   left: 480px;
@@ -1780,7 +1746,6 @@ body::-webkit-scrollbar-track {
 
 @media all and (max-width: 768px) and (min-height: 400px) {
   .navbar {
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -2072,7 +2037,6 @@ body::-webkit-scrollbar-track {
 }
 
 #stats_content {
-  position: fixed;
   display: none;
   /* right: calc(70vw + 20px); */
   /* background-color: var(--lore_background-hex); */
@@ -2620,4 +2584,12 @@ div.inventory {
 #nav_bar #nav_items_container .nav-item[aria-current]::after {
   height: 8px;
   top: calc(100% - 3px);
+}
+
+.player-stats {
+  display: flex;
+}
+
+.player-stats-column {
+  margin: 0 50px 0 0;
 }
