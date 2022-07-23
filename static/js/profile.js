@@ -114,3 +114,32 @@ allPieces.forEach((e) => {
     document.querySelector("#stats_content").style.display = "none";
   });
 });
+
+document.querySelectorAll(".nav-item").forEach((e) => {
+  e.addEventListener("click", (elem) => {
+    elem = elem.target;
+    elem.setAttribute("aria-current", "true");
+    if (elem.id === "armornav") {
+      document.querySelector("#invnav").removeAttribute("aria-current");
+      document.querySelector("#wardrobenav").removeAttribute("aria-current");
+    }
+    if (elem.id === "invnav") {
+      document.querySelector("#armornav").removeAttribute("aria-current");
+      document.querySelector("#wardrobenav").removeAttribute("aria-current");
+    }
+    if (elem.id === "wardrobenav") {
+      document.querySelector("#invnav").removeAttribute("aria-current");
+      document.querySelector("#armornav").removeAttribute("aria-current");
+    }
+  });
+
+  e.addEventListener("mouseover", (elem) => {
+    elem = elem.target;
+    elem.setAttribute("aria-current", "true");
+  });
+
+  e.addEventListener("mouseout", (elem) => {
+    elem = elem.target;
+    elem.removeAttribute("aria-current");
+  });
+});
