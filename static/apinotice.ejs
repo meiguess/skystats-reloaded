@@ -1,0 +1,8 @@
+<% if(playerInventory.inventory === null || equipments === null || playerInventory.enderchest === null || playerInventory.wardrobe === null || playerInventory.vaults === null) {%>
+<div class="stat-container info-container-wrapper">
+  <div class="info-container">
+  <div class="info-header">Notice</div>
+  Some informations are not available for <%= username %> due to limited API access.<br><span>Open your in game settings to enable full API access.</span>
+  </div>
+</div>
+<% } %>

@@ -1271,7 +1271,7 @@ body::-webkit-scrollbar-track {
 .armors {
   display: block;
   height: 100px;
-  margin-top: 50px;
+  margin: 50px 0 20px 0;
 }
 
 .dungeons {
@@ -2459,8 +2459,7 @@ div.inventory {
 }
 
 .stat-container {
-  margin-top: 35px;
-  position: absolute;
+  margin: 35px 0;
   top: 675px;
 }
 
@@ -2473,6 +2472,10 @@ div.inventory {
 }
 
 .stat-wardrobe-container {
+  top: 1400px;
+}
+
+.stat-echest-container {
   top: 1630px;
 }
 
