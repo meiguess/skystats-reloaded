@@ -1274,7 +1274,13 @@ body::-webkit-scrollbar-track {
   margin-top: 50px;
 }
 
-.text-armor, .text-wardrobe {
+.dungeons {
+  display: block;
+  height: 100px;
+  margin-top: 100px;
+}
+
+.text-armor, .text-wardrobe, .text-dungeons {
   height: 40px;
   line-height: 40px;
   text-transform: uppercase;
@@ -2588,3 +2594,63 @@ div.inventory {
 .player-statistics-misc {
   margin-bottom: 30px;
 }
+
+.stat-sub-header {
+  font-size: 20px;
+  color: rgba(var(--text-rgb), 0.9);
+  font-weight: 600;
+  padding: 5px;
+}
+
+.chip {
+  display: grid;
+  grid-template-columns: 48px max-content;
+  align-items: center;
+  padding: 8px;
+  background-color: rgba(var(--background-rgb), 0.3);
+  border-radius: 8px;
+  width: 250px;
+}
+
+.chip .chip-icon-wrapper {
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.chip .chip-icon-wrapper .item-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.375);
+  transform-origin: center center;
+}
+
+.chip .chip-text {
+  padding: 0 8px;
+}
+
+.collection-name {
+  font-size: 18px;
+}
+
+
+.stat-name {
+  font-weight: bold;
+  color: rgba(var(--text-rgb), 0.6);
+  text-transform: capitalize;
+}
+
+.stat-value {
+  font-weight: 700;
+  margin-left: 2px;
+  color: #fff;
+}
+
+.stat-name, .stat-value {
+  line-height: 1.5;
+}
+
+.collection-amount {
+  font-size: 14px;
+}
+
