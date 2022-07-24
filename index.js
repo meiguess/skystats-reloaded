@@ -483,3 +483,4 @@ App.post("/", async (req, res) => {
 });
 
 App.listen(3618);
+console.log("SkyStats Online!")
