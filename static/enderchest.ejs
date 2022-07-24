@@ -1,0 +1,201 @@
+<div class="text-wardrobe" style="position: absolute; top: 2110px;" id="Enderchest">Enderchest</div>
+
+<% if (playerInventory.enderchest === null || playerInventory.enderchest === undefined) { %>
+
+<div class="stat-container info-container-wrapper stat-inventory-container">
+  <div class="info-container">
+  <div class="info-header">Notice</div>
+  Enderchest is not available for <%= username %> due to limited API access.<br><span>Open your in game settings to enable full API access.</span>
+  </div>
+</div>
+
+<% } else { %>
+
+
+<div class="echest-pieces">
+  <% 
+  let items = playerInventory.enderchest;
+  let hotbar = [];
+  let row1 = [];
+  let row2 = [];
+  let row3 = [];
+
+  for (let i = 0; i < 9; i+=1) {
+    hotbar.push(items[i]);
+  }
+  for (let i = 9; i < 18; i+=1) {
+    row3.push(items[i]);
+  }
+  for (let i = 18; i < 27; i+=1) {
+    row2.push(items[i]);
+  }
+
+
+  console.log(row3);
+  %>
+
+    <!-- Row 3 -->
+
+    <div class="row">
+      <% for(let j = 0; j < row3.length; j++) { if(row3[j] === null) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-NONE-bg"></div>
+        </div>
+      <% } else {%>
+      <% if (minecraftMaterials.includes(row3[j].material) || skysimTypes.hasOwnProperty(row3[j].type)) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-<%= loreToRarity(row3[j].lore); %>-bg   <%= row3[j].name %>" lore="<%= row3[j].lore %>" lore="<%= row3[j].lore %>">
+            <% if (row3[j].material.toLowerCase() === "stained_glass") { %>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/glass_red.png')"></div>
+            <% } else { %>
+              <% if(skysimTypes.hasOwnProperty(row3[j].type)) {  let type = row3[j].type;%>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%=skysimTypes[type] %>')"></div>
+              <% } else { %>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/<%= row3[j].material.toLowerCase() %>.png')"></div>
+            <%} } %>
+          </div>
+        </div>
+      <% } else if (row3[j].material.toLowerCase().includes("leather") && row3[j].material.toLowerCase().includes("helmet")) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-<%= loreToRarity(row3[j].lore); %>-bg  <%= row3[j].name %>" lore="<%= row3[j].lore %>">
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/helmet/' + intToRGB(row3[j].color).r + ',' + intToRGB(row3[j].color).g + ',' + intToRGB(row3[j].color).b %>')"></div>
+          </div>
+        </div>
+      <% } else if (row3[j].material.toLowerCase().includes("leather") && row3[j].material.toLowerCase().includes("chestplate")) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-<%= loreToRarity(row3[j].lore); %>-bg  <%= row3[j].name %>" lore="<%= row3[j].lore %>">
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/chestplate/' + intToRGB(row3[j].color).r + ',' + intToRGB(row3[j].color).g + ',' + intToRGB(row3[j].color).b %>')"></div>
+          </div>
+        </div>
+      <% } else if (row3[j].material.toLowerCase().includes("leather") && row3[j].material.toLowerCase().includes("leggings")) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-<%= loreToRarity(row3[j].lore); %>-bg  <%= row3[j].name %>" lore="<%= row3[j].lore %>">
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/leggings/' + intToRGB(row3[j].color).r + ',' + intToRGB(row3[j].color).g + ',' + intToRGB(row3[j].color).b %>')"></div>
+          </div>
+        </div>
+      <% } else if (row3[j].material.toLowerCase().includes("leather") && row3[j].material.toLowerCase().includes("boots")) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-<%= loreToRarity(row3[j].lore); %>-bg  <%= row3[j].name %>" lore="<%= row3[j].lore %>">
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/boots/' + intToRGB(row3[j].color).r + ',' + intToRGB(row3[j].color).g + ',' + intToRGB(row3[j].color).b %>')"></div>
+          </div>
+        </div>
+      <% } else { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(row3[j].lore); %>-bg  <%= row3[j].name %>" lore="<%= row3[j].lore %>">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= row3[j].texture === undefined ? armorAttr[row3[j].type.toLowerCase()] : row3[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+        </div>
+      </div>
+      <% } } }%>
+    </div>
+
+    <!-- Row 2 -->
+
+    <div class="row">
+      <% for(let j = 0; j < row2.length; j++) { if(row2[j] === null) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-NONE-bg"></div>
+        </div>
+      <% } else {%>
+      <% if (minecraftMaterials.includes(row2[j].material) || skysimTypes.hasOwnProperty(row2[j].type)) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-<%= loreToRarity(row2[j].lore); %>-bg  <%= row2[j].name %>" lore="<%= row2[j].lore %>">
+            <% if (row2[j].material.toLowerCase() === "stained_glass") { %>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/glass_red.png')"></div>
+            <% } else { %>
+              <% if(skysimTypes.hasOwnProperty(row2[j].type)) {  let type = row2[j].type;%>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%=skysimTypes[type] %>')"></div>
+              <% } else { %>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/<%= row2[j].material.toLowerCase() %>.png')"></div>
+            <%} } %>
+          </div>
+        </div>
+        <% } else if (row2[j].material.toLowerCase().includes("leather") && row2[j].material.toLowerCase().includes("helmet")) { %>
+          <div class="wardrobe-set">
+            <div class="piece piece-<%= loreToRarity(row2[j].lore); %>-bg  <%= row2[j].name %>" lore="<%= row2[j].lore %>">
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/helmet/' + intToRGB(row2[j].color).r + ',' + intToRGB(row2[j].color).g + ',' + intToRGB(row2[j].color).b %>')"></div>
+            </div>
+          </div>
+        <% } else if (row2[j].material.toLowerCase().includes("leather") && row2[j].material.toLowerCase().includes("chestplate")) { %>
+          <div class="wardrobe-set">
+            <div class="piece piece-<%= loreToRarity(row2[j].lore); %>-bg  <%= row2[j].name %>" lore="<%= row2[j].lore %>">
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/chestplate/' + intToRGB(row2[j].color).r + ',' + intToRGB(row2[j].color).g + ',' + intToRGB(row2[j].color).b %>')"></div>
+            </div>
+          </div>
+        <% } else if (row2[j].material.toLowerCase().includes("leather") && row2[j].material.toLowerCase().includes("leggings")) { %>
+          <div class="wardrobe-set">
+            <div class="piece piece-<%= loreToRarity(row2[j].lore); %>-bg  <%= row2[j].name %>" lore="<%= row2[j].lore %>">
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/leggings/' + intToRGB(row2[j].color).r + ',' + intToRGB(row2[j].color).g + ',' + intToRGB(row2[j].color).b %>')"></div>
+            </div>
+          </div>
+        <% } else if (row2[j].material.toLowerCase().includes("leather") && row2[j].material.toLowerCase().includes("boots")) { %>
+          <div class="wardrobe-set">
+            <div class="piece piece-<%= loreToRarity(row2[j].lore); %>-bg  <%= row2[j].name %>" lore="<%= row2[j].lore %>">
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/boots/' + intToRGB(row2[j].color).r + ',' + intToRGB(row2[j].color).g + ',' + intToRGB(row2[j].color).b %>')"></div>
+            </div>
+          </div>
+        <% } else { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(row2[j].lore); %>-bg  <%= row2[j].name %>" lore="<%= row2[j].lore %>">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= row2[j].texture === undefined ? armorAttr[row2[j].type.toLowerCase()] : row2[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+        </div>
+      </div>
+      <% } } }%>
+    </div>
+  
+
+    <!-- Hotbar -->
+
+    <div class="row">
+      <% for(let j = 0; j < hotbar.length; j++) { if(hotbar[j] === null) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-NONE-bg"></div>
+        </div>
+      <% } else {%>
+      <% if (minecraftMaterials.includes(hotbar[j].material) || skysimTypes.hasOwnProperty(hotbar[j].type)) { %>
+        <div class="wardrobe-set">
+          <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg  <%= hotbar[j].name %>" lore="<%= hotbar[j].lore %>">
+            <% if (hotbar[j].material.toLowerCase() === "stained_glass") { %>
+            <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/glass_red.png')"></div>
+            <% } else { %>
+              <% if(skysimTypes.hasOwnProperty(hotbar[j].type)) {  let type = hotbar[j].type;%>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%=skysimTypes[type] %>')"></div>
+              <% } else { %>
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('../resources/armor/<%= hotbar[j].material.toLowerCase() %>.png')"></div>
+            <%} } %>
+          </div>
+        </div>
+        <% } else if (hotbar[j].material.toLowerCase().includes("leather") && hotbar[j].material.toLowerCase().includes("helmet")) { %>
+          <div class="wardrobe-set">
+            <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg  <%= hotbar[j].name %>" lore="<%= hotbar[j].lore %>">
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/helmet/' + intToRGB(hotbar[j].color).r + ',' + intToRGB(hotbar[j].color).g + ',' + intToRGB(hotbar[j].color).b %>')"></div>
+            </div>
+          </div>
+        <% } else if (hotbar[j].material.toLowerCase().includes("leather") && hotbar[j].material.toLowerCase().includes("chestplate")) { %>
+          <div class="wardrobe-set">
+            <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg  <%= hotbar[j].name %>" lore="<%= hotbar[j].lore %>">
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/chestplate/' + intToRGB(hotbar[j].color).r + ',' + intToRGB(hotbar[j].color).g + ',' + intToRGB(hotbar[j].color).b %>')"></div>
+            </div>
+          </div>
+        <% } else if (hotbar[j].material.toLowerCase().includes("leather") && hotbar[j].material.toLowerCase().includes("leggings")) { %>
+          <div class="wardrobe-set">
+            <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg  <%= hotbar[j].name %>" lore="<%= hotbar[j].lore %>">
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/leggings/' + intToRGB(hotbar[j].color).r + ',' + intToRGB(hotbar[j].color).g + ',' + intToRGB(hotbar[j].color).b %>')"></div>
+            </div>
+          </div>
+        <% } else if (hotbar[j].material.toLowerCase().includes("leather") && row3[j].material.toLowerCase().includes("boots")) { %>
+          <div class="wardrobe-set">
+            <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg  <%= hotbar[j].name %>" lore="<%= hotbar[j].lore %>">
+              <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= 'https://sky.lea.moe/leather/boots/' + intToRGB(hotbar[j].color).r + ',' + intToRGB(hotbar[j].color).g + ',' + intToRGB(hotbar[j].color).b %>')"></div>
+            </div>
+          </div>
+        <% } else { %>
+      <div class="wardrobe-set">
+        <div class="piece piece-<%= loreToRarity(hotbar[j].lore); %>-bg  <%= hotbar[j].name %>" lore="<%= hotbar[j].lore %>">
+          <div class="piece-1-icon armor-piece" style="--item-icon: url('<%= hotbar[j].texture === undefined ? armorAttr[hotbar[j].type.toLowerCase()] : hotbar[j].texture.replace(`http://textures.minecraft.net/texture/`, `https://mc-heads.net/head/`);  %>')"></div>
+        </div>
+      </div>
+      <% } } }%>
+    </div>
+</div>
+
+<% } %>

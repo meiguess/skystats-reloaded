@@ -105,6 +105,10 @@
                         <!-- rsnx -->
                         <div class="badge badge-code dashicons dashicons-editor-code"> </div>
                     <% } %>
+                    <% if(uuidData.raw_id === '76543db3e9934b2facb1d964d6844a21') { %>
+                        <!-- Uhut -->
+                        <div class="badge badge-code dashicons dashicons-editor-code"> </div>
+                    <% } %>
                     <% if(uuidData.raw_id === 'ffdd482c9e5141ccbc8b4bdfb472e203') { %>
                         <!-- eqrta -->
                         <div class="badge badge-speaker dashicons dashicons-star-filled"> </div>
@@ -151,6 +155,14 @@
                         <!-- Absolute_Void / Shard_of_the_UwU -->
                         <div class="badge badge-speaker dashicons dashicons-heart"> </div>
                     <% } %>
+                    <% if(uuidData.raw_id === '10009311053840c282a37c2eb3566275') { %>
+                        <!-- StormChestplate -->
+                        <div class="badge badge-speaker dashicons dashicons-heart"> </div>
+                    <% } %>
+                    <% if(uuidData.raw_id === 'f0a5a299399841e880c2997a20960d94') { %>
+                        <!-- Harnit -->
+                        <div class="badge badge-speaker dashicons dashicons-heart"> </div>
+                    <% } %>
                 </span>
                 &ThickSpace;&ThickSpace;<span class="text-on">on</span>&ThickSpace;&ThickSpace;<span class="text-skysim">SkySim</span>
                 <!-- <p class="unique-visits">Unique Visits: 
@@ -183,9 +195,11 @@
                     <div id="nav_bar_line"></div>
                     <div id="nav_bar_background"></div>
                     <div id="nav_items_container">
-                        <a class="nav-item" id="armornav" href="#Armor" aria-current="true">Armor</a>
+                        <a class="nav-item" id="armornav" href="#Armor">Armor</a>
                         <a class="nav-item" id="invnav"href="#Inventory">Inventory</a>
                         <a class="nav-item" id="wardrobenav"href="#Wardrobe">Wardrobe</a>
+                        <a class="nav-item" id="echestnav"href="#Enderchest">Enderchest</a>
+                        <a class="nav-item" id="dungeonsnav"href="#Dungeons">Dungeons</a>
                     </div>
                 </div>
                 <%- include('./skills.ejs'); %> 
@@ -193,6 +207,8 @@
                 <%- include('./armor.ejs'); %>
                 <%- include('./inventory.ejs'); %>
                 <%- include('./wardrobe.ejs'); %>
+                <%- include('./enderchest.ejs'); %>
+                <%- include('./dungeons.ejs'); %>
             </div>
         </div>
     </body>

@@ -119,17 +119,62 @@ document.querySelectorAll(".nav-item").forEach((e) => {
   e.addEventListener("click", (elem) => {
     elem = elem.target;
     elem.setAttribute("aria-current", "true");
+    elem.setAttribute("active", "true");
     if (elem.id === "armornav") {
       document.querySelector("#invnav").removeAttribute("aria-current");
       document.querySelector("#wardrobenav").removeAttribute("aria-current");
+      document.querySelector("#dungeonsnav").removeAttribute("aria-current");
+      document.querySelector("#echestnav").removeAttribute("aria-current");
+
+      document.querySelector("#invnav").removeAttribute("active");
+      document.querySelector("#wardrobenav").removeAttribute("active");
+      document.querySelector("#dungeonsnav").removeAttribute("active");
+      document.querySelector("#echestnav").removeAttribute("active");
     }
     if (elem.id === "invnav") {
       document.querySelector("#armornav").removeAttribute("aria-current");
       document.querySelector("#wardrobenav").removeAttribute("aria-current");
+      document.querySelector("#dungeonsnav").removeAttribute("aria-current");
+      document.querySelector("#echestnav").removeAttribute("aria-current");
+
+      document.querySelector("#armornav").removeAttribute("active");
+      document.querySelector("#wardrobenav").removeAttribute("active");
+      document.querySelector("#dungeonsnav").removeAttribute("active");
+      document.querySelector("#echestnav").removeAttribute("active");
     }
     if (elem.id === "wardrobenav") {
       document.querySelector("#invnav").removeAttribute("aria-current");
       document.querySelector("#armornav").removeAttribute("aria-current");
+      document.querySelector("#dungeonsnav").removeAttribute("aria-current");
+      document.querySelector("#echestnav").removeAttribute("aria-current");
+
+      document.querySelector("#invnav").removeAttribute("active");
+      document.querySelector("#armornav").removeAttribute("active");
+      document.querySelector("#dungeonsnav").removeAttribute("active");
+      document.querySelector("#echestnav").removeAttribute("active");
+    }
+    if (elem.id === "dungeonsnav") {
+      document.querySelector("#invnav").removeAttribute("aria-current");
+      document.querySelector("#armornav").removeAttribute("aria-current");
+      document.querySelector("#wardrobenav").removeAttribute("aria-current");
+      document.querySelector("#echestnav").removeAttribute("aria-current");
+
+      document.querySelector("#invnav").removeAttribute("active");
+      document.querySelector("#armornav").removeAttribute("active");
+      document.querySelector("#wardrobenav").removeAttribute("active");
+      document.querySelector("#echestnav").removeAttribute("active");
+    }
+
+    if (elem.id === "echestnav") {
+      document.querySelector("#invnav").removeAttribute("aria-current");
+      document.querySelector("#armornav").removeAttribute("aria-current");
+      document.querySelector("#wardrobenav").removeAttribute("aria-current");
+      document.querySelector("#dungeonsnav").removeAttribute("aria-current");
+
+      document.querySelector("#invnav").removeAttribute("active");
+      document.querySelector("#armornav").removeAttribute("active");
+      document.querySelector("#wardrobenav").removeAttribute("active");
+      document.querySelector("#dungeonsnav").removeAttribute("active");
     }
   });
 
@@ -140,6 +185,8 @@ document.querySelectorAll(".nav-item").forEach((e) => {
 
   e.addEventListener("mouseout", (elem) => {
     elem = elem.target;
-    elem.removeAttribute("aria-current");
+    if (!elem.hasAttribute("active")) {
+      elem.removeAttribute("aria-current");
+    }
   });
 });
