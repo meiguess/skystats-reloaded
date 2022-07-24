@@ -2269,6 +2269,12 @@ div.inventory {
   position:relative;
 }
 
+.echest-pieces {
+  margin-top: 60px;
+  margin-left: 15px;
+  position:relative;
+}
+
 
 .wardrobe-set {
   vertical-align: top;
@@ -2406,7 +2412,7 @@ div.inventory {
   user-select: none;
   backdrop-filter: blur(16px) brightness(0.5);
   border-radius: 25px;
-  height: 275vh;
+  height: 300vh;
   width: 61vw;
 }
 
