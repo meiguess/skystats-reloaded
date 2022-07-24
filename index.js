@@ -288,6 +288,17 @@ App.post("/", async (req, res) => {
       }, PlayerInventory.data.inventory);
     }
 
+    if (PlayerInventory.data.enderchest !== null) {
+      PlayerInventory.data.enderchest.forEach((elem, index) => {
+        if (elem !== null) {
+          let elemObj = elem;
+          elemObj.name = elemObj.name.split(" ").join("_");
+          elemObj.lore = elemObj.lore.join("\n");
+          this[index] = elemObj;
+        }
+      }, PlayerInventory.data.enderchest);
+    }
+
     if (PlayerInventory.data.armor !== null) {
       PlayerInventory.data.armor.forEach((elem, index) => {
         if (elem !== null) {
