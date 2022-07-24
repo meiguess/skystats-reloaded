@@ -122,14 +122,22 @@ document.querySelectorAll(".nav-item").forEach((e) => {
     if (elem.id === "armornav") {
       document.querySelector("#invnav").removeAttribute("aria-current");
       document.querySelector("#wardrobenav").removeAttribute("aria-current");
+      document.querySelector("#dungeonsnav").removeAttribute("aria-current");
     }
     if (elem.id === "invnav") {
       document.querySelector("#armornav").removeAttribute("aria-current");
       document.querySelector("#wardrobenav").removeAttribute("aria-current");
+      document.querySelector("#dungeonsnav").removeAttribute("aria-current");
     }
     if (elem.id === "wardrobenav") {
       document.querySelector("#invnav").removeAttribute("aria-current");
       document.querySelector("#armornav").removeAttribute("aria-current");
+      document.querySelector("#dungeonsnav").removeAttribute("aria-current");
+    }
+    if (elem.id === "dungeonsnav") {
+      document.querySelector("#invnav").removeAttribute("aria-current");
+      document.querySelector("#armornav").removeAttribute("aria-current");
+      document.querySelector("#wardrobenav").removeAttribute("aria-current");
     }
   });
 
