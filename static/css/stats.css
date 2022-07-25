@@ -2437,7 +2437,7 @@ div.inventory {
 }
 
 #stats_content .item-lore {
-  max-height: calc(100vh - 200px);
+  /* max-height: calc(100vh - 200px); */
   overflow-y: auto;
   overscroll-behavior: contain;
   font-size: 15px;
