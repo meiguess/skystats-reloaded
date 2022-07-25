@@ -15,6 +15,9 @@ function getPosition(string, subString, index) {
 function disableOverlay() {
   document.querySelector("#overlay").style.display = "none";
   document.querySelector("#stats_content").style.display = "none";
+  allPieces.forEach((elem) => {
+    if (elem.classList.contains('activeClick')) {elem.classList.remove('activeClick');}
+  });
 }
 
 const allPieces = document.querySelectorAll(".piece");
