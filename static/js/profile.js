@@ -12,10 +12,29 @@ function getPosition(string, subString, index) {
   return string.split(subString, index).join(subString).length;
 }
 
+function disableOverlay() {
+  document.querySelector("#overlay").style.display = "none";
+  document.querySelector("#stats_content").style.display = "none";
+}
+
 const allPieces = document.querySelectorAll(".piece");
 allPieces.forEach((e) => {
+
+  e.addEventListener("click", (event) => {
+    let target = event.target;
+    if (target.classList.contains('activeClick')) {
+      target.classList.remove('activeClick');
+      document.querySelector("#overlay").style.display = "none";
+    } else {
+      target.dispatchEvent(new Event('mouseover'));
+      target.classList.add('activeClick');
+      document.querySelector("#overlay").style.display = "block";
+    }
+  })
+
   if (!e.classList.contains("piece-NONE-bg")) {
     e.addEventListener("mouseover", (event) => {
+      if (event.target.classList.contains('activeClick')) {return;}
       let pos = event.target.getBoundingClientRect();
       let rarity = e.classList[1].replace("piece-", "").replace("-bg", "");
 
@@ -100,7 +119,8 @@ allPieces.forEach((e) => {
 });
 
 allPieces.forEach((e) => {
-  e.addEventListener("mouseout", () => {
+  e.addEventListener("mouseout", (event) => {
+    if (event.target.classList.contains('activeClick')) {return;}
     document.querySelector(".item-name").classList.remove("piece-COMMON-bg");
     document.querySelector(".item-name").classList.remove("piece-UNCOMMON-bg");
     document.querySelector(".item-name").classList.remove("piece-RARE-bg");
