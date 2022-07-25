@@ -469,7 +469,7 @@ App.post("/", async (req, res) => {
       uuidData: UUID.data.data.player,
       constants: {
         colorCodes: colorCodes,
-        glassArray: glassArray,
+        glassArray: GlassArray,
       },
       userData: userData,
       playerInventory: PlayerInventory.data,
