@@ -149,12 +149,14 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#dungeonsnav").removeAttribute("aria-current");
       document.querySelector("#echestnav").removeAttribute("aria-current");
       document.querySelector("#petsnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#invnav").removeAttribute("active");
       document.querySelector("#wardrobenav").removeAttribute("active");
       document.querySelector("#dungeonsnav").removeAttribute("active");
       document.querySelector("#echestnav").removeAttribute("active");
       document.querySelector("#petsnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
     }
     if (elem.id === "invnav") {
       document.querySelector("#armornav").removeAttribute("aria-current");
@@ -162,12 +164,14 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#dungeonsnav").removeAttribute("aria-current");
       document.querySelector("#echestnav").removeAttribute("aria-current");
       document.querySelector("#petsnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#armornav").removeAttribute("active");
       document.querySelector("#wardrobenav").removeAttribute("active");
       document.querySelector("#dungeonsnav").removeAttribute("active");
       document.querySelector("#echestnav").removeAttribute("active");
       document.querySelector("#petsnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
     }
     if (elem.id === "wardrobenav") {
       document.querySelector("#invnav").removeAttribute("aria-current");
@@ -175,12 +179,14 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#dungeonsnav").removeAttribute("aria-current");
       document.querySelector("#echestnav").removeAttribute("aria-current");
       document.querySelector("#petsnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#invnav").removeAttribute("active");
       document.querySelector("#armornav").removeAttribute("active");
       document.querySelector("#dungeonsnav").removeAttribute("active");
       document.querySelector("#echestnav").removeAttribute("active");
       document.querySelector("#petsnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
     }
     if (elem.id === "dungeonsnav") {
       document.querySelector("#invnav").removeAttribute("aria-current");
@@ -188,12 +194,14 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#wardrobenav").removeAttribute("aria-current");
       document.querySelector("#echestnav").removeAttribute("aria-current");
       document.querySelector("#petsnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#invnav").removeAttribute("active");
       document.querySelector("#armornav").removeAttribute("active");
       document.querySelector("#wardrobenav").removeAttribute("active");
       document.querySelector("#echestnav").removeAttribute("active");
       document.querySelector("#petsnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
     }
 
     if (elem.id === "echestnav") {
@@ -202,12 +210,14 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#wardrobenav").removeAttribute("aria-current");
       document.querySelector("#dungeonsnav").removeAttribute("aria-current");
       document.querySelector("#petsnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#invnav").removeAttribute("active");
       document.querySelector("#armornav").removeAttribute("active");
       document.querySelector("#wardrobenav").removeAttribute("active");
       document.querySelector("#dungeonsnav").removeAttribute("active");
       document.querySelector("#petsnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
     }
     if (elem.id === "petsnav") {
       document.querySelector("#invnav").removeAttribute("aria-current");
@@ -215,12 +225,29 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#wardrobenav").removeAttribute("aria-current");
       document.querySelector("#dungeonsnav").removeAttribute("aria-current");
       document.querySelector("#echestnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#invnav").removeAttribute("active");
       document.querySelector("#armornav").removeAttribute("active");
       document.querySelector("#wardrobenav").removeAttribute("active");
       document.querySelector("#dungeonsnav").removeAttribute("active");
       document.querySelector("#echestnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
+    }
+    if (elem.id === "pvaultnav") {
+      document.querySelector("#invnav").removeAttribute("aria-current");
+      document.querySelector("#armornav").removeAttribute("aria-current");
+      document.querySelector("#wardrobenav").removeAttribute("aria-current");
+      document.querySelector("#dungeonsnav").removeAttribute("aria-current");
+      document.querySelector("#echestnav").removeAttribute("aria-current");
+      document.querySelector("#petsnav").removeAttribute("aria-current");
+
+      document.querySelector("#invnav").removeAttribute("active");
+      document.querySelector("#armornav").removeAttribute("active");
+      document.querySelector("#wardrobenav").removeAttribute("active");
+      document.querySelector("#dungeonsnav").removeAttribute("active");
+      document.querySelector("#echestnav").removeAttribute("active");
+      document.querySelector("#petsnav").removeAttribute("active");
     }
   });
 
