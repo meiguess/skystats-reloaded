@@ -440,6 +440,8 @@ App.post("/", async (req, res) => {
 
     const SkySimTypes = await require(path.resolve(__dirname, "./constants/SkySimTypes"));
 
+    const GlassArray = await require(path.resolve(__dirname, "./constants/ColoredGlassArray"));
+
     //Rendering page.
 
     const fetchingPlayer = await PlayerDB.findOne({
@@ -467,6 +469,7 @@ App.post("/", async (req, res) => {
       uuidData: UUID.data.data.player,
       constants: {
         colorCodes: colorCodes,
+        glassArray: glassArray,
       },
       userData: userData,
       playerInventory: PlayerInventory.data,
