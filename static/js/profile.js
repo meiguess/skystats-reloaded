@@ -263,3 +263,18 @@ document.querySelectorAll(".nav-item").forEach((e) => {
     }
   });
 });
+
+document.querySelectorAll(".pagenav").forEach((e) => {
+  e.addEventListener("click", (elem) => {
+    elem = elem.target;
+    elem.setAttribute("aria-current", "true");
+    elem.setAttribute("active", "true");
+
+    document.querySelectorAll(".pagenav").forEach((elem2) => {
+      if (elem.id !== elem2.id) {
+        elem2.removeAttribute("aria-current");
+        elem2.removeAttribute("active");
+      }
+    })
+  })
+})
