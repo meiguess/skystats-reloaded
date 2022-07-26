@@ -2510,6 +2510,7 @@ div.inventory {
   padding-bottom: 6px;
   white-space: nowrap;
   z-index: 25;
+  margin-bottom: 20px;
 }
 
 .echest-pieces #nav_bar {
