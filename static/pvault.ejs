@@ -4,7 +4,7 @@
     <div id="nav_bar_line"></div>
     <div id="nav_bar_background"></div>
     <div id="nav_items_container">
-        <a class="nav-item pagenav" id="page1nav">Page 1</a>
+        <a class="nav-item pagenav" id="page1nav" aria-current="true" active="true">Page 1</a>
         <a class="nav-item pagenav" id="page2nav">Page 2</a>
         <a class="nav-item pagenav" id="page3nav">Page 3</a>
         <a class="nav-item pagenav" id="page4nav">Page 4</a>
@@ -16,7 +16,7 @@
         <a class="nav-item pagenav" id="page10nav ">Page 10</a>
     </div>
 </div>
-<div class="echest-pieces">
+<div class="echest-pieces pvault-pieces">
 
   <% 
   let items = playerInventory.vaults;
@@ -364,10 +364,9 @@
 
   %>
 
-    <% if (pvPage === 1) { %>
-
+    <div class="pvault1 pvault">
     <!-- Row 1 -->
-
+    
     <div class="row">
       <% for(let j = 0; j < row1_1.length; j++) { if(row1_1[j] === null) { %>
         <div class="wardrobe-set">
@@ -688,8 +687,10 @@
       <% } } }%>
     </div>
 
+    </div>
 
-    <% } else if(pvPage === 2) { %>
+
+    <div class="pvault2 pvault">
           <!-- Row 1 -->
 
     <div class="row">
@@ -1011,8 +1012,9 @@
       </div>
       <% } } }%>
     </div>
-
-    <% } else if(pvPage === 3) { %>
+  </div>
+    
+    <div class="pvault3 pvault">
       <!-- Row 1 -->
     
     <div class="row">
@@ -1334,8 +1336,9 @@
     </div>
     <% } } }%>
     </div>
+  </div>
 
-    <% } else if(pvPage === 4) { %>
+  <div class="pvault4 pvault">
       <!-- Row 1 -->
     
     <div class="row">
@@ -1657,9 +1660,10 @@
     </div>
     <% } } }%>
     </div>
+  </div>
 
 
-    <% } else if(pvPage === 5) { %>
+  <div class="pvault5 pvault">
       <!-- Row 1 -->
     
     <div class="row">
@@ -1981,8 +1985,9 @@
     </div>
     <% } } }%>
     </div>
+  </div>
 
-    <% } else if(pvPage === 6) { %>
+  <div class="pvault6 pvault">
       <!-- Row 1 -->
     
     <div class="row">
@@ -2304,8 +2309,9 @@
     </div>
     <% } } }%>
     </div>
+  </div>
 
-    <% } else if(pvPage === 7) { %>
+  <div class="pvault7 pvault">
       <!-- Row 1 -->
     
     <div class="row">
@@ -2627,8 +2633,9 @@
     </div>
     <% } } }%>
     </div>
+  </div>
 
-    <% } else if(pvPage === 8) { %>
+  <div class="pvault8 pvault">
       <!-- Row 1 -->
     
     <div class="row">
@@ -2950,8 +2957,9 @@
     </div>
     <% } } }%>
     </div>
+    </div>
 
-    <% } else if(pvPage === 9) { %>
+    <div class="pvault9 pvault">
       <!-- Row 1 -->
     
     <div class="row">
@@ -3273,8 +3281,9 @@
     </div>
     <% } } }%>
     </div>
+  </div>
 
-    <% } else if(pvPage === 10) { %>
+  <div class="pvault10 pvault">
       <!-- Row 1 -->
     
     <div class="row">
@@ -3596,5 +3605,5 @@
     </div>
     <% } } }%>
     </div>
-  <% }%>
+  </div>
 </div>
