@@ -26,6 +26,7 @@
     </head>
 
     <body>
+        <div id="overlay" onclick="disableOverlay();"></div>
         <nav class="menu-container">
             <img src="/resources/slyso234.png" alt="SkyStats Logo"
                 class="skystats-img" />
@@ -49,8 +50,6 @@
                 </ul>
             </div>
         </nav>
-        <div class="second-blur-box">
-        </div>
         <div class="blur-box" data-sticky>
             <div class="player_profile">
                 <span class="text-stats-for">Stats for</span>&ThickSpace;&ThickSpace;
@@ -191,6 +190,8 @@
             </div>
             <!--Skill Section-->
             <div class="skills">
+                <%- include('./skills.ejs'); %> 
+                <%- include("./stats.ejs"); %>
                 <div id="nav_bar">
                     <div id="nav_bar_line"></div>
                     <div id="nav_bar_background"></div>
@@ -199,17 +200,17 @@
                         <a class="nav-item" id="invnav"href="#Inventory">Inventory</a>
                         <a class="nav-item" id="wardrobenav"href="#Wardrobe">Wardrobe</a>
                         <a class="nav-item" id="echestnav"href="#Enderchest">Enderchest</a>
+                        <a class="nav-item" id="pvaultnav"href="#PrivateVault">Private Vault</a>
                         <a class="nav-item" id="petsnav"href="#Pets">Pets</a>
                         <a class="nav-item" id="dungeonsnav"href="#Dungeons">Dungeons</a>
                     </div>
                 </div>
                 <%- include('./apinotice.ejs') %>
-                <%- include('./skills.ejs'); %> 
-                <%- include("./stats.ejs"); %> 
                 <%- include('./armor.ejs'); %>
                 <%- include('./inventory.ejs'); %>
                 <%- include('./wardrobe.ejs'); %>
                 <%- include('./enderchest.ejs'); %>
+                <%- include('./pvault.ejs'); %>
                 <%- include('./pets.ejs'); %>
                 <%- include('./dungeons.ejs'); %>
             </div>

@@ -140,14 +140,13 @@ body::-webkit-scrollbar-track {
 .blur-box {
   position: relative;
   margin-left: 40vw;
-  height: 190vh;
   --padding: 30px;
   padding: var(--padding);
   padding-top: calc(48px + env(safe-area-inset-top, 0));
   padding-bottom: calc(var(--padding) + env(safe-area-inset-bottom));
   box-sizing: border-box;
   user-select: none;
-  /* backdrop-filter: blur(16px) brightness(0.5); */
+  backdrop-filter: blur(16px) brightness(0.5);
   border-radius: 25px;
 }
 
@@ -2275,6 +2274,12 @@ div.inventory {
   position:relative;
 }
 
+.pvault-pieces {
+  margin-top: 20px;
+  margin-left: 15px;
+  position:relative;
+}
+
 
 .wardrobe-set {
   vertical-align: top;
@@ -2400,22 +2405,6 @@ div.inventory {
     display: none;
   }
 }
-
-.second-blur-box {
-  position: absolute;
-  margin-left: 40vw;
-  --padding: 30px;
-  padding: var(--padding);
-  padding-top: calc(48px + env(safe-area-inset-top, 0));
-  padding-bottom: calc(var(--padding) + env(safe-area-inset-bottom));
-  box-sizing: border-box;
-  user-select: none;
-  backdrop-filter: blur(16px) brightness(0.5);
-  border-radius: 25px;
-  height: 310vh;
-  width: 61vw;
-}
-
 #stats_content .item-name .item-name__name[data-multicolor=true] {
   background-color: var(--lore_background-hex);
   border-radius: 1rem;
@@ -2437,7 +2426,7 @@ div.inventory {
 }
 
 #stats_content .item-lore {
-  max-height: calc(100vh - 200px);
+  /* max-height: calc(100vh - 200px); */
   overflow-y: auto;
   overscroll-behavior: contain;
   font-size: 15px;
@@ -2521,6 +2510,16 @@ div.inventory {
 #nav_bar {
   position: sticky;
   top: 0;
+  margin-left: calc(-1*var(--padding));
+  margin-right: calc(-1*var(--padding));
+  text-align: center;
+  padding-bottom: 6px;
+  white-space: nowrap;
+  z-index: 25;
+  margin-bottom: 20px;
+}
+
+.echest-pieces #nav_bar {
   margin-left: calc(-1*var(--padding));
   margin-right: calc(-1*var(--padding));
   text-align: center;
@@ -2663,3 +2662,25 @@ div.inventory {
   font-size: 14px;
 }
 
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.pvault {
+  display: none;
+}
+
+.pvault1 {
+  display: block;
+}

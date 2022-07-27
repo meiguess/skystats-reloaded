@@ -12,10 +12,32 @@ function getPosition(string, subString, index) {
   return string.split(subString, index).join(subString).length;
 }
 
+function disableOverlay() {
+  document.querySelector("#overlay").style.display = "none";
+  document.querySelector("#stats_content").style.display = "none";
+  allPieces.forEach((elem) => {
+    if (elem.classList.contains('activeClick')) {elem.classList.remove('activeClick');}
+  });
+}
+
 const allPieces = document.querySelectorAll(".piece");
 allPieces.forEach((e) => {
+
+  e.addEventListener("click", (event) => {
+    let target = event.target;
+    if (target.classList.contains('activeClick')) {
+      target.classList.remove('activeClick');
+      document.querySelector("#overlay").style.display = "none";
+    } else {
+      target.dispatchEvent(new Event('mouseover'));
+      target.classList.add('activeClick');
+      document.querySelector("#overlay").style.display = "block";
+    }
+  })
+
   if (!e.classList.contains("piece-NONE-bg")) {
     e.addEventListener("mouseover", (event) => {
+      if (event.target.classList.contains('activeClick')) {return;}
       let pos = event.target.getBoundingClientRect();
       let rarity = e.classList[1].replace("piece-", "").replace("-bg", "");
 
@@ -100,7 +122,8 @@ allPieces.forEach((e) => {
 });
 
 allPieces.forEach((e) => {
-  e.addEventListener("mouseout", () => {
+  e.addEventListener("mouseout", (event) => {
+    if (event.target.classList.contains('activeClick')) {return;}
     document.querySelector(".item-name").classList.remove("piece-COMMON-bg");
     document.querySelector(".item-name").classList.remove("piece-UNCOMMON-bg");
     document.querySelector(".item-name").classList.remove("piece-RARE-bg");
@@ -126,12 +149,14 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#dungeonsnav").removeAttribute("aria-current");
       document.querySelector("#echestnav").removeAttribute("aria-current");
       document.querySelector("#petsnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#invnav").removeAttribute("active");
       document.querySelector("#wardrobenav").removeAttribute("active");
       document.querySelector("#dungeonsnav").removeAttribute("active");
       document.querySelector("#echestnav").removeAttribute("active");
       document.querySelector("#petsnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
     }
     if (elem.id === "invnav") {
       document.querySelector("#armornav").removeAttribute("aria-current");
@@ -139,12 +164,14 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#dungeonsnav").removeAttribute("aria-current");
       document.querySelector("#echestnav").removeAttribute("aria-current");
       document.querySelector("#petsnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#armornav").removeAttribute("active");
       document.querySelector("#wardrobenav").removeAttribute("active");
       document.querySelector("#dungeonsnav").removeAttribute("active");
       document.querySelector("#echestnav").removeAttribute("active");
       document.querySelector("#petsnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
     }
     if (elem.id === "wardrobenav") {
       document.querySelector("#invnav").removeAttribute("aria-current");
@@ -152,12 +179,14 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#dungeonsnav").removeAttribute("aria-current");
       document.querySelector("#echestnav").removeAttribute("aria-current");
       document.querySelector("#petsnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#invnav").removeAttribute("active");
       document.querySelector("#armornav").removeAttribute("active");
       document.querySelector("#dungeonsnav").removeAttribute("active");
       document.querySelector("#echestnav").removeAttribute("active");
       document.querySelector("#petsnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
     }
     if (elem.id === "dungeonsnav") {
       document.querySelector("#invnav").removeAttribute("aria-current");
@@ -165,12 +194,14 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#wardrobenav").removeAttribute("aria-current");
       document.querySelector("#echestnav").removeAttribute("aria-current");
       document.querySelector("#petsnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#invnav").removeAttribute("active");
       document.querySelector("#armornav").removeAttribute("active");
       document.querySelector("#wardrobenav").removeAttribute("active");
       document.querySelector("#echestnav").removeAttribute("active");
       document.querySelector("#petsnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
     }
 
     if (elem.id === "echestnav") {
@@ -179,12 +210,14 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#wardrobenav").removeAttribute("aria-current");
       document.querySelector("#dungeonsnav").removeAttribute("aria-current");
       document.querySelector("#petsnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#invnav").removeAttribute("active");
       document.querySelector("#armornav").removeAttribute("active");
       document.querySelector("#wardrobenav").removeAttribute("active");
       document.querySelector("#dungeonsnav").removeAttribute("active");
       document.querySelector("#petsnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
     }
     if (elem.id === "petsnav") {
       document.querySelector("#invnav").removeAttribute("aria-current");
@@ -192,12 +225,29 @@ document.querySelectorAll(".nav-item").forEach((e) => {
       document.querySelector("#wardrobenav").removeAttribute("aria-current");
       document.querySelector("#dungeonsnav").removeAttribute("aria-current");
       document.querySelector("#echestnav").removeAttribute("aria-current");
+      document.querySelector("#pvaultnav").removeAttribute("aria-current");
 
       document.querySelector("#invnav").removeAttribute("active");
       document.querySelector("#armornav").removeAttribute("active");
       document.querySelector("#wardrobenav").removeAttribute("active");
       document.querySelector("#dungeonsnav").removeAttribute("active");
       document.querySelector("#echestnav").removeAttribute("active");
+      document.querySelector("#pvaultnav").removeAttribute("active");
+    }
+    if (elem.id === "pvaultnav") {
+      document.querySelector("#invnav").removeAttribute("aria-current");
+      document.querySelector("#armornav").removeAttribute("aria-current");
+      document.querySelector("#wardrobenav").removeAttribute("aria-current");
+      document.querySelector("#dungeonsnav").removeAttribute("aria-current");
+      document.querySelector("#echestnav").removeAttribute("aria-current");
+      document.querySelector("#petsnav").removeAttribute("aria-current");
+
+      document.querySelector("#invnav").removeAttribute("active");
+      document.querySelector("#armornav").removeAttribute("active");
+      document.querySelector("#wardrobenav").removeAttribute("active");
+      document.querySelector("#dungeonsnav").removeAttribute("active");
+      document.querySelector("#echestnav").removeAttribute("active");
+      document.querySelector("#petsnav").removeAttribute("active");
     }
   });
 
@@ -213,3 +263,25 @@ document.querySelectorAll(".nav-item").forEach((e) => {
     }
   });
 });
+
+document.querySelectorAll(".pagenav").forEach((e) => {
+  e.addEventListener("click", (elem) => {
+    elem = elem.target;
+    elem.setAttribute("aria-current", "true");
+    elem.setAttribute("active", "true");
+
+    document.querySelectorAll(".pagenav").forEach((elem2) => {
+      if (elem.id !== elem2.id) {
+        elem2.removeAttribute("aria-current");
+        elem2.removeAttribute("active");
+        document.querySelectorAll(".pvault").forEach(elem3 => {
+          if (!elem3.classList.contains("pvault" + (elem.id.replace("page", "").replace("nav", "")))) {
+            elem3.style.display = "none";
+          } else {
+            elem3.style.display = "block";
+          }
+        });
+      }
+    })
+  })
+})

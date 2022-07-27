@@ -288,6 +288,19 @@ App.post("/", async (req, res) => {
       }, PlayerInventory.data.inventory);
     }
 
+    if (PlayerInventory.data.vaults !== null) {
+      PlayerInventory.data.vaults.forEach((elem, index) => {
+        elem.items.forEach((vaultElem, vaultIndex) => {
+          if (vaultElem !== null) {
+            let elemObj = vaultElem;
+            elemObj.name = elemObj.name.split(" ").join("_");
+            elemObj.lore = elemObj.lore.join("\n");
+            this[index] = elemObj;
+          }
+        });
+      }, PlayerInventory.data.vaults);
+    }
+
     if (PlayerInventory.data.enderchest !== null) {
       PlayerInventory.data.enderchest.forEach((elem, index) => {
         if (elem !== null) {
@@ -440,6 +453,8 @@ App.post("/", async (req, res) => {
 
     const SkySimTypes = await require(path.resolve(__dirname, "./constants/SkySimTypes"));
 
+    const GlassArray = await require(path.resolve(__dirname, "./constants/ColoredGlassArray"));
+
     //Rendering page.
 
     const fetchingPlayer = await PlayerDB.findOne({
@@ -467,6 +482,7 @@ App.post("/", async (req, res) => {
       uuidData: UUID.data.data.player,
       constants: {
         colorCodes: colorCodes,
+        glassArray: GlassArray,
       },
       userData: userData,
       playerInventory: PlayerInventory.data,
