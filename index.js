@@ -289,6 +289,19 @@ App.post("/", async (req, res) => {
       }, PlayerInventory.data.inventory);
     }
 
+    if (PlayerInventory.data.vaults !== null) {
+      PlayerInventory.data.vaults.forEach((elem, index) => {
+        elem.items.forEach((vaultElem, vaultIndex) => {
+          if (vaultElem !== null) {
+            let elemObj = vaultElem;
+            elemObj.name = elemObj.name.split(" ").join("_");
+            elemObj.lore = elemObj.lore.join("\n");
+            this[index] = elemObj;
+          }
+        });
+      }, PlayerInventory.data.vaults);
+    }
+
     if (PlayerInventory.data.enderchest !== null) {
       PlayerInventory.data.enderchest.forEach((elem, index) => {
         if (elem !== null) {

@@ -2274,6 +2274,12 @@ div.inventory {
   position:relative;
 }
 
+.pvault-pieces {
+  margin-top: 20px;
+  margin-left: 15px;
+  position:relative;
+}
+
 
 .wardrobe-set {
   vertical-align: top;
@@ -2510,6 +2516,7 @@ div.inventory {
   padding-bottom: 6px;
   white-space: nowrap;
   z-index: 25;
+  margin-bottom: 20px;
 }
 
 .echest-pieces #nav_bar {
@@ -2668,4 +2675,12 @@ div.inventory {
   background-color: rgba(0,0,0,0.5);
   z-index: 10;
   cursor: pointer;
+}
+
+.pvault {
+  display: none;
+}
+
+.pvault1 {
+  display: block;
 }

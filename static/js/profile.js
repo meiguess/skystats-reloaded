@@ -274,6 +274,13 @@ document.querySelectorAll(".pagenav").forEach((e) => {
       if (elem.id !== elem2.id) {
         elem2.removeAttribute("aria-current");
         elem2.removeAttribute("active");
+        document.querySelectorAll(".pvault").forEach(elem3 => {
+          if (!elem3.classList.contains("pvault" + (elem.id.replace("page", "").replace("nav", "")))) {
+            elem3.style.display = "none";
+          } else {
+            elem3.style.display = "block";
+          }
+        });
       }
     })
   })
