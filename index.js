@@ -8,9 +8,10 @@ const PlayerDB = require("./db/PlayerDB");
 const dotenv = require("dotenv").config();
 
 // Connect to database
+console.log("starting...")
 const URL = process.env.URL;
 mongoose.connect(URL);
-
+console.log("connected to mongoose URI")
 function abbreviateNumber(number) {
   // what tier? (determines SI symbol)
   var tier = (Math.log10(Math.abs(number)) / 3) | 0;

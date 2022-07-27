@@ -40,20 +40,33 @@ function enderman() {
     }
 }
 function combatxp() {
-    if (userData['skills'].combat.xp > 55172425) {
-        let combat2 = ((userData['skills'].combat.xp - 55172425) / 125000) + (55172425 / 110000) * 1.35;
-        return combat2;
+    let res = 0;
+    let firstbar = 1000;
+    while (userData.skills.combat.xp > firstbar) {
+        firstbar = firstbar + (firstbar/50)
+        res++
     }
-    else {
-        let combat2 = (userData['skills'].combat.xp / 150000) * 1.21;
-        return combat2;
-    }
+    return res
 }
 function miningxp() {
-    return ((userData.skills.mining.xp)/23000)*1.25
+    let res = 0;
+    let firstbar = 1000;
+    while (userData.skills.mining.xp > firstbar)
+    {
+        firstbar = firstbar + (firstbar/40)
+        res++
+    }
+    return res
 }
 function enchantingxp() {
-    return ((userData.skills.enchanting.xp)/74252)*1.11
+    let res = 0;
+    let firstbar = 1000;
+    while (userData.skills.enchanting.xp > firstbar)
+    {
+        firstbar = firstbar + (firstbar/100)
+        res++
+    }
+    return res
 }
 const SI_SYMBOL = ["", "K", "M", "B", "T", "P", "E"];
 function abbreviateNumber(number) {
